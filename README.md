@@ -89,8 +89,12 @@ These are the wireframes. the login and register pages are on the Home wireframe
 
 ![Home Page](Home_WireFrame.png)
 ![Resources](Resource_WireFrame.png)
+![Resources](CloseUp_Resource_WireFrame.png)
+![Resources](AddTip_WireFrame.png)
+![Resources](NotLoggedIn_WireFrame.png)
 ![Article](Article_WireFrame.png)
 ![PC Parts](PcPart_WireFrame.png)
+
 
 
 <!-- ### Lost
