@@ -83,6 +83,29 @@ As a registered user:
 ## DB (Server Side) -
   Still to be built for the tutorials, tips, and articles. A many to many database is to be implimented as we want to have categories of parts and general knowledge which will allow the use to filter when viewing tips/tutorials etc. 
 
+
+## WireFrames
+These are the wireframes. the login and register pages are on the Home wireframe and then form to add a tip or tutorial is on the resource wireframe.
+
+## Home Page
+![Home Page](Home_WireFrame.png)
+
+## Resources
+![Resources](Resource_WireFrame.png)
+![Resources](CloseUp_Resource_WireFrame.png)
+
+## Close Ups
+![Resources](AddTip_WireFrame.png)
+![Resources](NotLoggedIn_WireFrame.png)
+
+## Articles
+![Article](Article_WireFrame.png)
+
+## PC Parts
+![PC Parts](PcPart_WireFrame.png)
+
+
+
 <!-- ### Lost
   | Column Name | Data Type | Purpose |
   | --- | --- | --- |
