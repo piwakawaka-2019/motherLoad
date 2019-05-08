@@ -87,21 +87,21 @@ As a registered user:
 ## WireFrames
 These are the wireframes. the login and register pages are on the Home wireframe and then form to add a tip or tutorial is on the resource wireframe.
 
-##Home Page
+## Home Page
 ![Home Page](Home_WireFrame.png)
 
-##Resources
+## Resources
 ![Resources](Resource_WireFrame.png)
 ![Resources](CloseUp_Resource_WireFrame.png)
 
-##
+## Close Ups
 ![Resources](AddTip_WireFrame.png)
 ![Resources](NotLoggedIn_WireFrame.png)
 
-##Articles
+## Articles
 ![Article](Article_WireFrame.png)
 
-##PC Parts
+## PC Parts
 ![PC Parts](PcPart_WireFrame.png)
 
 
