@@ -3,6 +3,7 @@ import {HashRouter as Router, Route, Link} from 'react-router-dom'
 import {connect} from 'react-redux'
 import Nav from './Nav'
 import List from './List'
+import MenuBar from './MenuBar'
 
 import Login from './Login'
 import Register from './Register'
@@ -13,15 +14,16 @@ export function App({auth}) {
     
     <Router>
       <div className="container has-text-centered">
-
         <div className="hero is-small is-primary">
           <div className="hero-body has-text-centered">
             <Link to='/' className="">
               <h1 className="title is-1">MotherLoad</h1>
             </Link>
-            <Nav />
+            
           </div>
+          <Nav />
         </div>
+        <MenuBar />
 
         <div className=''>
           {!auth.isAuthenticated &&

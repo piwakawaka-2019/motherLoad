@@ -3,7 +3,7 @@ import {connect} from 'react-redux'
 
 const Carousel = () => {
     return (
-        <div>
+        <div className='carousel'>
             <h2>Carousel goes here.</h2>
         </div>
     )

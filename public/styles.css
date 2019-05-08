@@ -1,3 +1,16 @@
 a {
     text-decoration: none;
 }
+
+.carousel {
+    border: 1px solid;
+    border-color: #000000;
+    margin: 16px;
+}
+
+.menubar {
+    border: 1px solid;
+    border-color:
+    margin-top: 32px;
+    padding: 8px;
+}
