@@ -1,12 +1,19 @@
-import React from 'react'
+import React , {Fragment} from 'react'
 import {connect} from 'react-redux'
 import Carousel from './Carousel'
 import ListItem from './ListItem'
 import resources from '../../data/resources'
 
-const List = () => {
-    return (
-        <div className='content'>
+
+class List extends React.Component {
+    constructor(props){
+        super(props)
+    }
+    render(){
+        return(
+
+            <Fragment>
+                <div className='content'>
             <Carousel />
             <p>
                 <ListItem />
@@ -21,7 +28,10 @@ const List = () => {
                 })} */}
             </p>
         </div>
-    )
+            </Fragment>
+            
+        )
+    }
 }
 
 export default List

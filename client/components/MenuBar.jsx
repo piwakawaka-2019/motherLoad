@@ -1,8 +1,14 @@
-import React from 'react'
+import React , {Fragment} from 'react'
 
-const MenuBar = () => {
-    return (
-        <div className='columns'>
+class MenuBar extends React.Component {
+    constructor(props){
+        super(props)
+    }
+    render(){
+        return(
+
+            <Fragment>
+                <div className='columns'>
             <div className="column is-one-quarter label is-medium has-text-centered">
                 <div className='menubar'>
                 <a href='#/pcparts/'>PC Parts</a>
@@ -24,7 +30,9 @@ const MenuBar = () => {
                 </div>
             </div>          
         </div>
-    )
+            </Fragment>
+        )
+    }
 }
 
 export default MenuBar
