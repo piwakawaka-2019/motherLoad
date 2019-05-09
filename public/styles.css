@@ -2,12 +2,16 @@ a {
     text-decoration: none;
 }
 
+p {
+    font-family: Merriweather, serif;
+}
+
 h1 {
     font-family: 'Orbitron';
 }
 .carousel {
     border: 1px solid;
-    border-color: #000000;
+    border-color: #24305e;
     margin: 16px;
 }
 

@@ -10,7 +10,7 @@ class Tutorials extends React.Component {
         return(
             <Fragment>
                 <div className='content'>
-                    <h2 className='title is-2'>Tips</h2>
+                    <h2 className='title is-2'>Tutorials</h2>
                     <p>
                         <ListItem />
                         {/*       {props.articleDB.map(article => {
