@@ -13,6 +13,7 @@ import PCParts from './PCParts'
 import Tutorials from './Tutorials'
 import Tips from './Tips'
 import Articles from './Articles'
+import AddTip from './AddTip'
 
 export function App({auth}) {
   return (
@@ -33,6 +34,7 @@ export function App({auth}) {
           <Route path="/tutorials" component={Tutorials} />
           <Route path="/tips" component={Tips} />
           <Route path="/articles" component={Articles} />
+          <Route path="/addtip" component={AddTip} />
         </div>
 
       </div>
