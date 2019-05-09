@@ -6,6 +6,7 @@ const {comparePasswordToHash} = require('./hash')
 function issue (req, res) {
   getUserByUsername(req.body.user_name)
     .then(user => {
+      console.log(process.env.JWT_SECRET)
       if (!user) {
         res.status(403).json({message: 'User does not exist'})
       } else {
