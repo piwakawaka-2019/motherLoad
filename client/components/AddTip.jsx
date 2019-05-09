@@ -1,18 +1,23 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import {registerUserRequest} from '../actions/register'
-import {loginError} from '../actions/login'
+import ListItem from './ListItem'
+// import {registerUserRequest} from '../actions/register'
+// import {loginError} from '../actions/login'
 
-class Register extends React.Component {
+const AddTip = () => {
+    return (
+        <div className='content'>
+            <h2 className='title is-2'>Tweet of advice</h2>
+            <p>
+                
+{/* 
+class AddTip extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      user_name: '',
-      email: '',
-      first_name: '',
-      last_name: '',
-      password: '',
-      confirm_password: '',
+      title: '',
+      advice_type: '',
+      text: '',
     }
     this.updateDetails = this.updateDetails.bind(this)
     this.submit = this.submit.bind(this)
@@ -26,7 +31,7 @@ class Register extends React.Component {
   submit(e) {
     e.preventDefault()
     e.target.reset()
-    let {user_name, email, password, confirm_password, first_name, last_name} = this.state
+    let {title, advice_type, text} = this.state
     if (confirm_password != password) return this.props.dispatch(loginError("Passwords don't match"))
     this.props.dispatch(registerUserRequest(this.state))
   }
@@ -34,7 +39,7 @@ class Register extends React.Component {
     const {auth} = this.props
     return (
       <form className="Register form box" onSubmit={this.submit}>
-        <h2 className="title is-2">Register</h2>
+        <h2 className="title is-2">Add Tip</h2>
         <hr />
         {auth.errorMessage && <span className="has-text-danger is-large">{auth.errorMessage}</span>}
           <label className="column is-6 is-offset-one-quarter label is-large has-text-centered">*Username
@@ -73,4 +78,11 @@ const mapStateToProps = ({auth}) => {
   }
 }
 
-export default connect(mapStateToProps)(Register)
+export default connect(mapStateToProps)(AddTip)
+*/}
+            </p>
+        </div>
+    )
+}
+
+export default AddTip
