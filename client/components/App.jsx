@@ -21,6 +21,7 @@ export function App({auth}) {
         <Header />
         <Nav />
         <MenuBar />
+        <br />
 
         <div className=''>
           {!auth.isAuthenticated &&

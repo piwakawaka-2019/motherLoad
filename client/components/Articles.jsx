@@ -5,7 +5,7 @@ import ListItem from './ListItem'
 const Articles = () => {
     return (
         <div className='content'>
-            <h2>Articles</h2>
+            <h2 className='title is-2'>Articles</h2>
             <p>
                 <ListItem />
                 {/*       {props.articleDB.map(article => {
