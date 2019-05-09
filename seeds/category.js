@@ -44,7 +44,11 @@ exports.seed = function(knex, Promise) {
       {
         id: 10, 
         name: 'Peripherals',
-      }
+      },
+      {
+        id: 11, 
+        name: 'General Knowledge',
+      },
       ]);
     });
 }; 
