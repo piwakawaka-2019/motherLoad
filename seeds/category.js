@@ -35,6 +35,14 @@ exports.seed = function(knex, Promise) {
       },
       {
         id: 8, 
+        name: 'Case',
+      },
+      {
+        id: 9, 
+        name: 'Optical Drive',
+      },
+      {
+        id: 10, 
         name: 'Peripherals',
       }
       ]);
