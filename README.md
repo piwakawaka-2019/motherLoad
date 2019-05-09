@@ -88,21 +88,28 @@ As a registered user:
 These are the wireframes. the login and register pages are on the Home wireframe and then form to add a tip or tutorial is on the resource wireframe.
 
 ## Home Page
-![Home Page](Home_WireFrame.png)
+![Home Page](Images/Home_WireFrame.png)
 
 ## Resources
-![Resources](Resource_WireFrame.png)
-![Resources](CloseUp_Resource_WireFrame.png)
+![Resources](Images/Resource_WireFrame.png)
+![Resources](Images/CloseUp_Resource_WireFrame.png)
 
 ## Close Ups
-![Resources](AddTip_WireFrame.png)
-![Resources](NotLoggedIn_WireFrame.png)
+![Resources](Images/AddTip_WireFrame.png)
+![Resources](Images/NotLoggedIn_WireFrame.png)
 
 ## Articles
-![Article](Article_WireFrame.png)
+![Article](Images/Article_WireFrame.png)
 
 ## PC Parts
-![PC Parts](PcPart_WireFrame.png)
+![PC Parts](Images/PcPart_WireFrame.png)
+
+## Colors & Fonts
+
+Possible color palletes for the website.
+![Color](Images/pallete1.png)![Color](Images/pallete2.png)![Color](Images/pallete3.png)
+
+![Header](Images/HeaderFont.png)![Body](Images/BodyFont.png)
 
 
 
