@@ -157,7 +157,6 @@ Run the following commands in your terminal:
 npm install
 npx knex migrate:latest
 npx knex seed:run
-# mv .env.example .env
 ```
 
 To run in development:
