@@ -1,9 +1,5 @@
-exports.seed = function (knex, Promise) {
-  // Deletes ALL existing entries
-  return knex('resources').del()
-    .then(function () {
-      // Inserts seed entries
-      return knex('resources').insert([
+module.exports = {
+    resources: [
         {
           id: 1,
           title: 'Compromise',
@@ -53,6 +49,5 @@ exports.seed = function (knex, Promise) {
           category: 'Peripherals',
           source_url: "https://www.tomshardware.com/reviews/monitor-buying-guide,5699.html"
         }
-      ])
-    })
+    ]
 }
