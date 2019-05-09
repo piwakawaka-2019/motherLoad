@@ -5,7 +5,38 @@ exports.seed = function(knex, Promise) {
     .then(function () {
       // Inserts seed entries
       return knex('category').insert([
-        {id: 1000, "General Knowledge": 'rowValue1'},
+      {
+        id: 1, 
+        name: 'Power Supply',
+      },
+      {
+        id: 2, 
+        name: 'CPU',
+      },
+      {
+        id: 3, 
+        name: 'CPU Cooler',
+      },
+      {
+        id: 4, 
+        name: 'Motherboard',
+      },
+      {
+        id: 5, 
+        name: 'Memory',
+      },
+      {
+        id: 6, 
+        name: 'Storage',
+      },
+      {
+        id: 7, 
+        name: 'Graphics Card',
+      },
+      {
+        id: 8, 
+        name: 'Peripherals',
+      }
       ]);
     });
-};
+}; 
