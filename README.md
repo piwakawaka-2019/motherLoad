@@ -106,8 +106,12 @@ These are the wireframes. the login and register pages are on the Home wireframe
 
 ## Colors & Fonts
 
-Possible color palletes for the website.
+
 ![Color](Images/pallete1.png)![Color](Images/pallete2.png)![Color](Images/pallete3.png)
+
+
+Possible color palletes for the website.
+
 
 ![Header](Images/HeaderFont.png)![Body](Images/BodyFont.png)
 
