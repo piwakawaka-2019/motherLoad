@@ -5,7 +5,14 @@ function getPosts (db = connection){
     .select()
 };
 
+function getTips (db = connection) {
+    return db("posts")
+    .where("type" ,"tips")
+    .select()
+};
+
 module.exports = {
     getPosts,
+    getTips,
 };
 
