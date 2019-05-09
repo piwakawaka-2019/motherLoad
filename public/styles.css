@@ -9,8 +9,9 @@ a {
 }
 
 .menubar {
-    border: 1px solid;
-    border-color:
-    margin-top: 32px;
+    background-color: cyan;
+    border: 0px solid;
+    border-color: black;
+    margin: 8px;
     padding: 8px;
 }

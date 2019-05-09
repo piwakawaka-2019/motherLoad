@@ -1,10 +1,11 @@
 import React from 'react'
 import {connect} from 'react-redux'
+import ListItem from './ListItem'
 
 const Tutorials = () => {
     return (
         <div className='content'>
-            <h2>Articles</h2>
+            <h2>Tutorials</h2>
             <p>
                 <ListItem />
                 {/*       {props.articleDB.map(article => {

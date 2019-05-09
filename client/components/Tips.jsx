@@ -1,5 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
+import ListItem from './ListItem'
 
 const Tips = () => {
     return (
