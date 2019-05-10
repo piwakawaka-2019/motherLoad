@@ -53,6 +53,20 @@ exports.seed = function (knex, Promise) {
           type:'tip',
           source_url: "https://www.furenexo.com/gaming-headsets/"
         },
+        {
+          id: 8,
+          title: 'New Ghost Recon Game Breakpoint Announced For PS4 / Xbox One / PC',
+          description: 'Breakpoint is coming October 4',
+          type:'article',
+          source_url: "https://www.gamespot.com/articles/new-ghost-recon-game-breakpoint-announced-for-ps4-/1100-6466734/"
+        },
+        {
+          id: 9,
+          title: 'AMD Ryzen 3000-Series 16-Core CPU Specifications Leaked',
+          description: "TUM_APISAK, a very well respected leaker in the hardware scene, has tweeted the alleged specifications for AMD's upcoming Ryzen 3000-series 16-core processor, which is based on the Zen 2 processor microarchitecture and 7nm process node.",
+          type:'article',
+          source_url: "https://www.tomshardware.com/news/amd-ryzen-3000-series-16-core-cpu-specs,39304.html"
+        },
       ])
     })
 }

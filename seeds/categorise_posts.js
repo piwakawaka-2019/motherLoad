@@ -25,6 +25,12 @@ exports.seed = function(knex, Promise) {
         {id: 7,
         category_id : 10,
         posts_id: 7},
+        {id: 8,
+        category_id : 11,
+        posts_id: 8},
+        {id: 9,
+        category_id : 2,
+        posts_id: 9},
       ]);
     });
 };
