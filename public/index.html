@@ -4,13 +4,27 @@
   <meta charset="UTF-8">
   <title>MotherLoad</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css" />
   <script defer src="https://use.fontawesome.com/releases/v5.0.0/js/all.js"></script>
-  <link href="styles.css" rel="stylesheet" type="text/css"/>
+  <link href="styles.css" rel="stylesheet" type="text/css" />
   <link href="https://fonts.googleapis.com/css?family=Audiowide|Electrolize|Geo|Gugi|Merriweather|Orbitron|Press+Start+2P|Russo+One|Sharetech" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.css"/>
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css"/>
 </head>
 <body>
-  <div id="app" class="section app-container"></div>
+  <div id="app" className="section app-container"></div>
   <script src="bundle.js"></script>
+  <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('.your-class').slick({
+        autoplay: true,
+      });
+    });
+  </script>
+
 </body>
 </html>

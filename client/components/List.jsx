@@ -1,9 +1,7 @@
 import React , {Fragment} from 'react'
-import {connect} from 'react-redux'
-import Carousel from './Carousel'
+import CarouselDetail from './CarouselDetail'
 import ListItem from './ListItem'
 import resources from '../../data/resources'
-
 
 class List extends React.Component {
     constructor(props){
@@ -14,7 +12,7 @@ class List extends React.Component {
 
             <Fragment>
                 <div className='content'>
-            <Carousel />
+            <CarouselDetail />
             <p>
                 <ListItem />
                 {/*

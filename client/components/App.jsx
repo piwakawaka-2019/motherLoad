@@ -1,6 +1,7 @@
 import React from 'react'
 import {HashRouter as Router, Route, Link} from 'react-router-dom'
 import {connect} from 'react-redux'
+
 import Header from './Header'
 import List from './List'
 import MenuBar from './MenuBar'
@@ -22,7 +23,6 @@ export function App({auth}) {
         <Header />
         <Nav />
         <MenuBar />
-        <br />
 
         <div className=''>
           {!auth.isAuthenticated &&

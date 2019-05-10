@@ -1,5 +1,6 @@
 import React , {Fragment} from 'react'
 import {connect} from 'react-redux'
+import Carousel from 'react-bootstrap/Carousel'
 
 class AddTip extends React.Component {
   constructor(props){
