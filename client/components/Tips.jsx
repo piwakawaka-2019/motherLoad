@@ -19,7 +19,7 @@ class Tips extends React.Component {
                         return(
                             <Fragment>
                                 <h3>
-                                {tips.title}
+                                <a href={tips.source_url} target='_blank'>{tips.title}</a>
                             </h3>
                             <p>{tips.description}</p>
                             </Fragment>

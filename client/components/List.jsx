@@ -9,23 +9,22 @@ class List extends React.Component {
     }
     render(){
         return(
-
             <Fragment>
                 <div className='content'>
-            <CarouselDetail />
-            <p>
-                <ListItem />
-                {/*
-               {props.resources.map(resource => {
-                return (
-                <ListItem
-                key={resource.id}
-                resource={resource}
-                />
-                )
-                })} */}
-            </p>
-        </div>
+                <CarouselDetail />
+                <p>
+                    <ListItem />
+                    {/*
+                    {props.resources.map(resource => {
+                    return (
+                    <ListItem
+                    key={resource.id}
+                    resource={resource}
+                    />
+                    )
+                    })} */}
+                </p>
+                </div>
             </Fragment>
             
         )

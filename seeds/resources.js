@@ -16,14 +16,42 @@ exports.seed = function (knex, Promise) {
           title: 'Take What You Need Not What You Want.',
           description: 'Don’t get a very large power supply just because you can unless you’re going to use the capacity of it.',
           type:'tip',
-          source_url: ""
+          source_url: "https://www.extremepc.co.nz/index.php?route=product/category&path=3_36"
         },
         {
           id: 3,
           title: 'Hey',
           description: 'This is a test tutorial',
           type:'tutorial',
-          source_url: ""
+          source_url: "https://www.google.co.nz/"
+        },
+        {
+          id: 4,
+          title: 'How to Use Windows 10',
+          description: "Windows 10 is the most powerful operating system that Microsoft has ever made, but it's also the most complex.",
+          type:'tutorial',
+          source_url: "https://www.laptopmag.com/articles/how-to-use-windows-10"
+        },
+        {
+          id: 5,
+          title: 'How to choose the right graphics card model',
+          description: 'A guide to the differences you’ll encounter when trying to select the perfect graphics card for your PC',
+          type:'tip',
+          source_url: "https://www.pcgamer.com/au/how-to-choose-the-right-graphics-card-model/"
+        },
+        {
+          id: 6,
+          title: 'How to Choose the Best Mechanical Keyboard in 2019',
+          description: 'Don’t know which power supply to buy? In this guide, we’ll go through everything you need to know to pick the best unit for your PC',
+          type:'tip',
+          source_url: "https://pureinfotech.com/choose-power-supply-pc/"
+        },
+        {
+          id: 7,
+          title: '8 Tips on How to choose the best gaming headset?',
+          description: 'Wondering how to choose the best gaming headsets? With the different gaming headsets available out there, selecting among those can give you a hard time.',
+          type:'tip',
+          source_url: "https://www.furenexo.com/gaming-headsets/"
         },
       ])
     })
