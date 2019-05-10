@@ -6,6 +6,8 @@ const passport = require('passport')
 const authRoutes = require('./routes/auth')
 const resourceRoutes = require('./routes/posts')
 
+// const stuff = require('./db/category')
+
 const server = express()
 
 server.use(cors('*'))
