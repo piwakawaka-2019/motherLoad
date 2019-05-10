@@ -22,3 +22,12 @@ export function getTutorials () {
             console.error("Tip API issues", err)
         });
 };
+
+export function getDataByCategory (arr) {
+    return request
+        .get("/api/categories/category/" + arr)
+        .then(res => res.body)
+        .catch(err => {
+            console.error("Tip API issues", err)
+        });
+}
