@@ -18,6 +18,13 @@ exports.seed = function (knex, Promise) {
           type:'tip',
           source_url: ""
         },
+        {
+          id: 3,
+          title: 'Hey',
+          description: 'This is a test tutorial',
+          type:'tutorial',
+          source_url: ""
+        },
       ])
     })
 }
