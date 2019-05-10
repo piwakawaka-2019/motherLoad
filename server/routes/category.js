@@ -5,15 +5,15 @@ const router = express.Router();
 
 
 router.get("/category/:id" , (req, res) => {
-    let id = JSON.parse(req.params.id)
+    let id =(req.params.id)
     console.log(id)
     db.getPostsByCategory(id)
-    .then(category =>{
-        res.json(category);
+    .then(response =>{
+        console.log(response)
     })
     .catch(err => {
         console.error(err);
-        res.setStatus(500).json({ error: "It Broke"});
+        // res.setStatus(500).json({ error: "It Broke"});
     });
 
 });
