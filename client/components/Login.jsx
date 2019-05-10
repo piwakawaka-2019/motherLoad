@@ -27,7 +27,7 @@ class Login extends React.Component {
     const {auth} = this.props
     return (
       <form className="form box" onSubmit={this.submit}>
-        <h2 className="title is-2">Login</h2>
+        <h2 className="title is-2 has-text-weight-normal">Login</h2>
         <hr />
         {auth.errorMessage && <span className="has-text-danger is-large">{auth.errorMessage}</span>}
         <label className="label is-large has-text-centered">Username

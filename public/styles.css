@@ -14,7 +14,7 @@ h1, h2 {
 }
 h3 {
     font-family: 'Merriweather';
-    margin-top: 8px;
+    margin-top: 16px;
 }
 .carousel {
     background-color: #a8d0e6;
@@ -27,6 +27,9 @@ h3 {
 
 .menubar {
     background-color: cyan;
+}
+.slick-dots {
+    left: -28px;
 }
 .slick-prev:before,
 .slick-next:before {
