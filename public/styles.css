@@ -7,17 +7,23 @@ body {
 
 p {
     font-family: Merriweather, serif;
+    color: #24305e!important;
 }
 
 h1, h2 {
     font-family: 'Orbitron';
+    color: #303c6c!important;
 }
 h3 {
+    color: #24305e!important;
     font-family: 'Merriweather';
     margin-top: 16px;
 }
+h4, h5, h6, li, strong {
+    color: #24305e!important;
+}
 .carousel {
-    background-color: #a8d0e6;
+    background-color: #d2fdff;
     border: 1px solid;
     border-color: #24305e;
     margin: auto;
@@ -26,12 +32,12 @@ h3 {
 }
 
 .menubar {
-    background-color: cyan;
+    background-color:#a8d0e6;
 }
 .slick-dots {
     left: -28px;
 }
 .slick-prev:before,
 .slick-next:before {
-  color: black!important;
+  color:#24305e!important;
 }

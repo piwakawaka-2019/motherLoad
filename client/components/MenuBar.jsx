@@ -6,7 +6,6 @@ class MenuBar extends React.Component {
     }
     render(){
         return(
-
             <Fragment>
                 <div className='columns'>
             <div className="column is-one-quarter label is-medium has-text-centered">
