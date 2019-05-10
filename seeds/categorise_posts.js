@@ -5,7 +5,12 @@ exports.seed = function(knex, Promise) {
     .then(function () {
       // Inserts seed entries
       return knex('categorise_posts').insert([
-        {id: 1, category_id : 1000, resources_id: 7},
+        {id: 1, 
+        category_id : 11, 
+        posts_id: 1},
+        {id: 2, 
+        category_id : 1, 
+        posts_id: 2},
       ]);
     });
 };

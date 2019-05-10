@@ -1,32 +1,42 @@
 import React , {Fragment} from 'react'
 import {connect} from 'react-redux'
-import ListItem from './ListItem'
+
+import{fetchTutorials} from "../actions/receive"
+ 
 
 class Tutorials extends React.Component {
-    constructor(props){
-        super(props)
+
+    componentDidMount(){
+        this.props.dispatch(fetchTutorials())
     }
     render() {
         return(
             <Fragment>
                 <div className='content'>
                     <h2 className='title is-2'>Tutorials</h2>
-                    <p>
-                        <ListItem />
-                        {/*       {props.articleDB.map(article => {
-                            return (
-                            <ListItem
-                            key={article.id}
-                            article={article}
-                            />
-                            )
-                        })} */}
-                    </p>
+
+                    {this.props.tutorials.map(tutorials => {
+                        return(
+                            <Fragment>
+                                <h3>
+                                {tutorials.title}
+                            </h3>
+                            <p>{tutorials.description}</p>
+                            </Fragment>
+                        )
+                    })}
+
                 </div>
             </Fragment>
-            
+           
         )
     }
 }
 
-export default Tutorials
+function mapStateToProps(state) {
+    return{
+        tutorials: state.tutorials
+    }
+}
+
+export default connect(mapStateToProps)(Tutorials)
