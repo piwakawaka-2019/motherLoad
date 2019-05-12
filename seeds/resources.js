@@ -4,6 +4,14 @@ exports.seed = function (knex, Promise) {
     .then(function () {
       // Inserts seed entries
       return knex('posts').insert([
+        // Placeholder seed entry.
+        // {
+        //   id: 0,
+        //   title: '',
+        //   description: "",
+        //   type:'',
+        //   source_url: ""
+        // },
         {
           id: 1,
           title: 'Compromise',
@@ -67,6 +75,35 @@ exports.seed = function (knex, Promise) {
           type:'article',
           source_url: "https://www.tomshardware.com/news/amd-ryzen-3000-series-16-core-cpu-specs,39304.html"
         },
+        {
+          id: 10,
+          title: 'Building a Gaming PC for the First Time? Don’t Panic, This Guide Can Help You Out',
+          description: "Before you build a PC, you’re obviously going to need the right parts. That’s why we’re here.",
+          type:'tutorial',
+          source_url: "https://www.newegg.com/insider/building-a-gaming-pc-for-the-first-time-dont-panic-this-guide-can-help-you-out/"
+        },
+        {
+          id: 11,
+          title: 'These Upgrades Will Improve Your PC Performance the Most!',
+          description: "Is your PC fast enough for the things you want to do? Does it take forever to boot, or grind to a halt when you try to use Photoshop? If so, it’s probably time to upgrade your hardware.",
+          type:'tutorial',
+          source_url: "https://www.makeuseof.com/tag/upgrades-will-improve-pc-performance/"
+        },
+        {
+          id: 12,
+          title: 'How to prevent frying your PC insides with static electricity',
+          description: "IT'S ELECTRIFYING!",
+          type:'tutorial',
+          source_url: "https://www.windowscentral.com/how-prevent-frying-your-pc-insides-static-electricity"
+        },
+        {
+          id: 13,
+          title: 'How to clean your computer',
+          description: "Follow our tips to keep your PC dust-free.",
+          type:'tutorial',
+          source_url: "https://www.pcgamer.com/au/how-to-clean-your-computer-case/"
+        },        
+        
       ])
     })
 }

@@ -10,8 +10,8 @@ class AddTip extends React.Component {
     return(
 
 
-      <Fragment>
-  <div className='content'>
+        <Fragment>
+            <div className='content'>
               <h2 className="title is-2">
                   Tweet of advice 
               </h2>
@@ -50,12 +50,12 @@ class AddTip extends React.Component {
                           <textarea className="textarea" placeholder="Enter a tweet of advice"></textarea>
                       </div>
 
-                      <label className="label"></label>
+                      <label className="label is-large has-text-centered"></label>
                       
                       <div className="control">
-                          <label className="label">
-                              <input className="input" type="submit"/>
-                              Submit
+                          <label className="label is-large has-text-centered">
+                              <input className="input" type="submit" name='Submit' />
+                              
                           </label>
                       </div>
                   </div>

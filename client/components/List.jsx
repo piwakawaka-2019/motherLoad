@@ -1,7 +1,6 @@
 import React , {Fragment} from 'react'
-import CarouselDetail from './CarouselDetail'
+import Carousel from './Carousel'
 import ListItem from './ListItem'
-import resources from '../../data/resources'
 
 class List extends React.Component {
     constructor(props){
@@ -11,7 +10,7 @@ class List extends React.Component {
         return(
             <Fragment>
                 <div className='content'>
-                <CarouselDetail />
+                <Carousel />
                 <p>
                     <ListItem />
                     {/*

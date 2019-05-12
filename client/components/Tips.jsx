@@ -14,6 +14,8 @@ class Tips extends React.Component {
             <Fragment>
                 <div className='content'>
                     <h2 className='title is-2'>Tips</h2>
+                    
+                    <p><a href="#/addtip">Add a Tip</a></p>
 
                     {this.props.tips.map(tips => {
                         return(

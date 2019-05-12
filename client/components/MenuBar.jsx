@@ -10,11 +10,11 @@ class MenuBar extends React.Component {
                 <div className="wrapper">
                     <nav className="tabs">
                         <div className="selector"></div>
-                        <a href="#" className="active"><i className="fas fa-home"></i>Home</a>
-                        <a href="#/pcparts/"><i className="fas fa-desktop"></i>PC Parts</a>
-                        <a href="#"><i className="fas fa-hands-helping"></i>Tips</a>
-                        <a href="#"><i className="fas fa-robot"></i>Tutorials</a>
-                        <a href="#"><i className="far fa-newspaper"></i>Articles</a>
+                        <a href="#" className="active"><i className="fas fa-home" />&nbsp;Home</a>
+                        <a href="#/pcparts/"><i className="fas fa-desktop" />&nbsp;PC Parts</a>
+                        <a href="#/tips"><i className="fas fa-hands-helping" />&nbsp;Tips</a>
+                        <a href="#/tutorials"><i className="fas fa-robot" />&nbsp;Tutorials</a>
+                        <a href="#/articles"><i className="far fa-newspaper" />&nbsp;Articles</a>
                     </nav>
                 </div>
                 {/* <div className='columns'>

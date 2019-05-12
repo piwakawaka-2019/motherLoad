@@ -4,7 +4,7 @@ import {connect} from 'react-redux'
 const Contribute = () => {
     return (
         <div>
-            Know something we don't? <a href='#/addtip'>Contribute</a>
+            <a href='#/addtip'><i className="fas fa-plus" />&nbsp;Add Tip</a>
         </div>
     )
 }

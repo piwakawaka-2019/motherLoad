@@ -15,6 +15,7 @@ import Tutorials from './Tutorials'
 import Tips from './Tips'
 import Articles from './Articles'
 import AddTip from './AddTip'
+//import Contribute from './Contribute'
 
 export function App({auth}) {
   return (
@@ -25,16 +26,21 @@ export function App({auth}) {
         <MenuBar />
 
         <div className=''>
-          {!auth.isAuthenticated &&
-            <Route exact path="/" component={List} />
+          {auth.isAuthenticated &&
+            <Route path="/addtip" component={AddTip} />
           }
+          {!auth.isAuthenticated &&
+            <Route path="/addtip" component={Login} />
+          }
+          
+          <Route exact path="/" component={List} />
           <Route path="/login" component={Login} />
           <Route path="/register" component={Register} />
           <Route path="/pcparts" component={PCParts} />
           <Route path="/tutorials" component={Tutorials} />
           <Route path="/tips" component={Tips} />
           <Route path="/articles" component={Articles} />
-          <Route path="/addtip" component={AddTip} />
+          
         </div>
 
       </div>
