@@ -9,8 +9,9 @@ class PCParts extends React.Component{
     render(){
         return(
             <Fragment>
-                <div className='content'>
-                    <h2 className='title is-2'>PC Parts &mdash; What Do They Do?</h2> 
+                <h2 className='title is-2 has-text-centered	'>PC Parts &mdash; What Do They Do?</h2>
+                <div className='content has-text-left' id= "Parts" >
+                     
 
                     <span>
 
@@ -21,6 +22,7 @@ class PCParts extends React.Component{
                         </p>
 
                     </span>
+                    < br />
 
                     <span>
 
@@ -46,6 +48,7 @@ class PCParts extends React.Component{
                         </ul>
 
                     </span>
+                    < br />
 
                     <span>
 
@@ -57,6 +60,7 @@ class PCParts extends React.Component{
                         </p>
 
                     </span>
+                    < br />
 
                     <span>
 
@@ -67,6 +71,7 @@ class PCParts extends React.Component{
                         </p>
 
                     </span>
+                    < br />
 
                     <span>
 
@@ -101,6 +106,7 @@ class PCParts extends React.Component{
                         </ul>
 
                     </span>
+                    < br />
 
                     <span>
 
@@ -112,6 +118,7 @@ class PCParts extends React.Component{
                         </p>
 
                     </span>
+                    < br />
 
                     <span>
 
@@ -122,6 +129,7 @@ class PCParts extends React.Component{
                         </p>
 
                     </span>
+                    < br />
 
                     <span>
 
@@ -134,6 +142,7 @@ class PCParts extends React.Component{
                         </p>              
                         
                     </span>
+                    < br />
 
                     <span>
 
@@ -146,6 +155,7 @@ class PCParts extends React.Component{
                         </p>
 
                     </span>
+                    < br />
 
                     <span>
 
@@ -156,6 +166,7 @@ class PCParts extends React.Component{
                         </p>
 
                     </span>
+                    < br />
                 </div>
             </Fragment>
         )
