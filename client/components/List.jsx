@@ -16,10 +16,10 @@ class List extends React.Component {
                     {/*
                     {props.resources.map(resource => {
                     return (
-                    <ListItem
-                    key={resource.id}
-                    resource={resource}
-                    />
+                        <ListItem
+                            key={resource.id}
+                            resource={resource}
+                        />
                     )
                     })} */}
                 </p>
