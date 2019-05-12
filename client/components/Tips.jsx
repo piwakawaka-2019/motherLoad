@@ -33,9 +33,6 @@ class Tips extends React.Component {
     }
 }
 
-<<<<<<< HEAD
-export default connect()(Tips)
-=======
 function mapStateToProps(state) {
     return{
         tips: state.tips
@@ -43,4 +40,3 @@ function mapStateToProps(state) {
 }
 
 export default connect(mapStateToProps)(Tips)
->>>>>>> 17b24a4cbfe78afde175d21b91e54e6ac9cfe789
