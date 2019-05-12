@@ -1,6 +1,5 @@
 import React , {Fragment} from 'react'
 import {connect} from 'react-redux'
-import ListItem from './ListItem'
 
 class Articles extends React.Component{
     constructor(props){
@@ -10,7 +9,7 @@ class Articles extends React.Component{
         return(
             <Fragment>
                 <div className='content'>
-                    <h1>Articles</h1>
+                    <h2 className='title is-2'>Articles</h2>
                     
                     <div className="box">
                         This is a article about the Power Supply.

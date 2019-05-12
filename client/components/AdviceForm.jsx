@@ -1,7 +1,7 @@
 import React , {Fragment} from 'react'
 import {connect} from 'react-redux'
 
-class AddTip extends React.Component {
+class AdviceForm extends React.Component {
   constructor(props){
     super(props)
   }
@@ -65,4 +65,4 @@ class AddTip extends React.Component {
   }
 }
 
-export default AddTip
+export default AdviceForm
