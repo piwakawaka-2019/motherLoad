@@ -15,18 +15,7 @@ class List extends React.Component {
             <Fragment>
                 <div className='content'>
             <Carousel />
-            <p>
                 <ListItem />
-                {/*
-               {props.resources.map(resource => {
-                return (
-                <ListItem
-                key={resource.id}
-                resource={resource}
-                />
-                )
-                })} */}
-            </p>
         </div>
             </Fragment>
             
