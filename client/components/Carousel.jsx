@@ -15,8 +15,10 @@ class Carousel extends React.Component {
             slidesToScroll: 1,
             autoplay: true,
             autoplaySpeed: 5000
-        };
-        return(<div className='carousel'>
+          };
+          
+        return(
+        <div className='carousel'>
         {/* <h2> Single Item</h2> */}
         <Slider {...settings}>
           <div>
@@ -38,7 +40,9 @@ class Carousel extends React.Component {
             <h3>6</h3>
           </div>
         </Slider>
-      </div>)
+      </div>
+    );
+
     }
 }
 export default Carousel
