@@ -4,8 +4,9 @@ import ListItem from './ListItem'
 
 
 class Tips extends React.Component {
-    constructor(props){
-        super(props)
+
+    componentDidMount(){
+        this.props.dispatch()
     }
     render() {
         return(
@@ -27,4 +28,4 @@ class Tips extends React.Component {
     }
 }
 
-export default Tips
+export default connect()(Tips)
