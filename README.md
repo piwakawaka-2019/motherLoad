@@ -20,6 +20,7 @@ The focuse of this app is to provide accesible and easy to understand knowledge 
 As a non-registered user:
   * I want to register for the App under my name.
   * I want to browse tips, tutorials, articles and other knowledge.
+  * I ant to be able to filter tips, tutorials and articles by pc parts or general knowledge.
   * I want to have access to information that matches my knowledge.
   * I want access to tools to build my pc and ask for more advanced help.
 
@@ -61,9 +62,9 @@ As a registered user:
 
   | type | data | purpose |
   | --- | --- | --- |
-  | RECEIVE_TIPS | tips | For retreving the tips from the server response |
-  | RECEIVE_TUTORIALS | tutorials | For retreving the tutorials from the server response |
-  | RECEIVE_ARTICLES | articles | For retreving the articles from the server response |
+  | GET_TIP | tips | For retreving the tips from the server response |
+  | GET_TUTORIAL | tutorials | For retreving the tutorials from the server response |
+  | GET_ARTICLES | articles | For retreving the articles from the server response |
   | ADD_TIP | tips | For adding a tip to the client store after is had been added to the db |
   | ADD_TUTROIAL | tutorial | For adding a tutorial to the client store after is had been added to the db |
 
@@ -74,14 +75,52 @@ As a registered user:
 | --- | --- | --- | --- | --- |
 | Post | /api/auth/login | Yes | Log In a User | The Users JWT Token |
 | Post | /api/auth/register | Yes | Register a User | The Users JWT Token |
-| Get | /api/tip | No | Get the list of tips | Array of Objects (object = A Tip) |
-| Get | /api/tutorial| No | Get the list of tutorials | Array of Objects (object = A Tutorial) |
-| Get | /api/article| No | Get the list of articles | Array of Objects (object = An Article) |
-| Post | /api/tip | Yes | Add a tip to the db | Your tip was added (as an object) |
-| Post | /api/tutorial | Yes | Add a tutorial to the db | Your tutorial has been added (as an object) |
+| Get | /api/resource/tip | No | Get the list of tips | Array of Objects (object = A Tip) |
+| Get | /api/resource/tutorial| No | Get the list of tutorials | Array of Objects (object = A Tutorial) |
+| Get | /api/resource/article| No | Get the list of articles | Array of Objects (object = An Article) |
+| Post | /api/addTip | Yes | Add a tip to the db | Your tip was added (as an object) |
+| Post | /api/addTutorial | Yes | Add a tutorial to the db | Your tutorial has been added (as an object) |
 
 ## DB (Server Side) -
-  Still to be built for the tutorials, tips, and articles. A many to many database is to be implimented as we want to have categories of parts and general knowledge which will allow the use to filter when viewing tips/tutorials etc. 
+
+### Resources
+  | Column Name | Data Type | Purpose |
+  | --- | --- | --- |
+  | id | Integer | Unique identifier for each lost animal |
+  | title | String | Name of tip |
+  | description | String | The information |
+  | type | string | the type of resource |
+  | source_url | string | link to resource if applicable |
+
+
+### category
+  | Column Name | Data Type | Purpose |
+  | --- | --- | --- |
+  | id | Integer | Unique identifier for each found animal |
+  | name | String | Different parts of pc |
+
+### categorise_posts (Join Table M2M)
+
+  Many Users to Many posts
+
+ | Column Name | Data Type | Purpose |
+ | --- | --- | --- |
+ | id | Integer | Unique identifier for each user |
+ | category_id | Integer | takes category.id |
+ | posts_id | Integer | takes posts.id |
+
+### Users (Join Table M2M)
+
+  Many Users to Many Pets
+
+ | Column Name | Data Type | Purpose |
+ | --- | --- | --- |
+ | id | Integer | Unique identifier for each user |
+ | user_name | string | Used for login |
+ | contact_details | string | displayed for contact information |
+ | email_address | string | displayed for contact information |
+ | hash | text | hashed login password |
+ ---
 
 
 ## WireFrames
@@ -114,39 +153,6 @@ Possible color palletes for the website.
 
 
 ![Header](Images/HeaderFont.png)![Body](Images/BodyFont.png)
-
-
-
-<!-- ### Lost
-  | Column Name | Data Type | Purpose |
-  | --- | --- | --- |
-  | id | Integer | Unique identifier for each lost animal |
-  | name | String | Name of Lost animal, because names are special <3 |
-  | species | String | What kind of animal is it? |
-  | photo | string | URL of a picture of the lost animal |
-  | user_id | integer | Id of the user who reported the animal as lost |
-
-
-### Found
-  | Column Name | Data Type | Purpose |
-  | --- | --- | --- |
-  | id | Integer | Unique identifier for each found animal |
-  | species | String | What kind of animal is it? |
-  | photo | string | URL of a picture of the found animal |
-  | user_id | integer | Id of the user who found the lost animal |
-
-### Users (Join Table M2M)
-
-  Many Users to Many Pets
-
- | Column Name | Data Type | Purpose |
- | --- | --- | --- |
- | id | Integer | Unique identifier for each user |
- | user_name | string | Used for login |
- | contact_details | string | displayed for contact information |
- | email_address | string | displayed for contact information |
- | hash | text | hashed login password |
- --- -->
 
 
 ## Setup
