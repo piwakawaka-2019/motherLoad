@@ -111,7 +111,7 @@ As a registered user:
 
 ### Users (Join Table M2M)
 
-  Many Users to Many Pets
+  Many Users to Many
 
  | Column Name | Data Type | Purpose |
  | --- | --- | --- |
