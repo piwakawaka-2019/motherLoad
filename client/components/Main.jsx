@@ -1,11 +1,9 @@
 import React , {Fragment} from 'react'
 import {connect} from 'react-redux'
 import Carousel from './Carousel'
-import ListItem from './ListItem'
-import resources from '../../data/resources'
 
 
-class List extends React.Component {
+class Main extends React.Component {
     constructor(props){
         super(props)
     }
@@ -15,7 +13,6 @@ class List extends React.Component {
             <Fragment>
                 <div className='content'>
             <Carousel />
-                <ListItem />
         </div>
             </Fragment>
             
@@ -23,4 +20,4 @@ class List extends React.Component {
     }
 }
 
-export default List
+export default Main
