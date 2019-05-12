@@ -1,23 +1,42 @@
-import React from 'react'
+import React , {Fragment} from 'react'
 import {connect} from 'react-redux'
 
-const Tips = () => {
-    return (
-        <div className='content'>
-            <h2>Tips</h2>
-            <p>
-                <ListItem />
-                {/*       {props.articleDB.map(article => {
-        return (
-          <ListItem
-          key={article.id}
-          article={article}
-          />
+import{fetchTips} from "../actions/receive"
+ 
+
+class Tips extends React.Component {
+
+    componentDidMount(){
+        this.props.dispatch(fetchTips())
+    }
+    render() {
+        return(
+            <Fragment>
+                <div className='content'>
+                    <h2 className='title is-2'>Tips</h2>
+
+                    {this.props.tips.map(tips => {
+                        return(
+                            <Fragment>
+                                <h3>
+                                {tips.title}
+                            </h3>
+                            <p>{tips.description}</p>
+                            </Fragment>
+                        )
+                    })}
+
+                </div>
+            </Fragment>
+           
         )
-      })} */}
-            </p>
-        </div>
-    )
+    }
 }
 
-export default Tips
+function mapStateToProps(state) {
+    return{
+        tips: state.tips
+    }
+}
+
+export default connect(mapStateToProps)(Tips)

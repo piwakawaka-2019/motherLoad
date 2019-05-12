@@ -34,7 +34,7 @@ class Register extends React.Component {
     const {auth} = this.props
     return (
       <form className="Register form box" onSubmit={this.submit}>
-        <h1 className="title is-2">Register</h1>
+        <h2 className="title is-2">Register</h2>
         <hr />
         {auth.errorMessage && <span className="has-text-danger is-large">{auth.errorMessage}</span>}
           <label className="column is-6 is-offset-one-quarter label is-large has-text-centered">*Username

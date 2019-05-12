@@ -1,10 +1,16 @@
-import React from 'react'
+import React , {Fragment} from 'react'
 import {connect} from 'react-redux'
+import ListItem from './ListItem'
 
-const Articles = () => {
-    return (
-        <div className='content'>
-            <h2>Articles</h2>
+class Articles extends React.Component{
+    constructor(props){
+        super(props)
+    }
+    render(){
+        return(
+            <Fragment>
+                <div className='content'>
+            <h2 className='title is-2'>Articles</h2>
             <p>
                 <ListItem />
                 {/*       {props.articleDB.map(article => {
@@ -17,7 +23,10 @@ const Articles = () => {
       })} */}
             </p>
         </div>
-    )
+            </Fragment>
+
+        )
+    }
 }
 
 export default Articles
