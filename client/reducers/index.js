@@ -1,9 +1,11 @@
 import {combineReducers} from 'redux'
 
 import auth from './auth'
-import resources from './resources'
+import tips from './tips'
+import tutorials from "./tutorials"
 
 export default combineReducers({
   auth,
-  resources
+  tips,
+  tutorials
 })

@@ -4,7 +4,6 @@ exports.up = function(knex, Promise) {
       table.increments('id').primary()
       table.string('title')
       table.string('description')
-      table.string('category')
       table.string('type')
       table.string('source_url')
     })

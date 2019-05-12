@@ -1,24 +1,40 @@
-export const RECEIVE_TIPS = 'RECEIVE_TIPS'
-export const RECEIVE_TUTORIALS = 'RECEIVE_TUTORIALS'
-export const RECEIVE_ARTICLES = 'RECEIVE_ARTICLES'
+import { getTips,
+getTutorials } from "../apis/resources";
 
-export const receiveTips = (tips) => {
+export const GET_TIP = 'GET_TIP'
+export const GET_TUTORIAL = 'GET_TUTORIAL' 
+
+
+export function saveTips(tips){
     return {
-        type: RECEIVE_TIPS,
-        tips: tips.map(tip => tip.data)
+        type: GET_TIP,
+        tips
     }
 }
 
-export const receiveTutorials = (tutorials) => {
-    return {
-        type: RECEIVE_TUTORIALS,
-        tutorials: tutorials.map(tutorial => tutorial.data)
+export function fetchTips(){
+    return function(dispatch){
+        getTips()
+        .then(tips => {
+            dispatch(saveTips(tips))
+        })
+
     }
 }
 
-export const receiveArticles = (articles) => {
+export function saveTutorials(tutorials){
     return {
-        type: RECEIVE_ARTICLES,
-        articles: articles.map(article => article.data)
+        type: GET_TUTORIAL,
+        tutorials
+    }
+}
+
+export function fetchTutorials(){
+    return function(dispatch){
+        getTutorials()
+        .then(tutorials => {
+            dispatch(saveTutorials(tutorials))
+        })
+
     }
 }
