@@ -14,6 +14,7 @@ import Tutorials from './Tutorials'
 import Tips from './Tips'
 import Articles from './Articles'
 import AddTip from './AddTip'
+import Filter from './Filter'
 
 export function App({auth}) {
   return (
@@ -35,6 +36,8 @@ export function App({auth}) {
           <Route path="/tips" component={Tips} />
           <Route path="/articles" component={Articles} />
           <Route path="/addtip" component={AddTip} />
+          <Route path="/test" component={Filter} />
+
         </div>
 
       </div>

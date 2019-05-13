@@ -11,7 +11,6 @@ $(".selector").css({
 });
 
 $(".tabs").on("click","a",function(e){
-  e.preventDefault();
   $('.tabs a').removeClass("active");
   $(this).addClass('active');
   var activeWidth = $(this).innerWidth();
