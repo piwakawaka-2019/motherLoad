@@ -38,13 +38,12 @@ export function App({auth}) {
           {/* {!auth.isAuthenticated &&
             <Route exact path="/" component={Main} />
           } */}
-          {/* {auth.isAuthenticated &&
-            <Route path="/advice" component={AddTip} />
+          {auth.isAuthenticated &&
+            <Route path="/advice" component={AdviceForm} />
           }
           {!auth.isAuthenticated &&
             <Route path="/advice" component={Login} />
-          }
-         */}
+          }        
           <Route path="/login" component={Login} />
           <Route path="/register" component={Register} />
           <Route path="/pcparts" component={PCParts} />
