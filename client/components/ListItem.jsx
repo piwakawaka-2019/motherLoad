@@ -1,7 +1,6 @@
 import React , {Fragment} from 'react'
 import {connect} from 'react-redux'
 
-
 class ListItem extends React.Component {
     constructor(props){
         super(props)

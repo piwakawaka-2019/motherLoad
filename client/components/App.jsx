@@ -15,6 +15,7 @@ import Articles from './Articles'
 import AdviceForm from './AdviceForm'
 import RegisteredUsersHome from './RegisteredUsersHome.jsx';
 import Filter from './Filter';
+import List from './List'
 
 export function App({auth}) {
   return (
@@ -26,8 +27,11 @@ export function App({auth}) {
         <Main />
 
         {auth.isAuthenticated &&
-            <Route path="/" component={RegisteredUsersHome} />
-          }
+          <Route exact path="/" component={RegisteredUsersHome} />
+        }
+        {!auth.isAuthenticated &&
+          <Route exact path="/" component={List} />
+        }
         <br />
       
         <div className=''>

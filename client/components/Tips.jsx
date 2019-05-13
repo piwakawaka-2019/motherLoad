@@ -15,7 +15,7 @@ class Tips extends React.Component {
                 <div className='content'>
                 <h2 className='title is-2 has-text-centered	'>Tips</h2>
                     
-                <p>Know something we don't? &nbsp;<span className='addtip'><a href="#/addtip"><i className='fas fa-plus' />&nbsp;Add a Tip</a></span></p>
+                <p>Know something we don't? &nbsp;<span className='addtip'><a href="#/advice"><i className='fas fa-plus' />&nbsp;Add a Tip</a></span></p>
 
                     {this.props.tips.map(tips => {
                         return(
