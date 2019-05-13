@@ -8,7 +8,7 @@ class MenuBar extends React.Component {
         return(
             <Fragment>
                 <div className="wrapper">
-                    <nav key="navbar" className="tabs">
+                    <div key="navbar" className="tabs">
                         <div className="selector"></div>
                         <a href="#" className="active"><i className="fas fa-home" />&nbsp;Home</a>
                         <a href='#/pcparts/'><i className="fas fa-desktop" />&nbsp;PC Parts</a>

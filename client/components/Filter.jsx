@@ -33,23 +33,53 @@ class Form extends React.Component {
         return(
 
             <Fragment>
-                <div>
-                <form onSubmit={this.handleSubmit}>
-                    {this.props.categories.map(category =>{
-                        return(
-                            <Fragment>
-                            <input type="checkbox" name={category.id} value={category.id} onChange={this.handleChange} />
-                            <h2>{category.name}</h2>
-                        </Fragment>  
-                        )   
-                    })}
-                    <button type='submit'>Filter</button>
-                </form>
-                </div>
+                <input type="checkbox" id="navcheck" role="button" title="menu"></input>
+
+                <label for="navcheck" aria-hidden="true" title="menu">
+                    <span class="burger">
+                        <span class="bar">
+                            <span class="visuallyhidden">Filter</span>
+                        </span>
+                    </span>
+                </label>
+
+                <nav id="menu">
+                    <h2 className="title is-2">Filter By:</h2>
+                    <div>
+                        
+                        
+                        <form className="filterForm" onSubmit={this.handleSubmit}>
+                            {this.props.categories.map(category =>{
+                                return(
+                                    <Fragment> 
+                                        <ul>
+                                        <li>
+                                            <label>
+                                        <input type="checkbox" name={category.id} value={category.id} onChange={this.handleChange} />
+                                        <span>{category.name}</span>
+                                    </label>
+                                    </li>
+                                    </ul>
+                                        
+                                    
+                                    {/* <h2>{category.name}</h2> */}
+                                </Fragment>  
+                                )   
+                            })}
+                            <button type='submit'>Filter</button>
+                        </form>
+                    </div>           
+                </nav>
+
                 <div>
                     {this.props.search && <FilterItem/>}
-                </div>
+                </div> 
+
+                
+                
+
             </Fragment>
+            
 
         )
     }

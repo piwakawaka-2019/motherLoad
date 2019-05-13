@@ -2,6 +2,8 @@ import React , {Fragment} from 'react'
 import {connect} from 'react-redux'
 
 import{fetchTips} from "../actions/receive"
+
+import Filter from "../components/Filter"
  
 
 class Tips extends React.Component {
@@ -12,6 +14,7 @@ class Tips extends React.Component {
     render() {
         return(
             <Fragment>
+                <Filter />
                 <div className='content'>
                 <h2 className='title is-2 has-text-centered	'>Tips</h2>
                     
