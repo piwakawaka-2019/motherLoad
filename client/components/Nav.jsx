@@ -32,14 +32,14 @@ class Nav extends React.Component {
                 ? [
                 // Logged in only.
                   // <Link to='#' className="navbar-item is-large" >{this.state.user_name}</Link>,
-                  <Link to='/' className="navbar-item is-large" onClick={() => logout()}><i class="fas fa-sign-out-alt" />&nbsp;Logout</Link>
+                  <Link to='/' className="navbar-item is-large" onClick={() => logout()}><i className="fas fa-sign-out-alt" />&nbsp;Logout</Link>
                 ]
                 : [ //Logged out only.
-                  <Link onClick={this.toggleBurger} className="navbar-item is-large" to='/login'><i class="fas fa-sign-in-alt" />&nbsp;Login</Link>,
-                  <Link onClick={this.toggleBurger} className="navbar-item" to='/register'><i class="fas fa-user-plus" />&nbsp;Register</Link>
+                  <Link onClick={this.toggleBurger} className="navbar-item is-large" to='/login'><i className="fas fa-sign-in-alt" />&nbsp;Login</Link>,
+                  <Link onClick={this.toggleBurger} className="navbar-item" to='/register'><i className="fas fa-user-plus" />&nbsp;Register</Link>
                 ] //Display in either logged in or out.
               } 
-              <Link onClick={this.toggleBurger} to='/' className="navbar-item is-large" ><i class="fas fa-home" />&nbsp;Home</Link>
+              <Link onClick={this.toggleBurger} to='/' className="navbar-item is-large" ><i className="fas fa-home" />&nbsp;Home</Link>
             </div>
             
           </div>
