@@ -554,7 +554,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Header__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Header */ "./client/components/Header.jsx");
 /* harmony import */ var _Main__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Main */ "./client/components/Main.jsx");
 /* harmony import */ var _MenuBar__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./MenuBar */ "./client/components/MenuBar.jsx");
-/* harmony import */ var _MenuBar__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_MenuBar__WEBPACK_IMPORTED_MODULE_5__);
 /* harmony import */ var _Nav__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Nav */ "./client/components/Nav.jsx");
 /* harmony import */ var _Login__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./Login */ "./client/components/Login.jsx");
 /* harmony import */ var _Register__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./Register */ "./client/components/Register.jsx");
@@ -587,7 +586,7 @@ function App(_ref) {
   var auth = _ref.auth;
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["HashRouter"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "container has-text-centered"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Nav__WEBPACK_IMPORTED_MODULE_6__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Header__WEBPACK_IMPORTED_MODULE_3__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_MenuBar__WEBPACK_IMPORTED_MODULE_5___default.a, null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Main__WEBPACK_IMPORTED_MODULE_4__["default"], null), auth.isAuthenticated && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Nav__WEBPACK_IMPORTED_MODULE_6__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Header__WEBPACK_IMPORTED_MODULE_3__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_MenuBar__WEBPACK_IMPORTED_MODULE_5__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Main__WEBPACK_IMPORTED_MODULE_4__["default"], null), auth.isAuthenticated && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     exact: true,
     path: "/",
     component: _RegisteredUsersHome_jsx__WEBPACK_IMPORTED_MODULE_14__["default"]
@@ -859,15 +858,15 @@ function (_React$Component) {
         role: "button",
         title: "menu"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-        "for": "navcheck",
+        htmlFor: "navcheck",
         "aria-hidden": "true",
         title: "menu"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        "class": "burger"
+        className: "burger"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        "class": "bar"
+        className: "bar"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        "class": "visuallyhidden"
+        className: "visuallyhidden"
       }, "Filter")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
         id: "menu"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
@@ -1356,10 +1355,83 @@ function (_React$Component) {
 /*!***************************************!*\
   !*** ./client/components/MenuBar.jsx ***!
   \***************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: /home/student/workspace/motherLoad/client/components/MenuBar.jsx: Expected corresponding JSX closing tag for <div> (18:20)\n\n\u001b[0m \u001b[90m 16 | \u001b[39m                        \u001b[33m<\u001b[39m\u001b[33ma\u001b[39m href\u001b[33m=\u001b[39m\u001b[32m'#/tutorials'\u001b[39m\u001b[33m>\u001b[39m\u001b[33m<\u001b[39m\u001b[33mi\u001b[39m className\u001b[33m=\u001b[39m\u001b[32m\"fas fa-chalkboard-teacher\"\u001b[39m \u001b[33m/\u001b[39m\u001b[33m>\u001b[39m\u001b[33m&\u001b[39mnbsp\u001b[33m;\u001b[39m\u001b[33mTutorials\u001b[39m\u001b[33m<\u001b[39m\u001b[33m/\u001b[39m\u001b[33ma\u001b[39m\u001b[33m>\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 17 | \u001b[39m                        \u001b[33m<\u001b[39m\u001b[33ma\u001b[39m href\u001b[33m=\u001b[39m\u001b[32m'#/articles'\u001b[39m\u001b[33m>\u001b[39m\u001b[33m<\u001b[39m\u001b[33mi\u001b[39m className\u001b[33m=\u001b[39m\u001b[32m\"far fa-newspaper\"\u001b[39m \u001b[33m/\u001b[39m\u001b[33m>\u001b[39m\u001b[33m&\u001b[39mnbsp\u001b[33m;\u001b[39m\u001b[33mArticles\u001b[39m\u001b[33m<\u001b[39m\u001b[33m/\u001b[39m\u001b[33ma\u001b[39m\u001b[33m>\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 18 | \u001b[39m                    \u001b[33m<\u001b[39m\u001b[33m/\u001b[39m\u001b[33mnav\u001b[39m\u001b[33m>\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m    | \u001b[39m                    \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 19 | \u001b[39m                \u001b[33m<\u001b[39m\u001b[33m/\u001b[39m\u001b[33mdiv\u001b[39m\u001b[33m>\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 20 | \u001b[39m    \u001b[0m\n\u001b[0m \u001b[90m 21 | \u001b[39m            \u001b[33m<\u001b[39m\u001b[33m/\u001b[39m\u001b[33mFragment\u001b[39m\u001b[33m>\u001b[39m\u001b[0m\n    at Object.raise (/home/student/workspace/motherLoad/node_modules/@babel/parser/lib/index.js:6322:17)\n    at Object.jsxParseElementAt (/home/student/workspace/motherLoad/node_modules/@babel/parser/lib/index.js:3558:16)\n    at Object.jsxParseElementAt (/home/student/workspace/motherLoad/node_modules/@babel/parser/lib/index.js:3531:32)\n    at Object.jsxParseElementAt (/home/student/workspace/motherLoad/node_modules/@babel/parser/lib/index.js:3531:32)\n    at Object.jsxParseElement (/home/student/workspace/motherLoad/node_modules/@babel/parser/lib/index.js:3584:17)\n    at Object.parseExprAtom (/home/student/workspace/motherLoad/node_modules/@babel/parser/lib/index.js:3591:19)\n    at Object.parseExprSubscripts (/home/student/workspace/motherLoad/node_modules/@babel/parser/lib/index.js:8385:23)\n    at Object.parseMaybeUnary (/home/student/workspace/motherLoad/node_modules/@babel/parser/lib/index.js:8365:21)\n    at Object.parseExprOps (/home/student/workspace/motherLoad/node_modules/@babel/parser/lib/index.js:8252:23)\n    at Object.parseMaybeConditional (/home/student/workspace/motherLoad/node_modules/@babel/parser/lib/index.js:8225:23)\n    at Object.parseMaybeAssign (/home/student/workspace/motherLoad/node_modules/@babel/parser/lib/index.js:8172:21)\n    at Object.parseParenAndDistinguishExpression (/home/student/workspace/motherLoad/node_modules/@babel/parser/lib/index.js:8937:28)\n    at Object.parseExprAtom (/home/student/workspace/motherLoad/node_modules/@babel/parser/lib/index.js:8731:21)\n    at Object.parseExprAtom (/home/student/workspace/motherLoad/node_modules/@babel/parser/lib/index.js:3596:20)\n    at Object.parseExprSubscripts (/home/student/workspace/motherLoad/node_modules/@babel/parser/lib/index.js:8385:23)\n    at Object.parseMaybeUnary (/home/student/workspace/motherLoad/node_modules/@babel/parser/lib/index.js:8365:21)\n    at Object.parseExprOps (/home/student/workspace/motherLoad/node_modules/@babel/parser/lib/index.js:8252:23)\n    at Object.parseMaybeConditional (/home/student/workspace/motherLoad/node_modules/@babel/parser/lib/index.js:8225:23)\n    at Object.parseMaybeAssign (/home/student/workspace/motherLoad/node_modules/@babel/parser/lib/index.js:8172:21)\n    at Object.parseExpression (/home/student/workspace/motherLoad/node_modules/@babel/parser/lib/index.js:8120:23)\n    at Object.parseReturnStatement (/home/student/workspace/motherLoad/node_modules/@babel/parser/lib/index.js:10132:28)\n    at Object.parseStatementContent (/home/student/workspace/motherLoad/node_modules/@babel/parser/lib/index.js:9811:21)\n    at Object.parseStatement (/home/student/workspace/motherLoad/node_modules/@babel/parser/lib/index.js:9763:17)\n    at Object.parseBlockOrModuleBlockBody (/home/student/workspace/motherLoad/node_modules/@babel/parser/lib/index.js:10340:25)\n    at Object.parseBlockBody (/home/student/workspace/motherLoad/node_modules/@babel/parser/lib/index.js:10327:10)\n    at Object.parseBlock (/home/student/workspace/motherLoad/node_modules/@babel/parser/lib/index.js:10311:10)\n    at Object.parseFunctionBody (/home/student/workspace/motherLoad/node_modules/@babel/parser/lib/index.js:9382:24)\n    at Object.parseFunctionBodyAndFinish (/home/student/workspace/motherLoad/node_modules/@babel/parser/lib/index.js:9352:10)\n    at Object.parseMethod (/home/student/workspace/motherLoad/node_modules/@babel/parser/lib/index.js:9306:10)\n    at Object.pushClassMethod (/home/student/workspace/motherLoad/node_modules/@babel/parser/lib/index.js:10743:30)");
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+var MenuBar =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(MenuBar, _React$Component);
+
+  function MenuBar(props) {
+    _classCallCheck(this, MenuBar);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(MenuBar).call(this, props));
+  }
+
+  _createClass(MenuBar, [{
+    key: "render",
+    value: function render() {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "wrapper"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        key: "navbar",
+        className: "tabs"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "selector"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "#",
+        className: "active"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fas fa-home"
+      }), "\xA0Home"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "#/pcparts/"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fas fa-desktop"
+      }), "\xA0PC Parts"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "#/tips"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fas fa-hands-helping"
+      }), "\xA0Tips"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "#/tutorials"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fas fa-chalkboard-teacher"
+      }), "\xA0Tutorials"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "#/articles"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "far fa-newspaper"
+      }), "\xA0Articles"))));
+    }
+  }]);
+
+  return MenuBar;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["default"] = (MenuBar);
 
 /***/ }),
 

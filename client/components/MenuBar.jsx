@@ -15,7 +15,7 @@ class MenuBar extends React.Component {
                         <a href='#/tips'><i className="fas fa-hands-helping" />&nbsp;Tips</a>
                         <a href='#/tutorials'><i className="fas fa-chalkboard-teacher" />&nbsp;Tutorials</a>
                         <a href='#/articles'><i className="far fa-newspaper" />&nbsp;Articles</a>
-                    </nav>
+                    </div>
                 </div>
     
             </Fragment>
