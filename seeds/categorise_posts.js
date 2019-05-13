@@ -43,6 +43,12 @@ exports.seed = function(knex, Promise) {
         {id: 13,
         category_id : 11,
         posts_id: 13},
+        {id: 14,
+        category_id : 2,
+        posts_id: 14},
+        {id: 15,
+        category_id : 11,
+        posts_id: 15},
       ]);
     });
 };

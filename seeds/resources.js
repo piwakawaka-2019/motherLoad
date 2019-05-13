@@ -102,8 +102,21 @@ exports.seed = function (knex, Promise) {
           description: "Follow our tips to keep your PC dust-free.",
           type:'tutorial',
           source_url: "https://www.pcgamer.com/au/how-to-clean-your-computer-case/"
-        },        
-        
+        },
+        {
+          id: 14,
+          title: 'How to remove old CPU or processor and install a new one',
+          description: "If you noticed that the old processor in your system appears to be not up to the job lately, replacing it may be a wise option.",
+          type:'tutorial',
+          source_url: "https://www.easypcmod.com/remove-old-cpu-processor-install-new-one-tutorial-336"
+        },
+        {
+          id: 15,
+          title: '6 important CES 2019 reveals and trends that PC enthusiasts need to know about',
+          description: "The PC showed up strong at CES 2019.",
+          type:'article',
+          source_url: "https://www.pcworld.com/article/3331854/ces-2019-pc-trends-announcements.html"
+        },
       ])
     })
 }
