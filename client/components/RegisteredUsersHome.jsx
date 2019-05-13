@@ -8,10 +8,11 @@ class RegisteredUsersHome extends React.Component{
     render(){
         return(
             <Fragment>
-                <div className='content'>
-            <h2 className='title is-2'>Saved resources:</h2>
-
-        </div>
+                
+                <h2 className='title is-2 has-text-centered has-text-white'>Saved resources:</h2>
+                <div className='content has-text-left'>
+            
+                </div>
             </Fragment>
 
         )

@@ -14,8 +14,8 @@ import Tutorials from './Tutorials'
 import Tips from './Tips'
 import Articles from './Articles'
 import AdviceForm from './AdviceForm'
-import Filter from './Filter'
-
+import RegisteredUsersHome from './RegisteredUsersHome.jsx';
+import Filter from './Filter';
 
 export function App({auth}) {
   return (
@@ -24,21 +24,32 @@ export function App({auth}) {
         <Header />
         <Nav />
         <MenuBar />
-        <br />
+        <Main />
 
-        <div className=''>
-          {!auth.isAuthenticated &&
-            <Route exact path="/" component={Main} />
+        {auth.isAuthenticated &&
+            <Route exact path="/" component={RegisteredUsersHome} />
           }
+        <br />
+      
+        <div className=''>
+          {/* {!auth.isAuthenticated &&
+            <Route exact path="/" component={Main} />
+          } */}
+          {/* {auth.isAuthenticated &&
+            <Route path="/advice" component={AddTip} />
+          }
+          {!auth.isAuthenticated &&
+            <Route path="/advice" component={Login} />
+          }
+         */}
           <Route path="/login" component={Login} />
           <Route path="/register" component={Register} />
           <Route path="/pcparts" component={PCParts} />
           <Route path="/tutorials" component={Tutorials} />
           <Route path="/tips" component={Tips} />
           <Route path="/articles" component={Articles} />
-          <Route path="/addtip" component={AdviceForm} />
+          <Route path="/advice" component={AdviceForm} />
           <Route path="/search" component={Filter} />
-
         </div>
 
       </div>

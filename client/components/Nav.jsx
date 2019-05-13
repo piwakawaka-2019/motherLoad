@@ -18,7 +18,7 @@ class Nav extends React.Component {
       const {auth, logout} = this.props
       const {showBurger} = this.state
 
-      return <nav className="navbar">
+      return <div className="navbar">
         <div className="container">
           <div className="navbar-brand">
             <span onClick={this.toggleBurger} className={`navbar-burger burger ${showBurger ? 'is-active': ''}`} data-target="navbarMenuHeroA">
@@ -44,7 +44,7 @@ class Nav extends React.Component {
             
           </div>
         </div>
-      </nav>
+      </div>
     }
   }
   
