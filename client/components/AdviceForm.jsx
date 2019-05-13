@@ -10,10 +10,11 @@ class AdviceForm extends React.Component {
 
 
       <Fragment>
-  <div className='content'>
-              <h2 className="title is-2">
+          <h2 className='title is-2 has-text-centered has-text-white'>
                   Tweet of advice 
               </h2>
+  <div className='content has-text-left'>
+              
               <form action="/addTip" method="POST">
                   <div className="field">
 
