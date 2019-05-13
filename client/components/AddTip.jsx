@@ -1,6 +1,5 @@
 import React , {Fragment} from 'react'
 import {connect} from 'react-redux'
-import Carousel from 'react-bootstrap/Carousel'
 
 class AddTip extends React.Component {
   constructor(props){
@@ -18,7 +17,7 @@ class AddTip extends React.Component {
               <form action="/addTip" method="POST">
                   <div className="field">
 
-                      <label className="label">
+                      <label className="label is-large">
                           Title
                       </label>
                       <div className="control">
@@ -27,23 +26,23 @@ class AddTip extends React.Component {
 
                       <label className="label"></label>
                       
-                      <label className="label">
+                      <label className="label is-large">
                           I'd like to give advice on:
                       </label>
-                      <div className="control">
+                      <div className="control has-text-centered">
                           <label className="radio">
                               <input type="radio" name="part"/>
-                              Category or part
+                              &nbsp;Category or part&nbsp;&nbsp;
                           </label>
-                          <label className="radio">
+                          <label className="radio ">
                               <input type="radio" name="part"/>
-                              Part
+                              &nbsp;Part
                           </label>
                       </div>
                       
                       <label className="label"></label>
                       
-                      <label className="label">
+                      <label className="label is-large">
                           Advice
                       </label>
                       <div className="control">
@@ -52,9 +51,10 @@ class AddTip extends React.Component {
 
                       <label className="label is-large has-text-centered"></label>
                       
-                      <div className="control">
+                      <div className="control has-text-centered">
                           <label className="label is-large has-text-centered">
-                              <input className="input" type="submit" name='Submit' />
+                              <input className="button is-success is-large is-fullwidth" type="submit" name='Submit' />
+                              
                               
                           </label>
                       </div>
