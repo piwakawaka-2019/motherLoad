@@ -1,15 +1,10 @@
-export const ADD_TIP = 'ADD_TIP'
-export const ADD_TUTORIAL = 'ADD_TUTORIAL'
-
-export const addTip = (tip) => {
-    return {
-        type: ADD_TIP
-    }
-}
-
-export const addTutorial = (tutorial) => {
-    return {
-        type: ADD_TUTORIAL,
-        tutorial: tutorial
-    }
-}
+export const SAVE_DATA = 'SAVE_DATA'
+import { addDataToDB } from "../apis/resources";
+  
+export function addToDataBase(data){
+    console.log("dispatch")
+    return (
+        addDataToDB(data)
+        .then()
+    )
+} 
