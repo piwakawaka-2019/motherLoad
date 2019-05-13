@@ -39,3 +39,12 @@ export function getCatagories(){
         console.error("Tip API issues", err)
     });
 }
+export function addDataToDB (data){
+    console.log("api Call")
+    return request
+    .post("/api/post/add")
+    .send(data)
+    .then(()=>{
+        console.log("done")
+    })
+}
