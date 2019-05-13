@@ -1,7 +1,7 @@
 import React , {Fragment} from 'react'
 import {connect} from 'react-redux'
 
-class Articles extends React.Component{
+class RegisteredUsersHome extends React.Component{
     constructor(props){
         super(props)
     }
@@ -9,7 +9,7 @@ class Articles extends React.Component{
         return(
             <Fragment>
                 <div className='content'>
-            <h2 className='title is-2'>Articles</h2>
+            <h2 className='title is-2'>Saved resources:</h2>
 
         </div>
             </Fragment>
@@ -18,4 +18,4 @@ class Articles extends React.Component{
     }
 }
 
-export default Articles
+export default RegisteredUsersHome

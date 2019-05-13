@@ -1,3 +1,8 @@
+html , body {
+
+    width: 100%;
+}
+
 
 a {
     text-decoration: none;
@@ -16,6 +21,7 @@ h1 {
 .wrapper{
   text-align:center;
   margin:50px auto;
+  width:100%
 }
 
 .tabs{
@@ -39,7 +45,8 @@ h1 {
   position:relative;
   z-index:1;
   transition-duration:0.6s;
-  width: 250px;
+  width: 225px;
+  height:50px;
 }
 
 .tabs a.active{
@@ -60,12 +67,20 @@ h1 {
   border-radius:50px;
   transition-duration:0.6s;
   transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  
   background: #05abe0;
   background: -moz-linear-gradient(45deg, #05abe0 0%, #8200f4 100%);
   background: -webkit-linear-gradient(45deg, #05abe0 0%,#8200f4 100%);
   background: linear-gradient(45deg, #05abe0 0%,#8200f4 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#05abe0', endColorstr='#8200f4',GradientType=1 );
+}
+
+.carousel {
+    background-color: #d2fdff;
+    border: 1px solid;
+    border-color: #24305e;
+    margin: auto;
+    margin-bottom: 48px;
+    width: 80%;
 }
 
 #Parts {

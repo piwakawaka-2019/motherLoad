@@ -10,6 +10,7 @@ class PCParts extends React.Component{
         return(
             <Fragment>
                 <h2 className='title is-2 has-text-centered	'>PC Parts &mdash; What Do They Do?</h2>
+                
                 <div className='content has-text-left' id= "Parts" >
                      
 

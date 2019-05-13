@@ -1,20 +1,21 @@
 import React from 'react'
 import {HashRouter as Router, Route, Link} from 'react-router-dom'
 import {connect} from 'react-redux'
+
+
 import Header from './Header'
-import List from './List'
+import Main from './Main'
 import MenuBar from './MenuBar'
 import Nav from './Nav'
-
 import Login from './Login'
 import Register from './Register'
-
 import PCParts from './PCParts'
 import Tutorials from './Tutorials'
 import Tips from './Tips'
 import Articles from './Articles'
-import AddTip from './AddTip'
+import AdviceForm from './AdviceForm'
 import Filter from './Filter'
+
 
 export function App({auth}) {
   return (
@@ -27,7 +28,7 @@ export function App({auth}) {
 
         <div className=''>
           {!auth.isAuthenticated &&
-            <Route exact path="/" component={List} />
+            <Route exact path="/" component={Main} />
           }
           <Route path="/login" component={Login} />
           <Route path="/register" component={Register} />
@@ -35,8 +36,8 @@ export function App({auth}) {
           <Route path="/tutorials" component={Tutorials} />
           <Route path="/tips" component={Tips} />
           <Route path="/articles" component={Articles} />
-          <Route path="/addtip" component={AddTip} />
-          <Route path="/test" component={Filter} />
+          <Route path="/addtip" component={AdviceForm} />
+          <Route path="/search" component={Filter} />
 
         </div>
 
