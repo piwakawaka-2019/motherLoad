@@ -18,7 +18,7 @@ class Carousel extends React.Component {
         };
         return(<div className='carousel'>
         {/* <h2> Single Item</h2> */}
-        <Slider {...settings}>
+        {/* <Slider {...settings}>
           <div>
             <h3>1</h3>
           </div>
@@ -37,7 +37,8 @@ class Carousel extends React.Component {
           <div>
             <h3>6</h3>
           </div>
-        </Slider>
+        </Slider> */}
+        <p>is broke</p>
       </div>)
     }
 }

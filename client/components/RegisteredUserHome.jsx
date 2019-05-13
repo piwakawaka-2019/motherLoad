@@ -1,24 +1,21 @@
 import React , {Fragment} from 'react'
 import {connect} from 'react-redux'
-import Carousel from './Carousel'
-import RegisteredUsersHome from './RegisteredUserHome';
 
-
-class Main extends React.Component {
+class RegisteredUsersHome extends React.Component{
     constructor(props){
         super(props)
     }
     render(){
         return(
-
             <Fragment>
+                <div className='content'>
+            <h2 className='title is-2'>Saved resources:</h2>
 
-            <Carousel />
-            <RegisteredUsersHome />
+        </div>
             </Fragment>
-            
+
         )
     }
 }
 
-export default Main
+export default RegisteredUsersHome
