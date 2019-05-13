@@ -14,19 +14,20 @@ class Tips extends React.Component {
     render() {
         return(
             <Fragment>
-                <Filter />
-                <div className='content'>
-                <h2 className='title is-2 has-text-centered	'>Tips</h2>
-                    
-                <p>Know something we don't? &nbsp;<span className='addtip'><a href="#/advice"><i className='fas fa-plus' />&nbsp;Add a Tip</a></span></p>
 
+                <Filter />
+                <h2 className='title is-2 has-text-centered has-text-white' >Tips</h2>
+                <div className='content has-text-left' id="cleanUp">
+                    
                     {this.props.tips.map(tips => {
                         return(
                             <Fragment>
-                                <h3>
-                                <a href={tips.source_url} target='_blank'>{tips.title}</a>
-                            </h3>
-                            <p>{tips.description}</p>
+                                <h3 className="has-text-white">
+                                    {tips.title}
+                                </h3>
+                                <p>
+                                    {tips.description}
+                                </p>
                             </Fragment>
                         )
                     })}

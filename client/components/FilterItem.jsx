@@ -8,8 +8,8 @@ class FilterItem extends React.Component {
           return(
             <Fragment>
               <div>
-                <h1>Type: {data.type}</h1>
-                <h1>{data.title}</h1><br/>
+                <h2 className='title is-2 has-text-centered has-text-white'>Type: {data.type}</h2>
+                <h2 className='title is-2 has-text-centered has-text-white'>{data.title}</h2><br/>
                 <p>{data.description}</p>
               </div>
             </Fragment>

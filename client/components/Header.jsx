@@ -8,13 +8,13 @@ class Header extends React.Component {
     render() {
         return(
             <Fragment>
-                <div className="hero is-small is-white">
-                    <div className="hero-body has-text-centered">
-                    <Link to='/' className="">
-                        <h1 className="title is-1 has-text-dark-grey has-text-weight-bold">MotherLoad</h1>
-                    </Link>
-                    </div>
-                </div>  
+                <div className="hero is-small" id="header">
+            <div className="hero-body has-text-centered">
+            <Link to='/' className="">
+                <h1 className="has-text-white has-text-weight-medium">MotherLoad</h1>
+            </Link>
+            </div>
+        </div>  
             </Fragment>
 
         )

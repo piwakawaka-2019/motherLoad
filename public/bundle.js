@@ -474,11 +474,11 @@ function (_React$Component) {
   _createClass(AdviceForm, [{
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "content"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
-        className: "title is-2"
-      }, "Tweet of advice"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+        className: "title is-2 has-text-centered has-text-white"
+      }, "Tweet of advice"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "content has-text-left"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
         action: "/addTip",
         method: "POST"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -686,11 +686,12 @@ function (_React$Component) {
   _createClass(Articles, [{
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "content"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
-        className: "title is-2 has-text-centered\t"
-      }, "Articles"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_ListItem__WEBPACK_IMPORTED_MODULE_2__["default"], null)));
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+        className: "title is-2 has-text-centered has-text-white"
+      }, "Articles"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "content",
+        id: "cleanUp"
+      }));
     }
   }]);
 
@@ -950,7 +951,11 @@ function (_React$Component) {
     key: "render",
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, this.props.search.map(function (data) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Type: ", data.type), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, data.title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, data.description)));
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+          className: "title is-2 has-text-centered has-text-white"
+        }, "Type: ", data.type), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+          className: "title is-2 has-text-centered has-text-white"
+        }, data.title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, data.description)));
       }));
     }
   }]);
@@ -1016,14 +1021,15 @@ function (_React$Component) {
     key: "render",
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "hero is-small is-white"
+        className: "hero is-small",
+        id: "header"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "hero-body has-text-centered"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: "/",
         className: ""
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
-        className: "title is-1 has-text-dark-grey has-text-weight-bold"
+        className: "has-text-white has-text-weight-medium"
       }, "MotherLoad")))));
     }
   }]);
@@ -1246,13 +1252,14 @@ function (_React$Component) {
       var auth = this.props.auth;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
         className: "form box",
-        onSubmit: this.submit
+        onSubmit: this.submit,
+        id: "LnRForm"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
-        className: "title is-2 has-text-weight-normal"
+        className: "title is-2 has-text-white"
       }, "Login"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), auth.errorMessage && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "has-text-danger is-large"
       }, auth.errorMessage), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-        className: "label is-large has-text-centered"
+        className: "label has-text-white is-large has-text-centered"
       }, "Username", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         required: true,
         className: "input has-text-centered is-large is-fullwidth",
@@ -1261,15 +1268,16 @@ function (_React$Component) {
         name: "user_name",
         onChange: this.updateDetails
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-        className: "label is-large has-text-centered"
+        className: "label is-large has-text-white has-text-centered"
       }, "Password", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         required: true,
-        className: "input has-text-centered is-large is-fullwidth",
+        className: "input has-text-white has-text-centered is-large is-fullwidth",
         placeholder: "Password",
         type: "password",
         name: "password",
         onChange: this.updateDetails
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        id: "button",
         className: "button is-large is-fullwidth is-success",
         value: "Login",
         type: "submit"
@@ -1623,12 +1631,42 @@ function (_React$Component) {
   _createClass(PCParts, [{
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+        className: "title is-2 has-text-white has-text-centered\t"
+      }, "PC Parts \u2014 What Do They Do?"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "content has-text-left",
-        id: "Parts"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
-        className: "title is-2 has-text-centered\t"
-      }, "PC Parts \u2014 What Do They Do?"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "CPU (Central Processing Unit)"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "The CPU is the brain of the computer it runs all of the calculations for the computer.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "CPU Cooler"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "This cools down the CPU so it can run at an optimal temperature to ensure that it doesn\u2019t overheat and cause damage to the CPU or more. There are different types of cooling systems:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, "Liquid cooling:"), " a liquid cooling block is usually connected to the CPU and has a reservoir of extra coolant waiting to be used to cool down the CPU."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, "Fan cooling:"), " Typically when using fan cooling you would have a heatsink attached to the fan, and the heatsink is what gets attached to the CPU using thermal paste/compound, which helps dissipate the heat."))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Motherboard"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "The motherboard holds the CPU (Central Processing Unit), RAM (Random Access Memory) as well as input/output devices like storage, keyboards, mice, etc. It also allows for easier communication between the parts in and out of the computer.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Memory (RAM)"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Makes it easier to run multiple applications or applications that require more resources/power to run.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Storage"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Holds your files, such as games, programs and documents. There are different types of storage such as HDD (Hard Disc Drive), SSD (Solid State Drive), SSHD (Solid State Hybrid Drive)."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, "HDD (Hard Disc Drive):"), " A HDD or often referred to as a hard drive is the typical storage that you might find in a laptop. You would also typically find a hard drive in a computer that would have multiple options to store your files."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, "SSD (Solid State Drive):"), "  Unlike a hard drive an SSD doesn\u2019t have any moving parts and stores its information by using \u201Cflash memory\u201D, which will keep all its data/information when there is no power supplied. Because of the way this storage works you get faster speeds when reading and writing data to the SSD."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, "SSHD (Solid State Hybrid Drive):"), " SSHDs combines both SSDs and HDDs. You\u2019re able to store data on the SSD side of the hybrid drive which people often use for storing their operating system. The HDD side of the hybrid drive is often used as a normal hard drive. Often there is a cache with this which will read often used blocks on the hard drive and store that data on the SSD portion of the hybrid drive for faster reading and writing."))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Graphics Card"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "A graphics card is what displays graphics/information to the screen. It also does calculations just like the CPU but does it at a more efficient and faster rate in deciding on how to display your content.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Case"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Houses all of the parts of a computer.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Power Supply (PSU)"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Power Supply (PSU): The power supply draws power from the wall to supply your computer with enough power in order for it to run and operate with what you\u2019re doing. It\u2019s often a good idea to get one that\u2019ll easily supply more power to the computer incase you are doing heavy work.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Optical Drive"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "An optical drive is what allows you to read and write to a disc. But because of the internet, these are quickly becoming unneeded.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null)));
+        id: "cleanUp"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
+        className: "has-text-white"
+      }, "CPU (Central Processing Unit)"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "The CPU is the brain of the computer it runs all of the calculations for the computer.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
+        className: "has-text-white"
+      }, "CPU Cooler"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "This cools down the CPU so it can run at an optimal temperature to ensure that it doesn\u2019t overheat and cause damage to the CPU or more. There are different types of cooling systems:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", {
+        className: "has-text-white"
+      }, "Liquid cooling:"), " a liquid cooling block is usually connected to the CPU and has a reservoir of extra coolant waiting to be used to cool down the CPU."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", {
+        className: "has-text-white"
+      }, "Fan cooling:"), " Typically when using fan cooling you would have a heatsink attached to the fan, and the heatsink is what gets attached to the CPU using thermal paste/compound, which helps dissipate the heat."))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
+        className: "has-text-white"
+      }, "Motherboard"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "The motherboard holds the CPU (Central Processing Unit), RAM (Random Access Memory) as well as input/output devices like storage, keyboards, mice, etc. It also allows for easier communication between the parts in and out of the computer.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
+        className: "has-text-white"
+      }, "Memory (RAM)"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Makes it easier to run multiple applications or applications that require more resources/power to run.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
+        className: "has-text-white"
+      }, "Storage"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Holds your files, such as games, programs and documents. There are different types of storage such as HDD (Hard Disc Drive), SSD (Solid State Drive), SSHD (Solid State Hybrid Drive)."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", {
+        className: "has-text-white"
+      }, "HDD (Hard Disc Drive):"), " A HDD or often referred to as a hard drive is the typical storage that you might find in a laptop. You would also typically find a hard drive in a computer that would have multiple options to store your files."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", {
+        className: "has-text-white"
+      }, "SSD (Solid State Drive):"), "  Unlike a hard drive an SSD doesn\u2019t have any moving parts and stores its information by using \u201Cflash memory\u201D, which will keep all its data/information when there is no power supplied. Because of the way this storage works you get faster speeds when reading and writing data to the SSD."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("storage", {
+        className: "has-text-white"
+      }, "SSHD (Solid State Hybrid Drive):"), " SSHDs combines both SSDs and HDDs. You\u2019re able to store data on the SSD side of the hybrid drive which people often use for storing their operating system. The HDD side of the hybrid drive is often used as a normal hard drive. Often there is a cache with this which will read often used blocks on the hard drive and store that data on the SSD portion of the hybrid drive for faster reading and writing."))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
+        className: "has-text-white"
+      }, "Graphics Card"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "A graphics card is what displays graphics/information to the screen. It also does calculations just like the CPU but does it at a more efficient and faster rate in deciding on how to display your content.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
+        className: "has-text-white"
+      }, "Case"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Houses all of the parts of a computer.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
+        className: "has-text-white"
+      }, "Power Supply (PSU)"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Power Supply (PSU): The power supply draws power from the wall to supply your computer with enough power in order for it to run and operate with what you\u2019re doing. It\u2019s often a good idea to get one that\u2019ll easily supply more power to the computer incase you are doing heavy work.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
+        className: "has-text-white"
+      }, "Power Supply (PSU)"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Power Supply (PSU): The power supply draws power from the wall to supply your computer with enough power in order for it to run and operate with what you\u2019re doing. It\u2019s often a good idea to get one that\u2019ll easily supply more power to the computer incase you're doing heavy work.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
+        className: "has-text-white"
+      }, "Optical Driver"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "An optical drive is what allows you to read and write to a disc. But because of the internet, these are quickly becoming unneeded.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null)));
     }
   }]);
 
@@ -1733,13 +1771,14 @@ function (_React$Component) {
       var auth = this.props.auth;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
         className: "Register form box",
-        onSubmit: this.submit
+        onSubmit: this.submit,
+        id: "LnRForm"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
-        className: "title is-2 has-text-weight-normal"
+        className: "title is-2 has-text-white"
       }, "Register"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), auth.errorMessage && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        className: "has-text-danger is-large"
+        className: "has-text-danger has-text-white is-large"
       }, auth.errorMessage), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-        className: "column is-6 is-offset-one-quarter label is-large has-text-centered"
+        className: "column is-6 is-offset-one-quarter label is-large has-text-white has-text-centered"
       }, "*Username", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         required: true,
         className: "input is-large has-text-centered is-fullwidth",
@@ -1748,7 +1787,7 @@ function (_React$Component) {
         name: "user_name",
         onChange: this.updateDetails
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-        className: "column is-6 is-offset-one-quarter label is-large has-text-centered"
+        className: "column is-6 is-offset-one-quarter label has-text-white is-large has-text-centered"
       }, "*E-mail", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         required: true,
         className: "input is-large has-text-centered is-fullwidth",
@@ -1759,7 +1798,7 @@ function (_React$Component) {
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "columns"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-        className: "column is-6 label is-large has-text-centered"
+        className: "column is-6 label is-large has-text-white has-text-centered"
       }, "*First Name", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         required: true,
         className: "input is-large has-text-centered is-fullwidth",
@@ -1768,10 +1807,10 @@ function (_React$Component) {
         name: "first_name",
         onChange: this.updateDetails
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-        className: "column is-6 label is-large has-text-centered"
+        className: "column is-6 label is-large has-text-white has-text-centered"
       }, "*Last Name", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         required: true,
-        className: "input is-large has-text-centered is-fullwidth",
+        className: "input is-large  has-text-centered is-fullwidth",
         placeholder: "Last Name",
         type: "text",
         name: "last_name",
@@ -1779,7 +1818,7 @@ function (_React$Component) {
       }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "columns"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-        className: "column is-6 label is-large has-text-centered"
+        className: "column is-6 label is-large has-text-white has-text-centered"
       }, "*Password", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         required: true,
         className: "input is-large has-text-centered is-fullwidth",
@@ -1788,7 +1827,7 @@ function (_React$Component) {
         name: "password",
         onChange: this.updateDetails
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-        className: "column is-6 label is-large has-text-centered"
+        className: "column is-6 label is-large has-text-white has-text-centered"
       }, "*Confirm Password", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         required: true,
         className: "input is-large has-text-centered is-fullwidth",
@@ -1797,6 +1836,7 @@ function (_React$Component) {
         name: "confirm_password",
         onChange: this.updateDetails
       }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        id: "button",
         className: "button is-success is-large is-fullwidth",
         value: "Register",
         type: "submit"
@@ -1865,11 +1905,11 @@ function (_React$Component) {
   _createClass(RegisteredUsersHome, [{
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "content"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
-        className: "title is-2"
-      }, "Saved resources:")));
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+        className: "title is-2 has-text-centered has-text-white"
+      }, "Saved resources:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "content has-text-left"
+      }));
     }
   }]);
 
@@ -1936,21 +1976,15 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Filter__WEBPACK_IMPORTED_MODULE_3__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "content"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
-        className: "title is-2 has-text-centered\t"
-      }, "Tips"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Know something we don't? \xA0", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        className: "addtip"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: "#/advice"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        className: "fas fa-plus"
-      }), "\xA0Add a Tip"))), this.props.tips.map(function (tips) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-          href: tips.source_url,
-          target: "_blank"
-        }, tips.title)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, tips.description));
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Filter__WEBPACK_IMPORTED_MODULE_3__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+        className: "title is-2 has-text-centered has-text-white"
+      }, "Tips"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "content has-text-left",
+        id: "cleanUp"
+      }, this.props.tips.map(function (tips) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
+          className: "has-text-white"
+        }, tips.title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, tips.description));
       })));
     }
   }]);
@@ -2024,21 +2058,15 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Filter__WEBPACK_IMPORTED_MODULE_3__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "content"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
-        className: "title is-2 has-text-centered\t"
-      }, "Tutorials"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Know something we don't? \xA0", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        className: "addtip"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: "#/advice"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        className: "fas fa-plus"
-      }), "\xA0Add a Tip"))), this.props.tutorials.map(function (tutorials) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-          href: tutorials.source_url,
-          target: "_blank"
-        }, tutorials.title)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, tutorials.description));
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+        className: "title is-2 has-text-white has-text-centered"
+      }, "Tutorials"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "content has-text-left",
+        id: "cleanUp"
+      }, this.props.tutorials.map(function (tutorials) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
+          className: "has-text-white"
+        }, tutorials.title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, tutorials.description));
       })));
     }
   }]);

@@ -1,5 +1,8 @@
 html , body {
     width: 100%;
+    font-family: 'Merriweather', serif;
+    background-color: #26041D;
+    color: white;
 }
 
 a {
@@ -68,6 +71,33 @@ h4, h5, h6, li, strong {
 .slick-next:before {
   color:#24305e!important;
 
+#header {
+  background-color: #33032F;
+  padding: 15px;
+  right: 10%;
+  font-size: 80px;
+
+}
+
+#LnRForm {
+  background-color: #531253;
+
+}
+
+#button {
+
+  background-color: #97D8B2;
+  color: #33032F;
+  font-family: 'Merriweather', serif;
+}
+
+.navbar{
+  background-color: #97D8B2;
+  color: #33032F;
+  font-family: 'Merriweather', serif;
+}
+
+/* The nav bar slider  */
 .wrapper{
   text-align:center;
   margin:16px auto;
@@ -170,8 +200,8 @@ h4, h5, h6, li, strong {
 /* line 40, ../../sass/sass/screen.scss */
 label .burger {
   position: absolute;
-  top: 1em;
-  left: 1em;
+  top: -5%;
+  left: -2.5%;
   z-index: 3;
   width: 2em;
   height: 2em;
@@ -334,3 +364,9 @@ nav::before {
     width: 70%;
     margin-left:17%;
 }
+/* size content boxes  */
+#cleanUp {
+    width: 900px;
+}
+
+

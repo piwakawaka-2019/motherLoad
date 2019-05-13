@@ -9,20 +9,11 @@ class Articles extends React.Component{
     render(){
         return(
             <Fragment>
-                <div className='content'>
-                <h2 className='title is-2 has-text-centered	'>Articles</h2>
-                    <ListItem />
-                    {/*
-                    {props.articleDB.map(article => {
-                    return (
-                    <ListItem
-                    key={article.id}
-                    article={article}
-                    />
-                    )
-                    })}
-                    */}
-                </div>
+                <h2 className='title is-2 has-text-centered has-text-white'>Articles</h2>
+                <div className='content' id="cleanUp">
+            
+
+        </div>
             </Fragment>
 
         )

@@ -13,17 +13,15 @@ class Tutorials extends React.Component {
     render() {
         return(
             <Fragment>
-                <Filter />
-                <div className='content'>
-                <h2 className='title is-2 has-text-centered	'>Tutorials</h2>
-
-                <p>Know something we don't? &nbsp;<span className='addtip'><a href="#/advice"><i className='fas fa-plus' />&nbsp;Add a Tip</a></span></p>
+                <h2 className='title is-2 has-text-white has-text-centered'>Tutorials</h2>
+                <div className='content has-text-left' id="cleanUp">
+                    
 
                     {this.props.tutorials.map(tutorials => {
                         return(
                             <Fragment>
-                                <h3>
-                                <a href={tutorials.source_url} target='_blank'>{tutorials.title}</a>
+                                <h3 className="has-text-white">
+                                {tutorials.title}
                             </h3>
                             <p>{tutorials.description}</p>
                             </Fragment>
