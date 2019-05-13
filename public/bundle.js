@@ -1986,7 +1986,10 @@ function (_React$Component) {
       }, this.props.tips.map(function (tips) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
           className: "has-text-white"
-        }, tips.title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, tips.description));
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+          href: tips.source_url,
+          target: "_blank"
+        }, tips.title)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, tips.description));
       })));
     }
   }]);
@@ -2074,7 +2077,10 @@ function (_React$Component) {
       }, this.props.tutorials.map(function (tutorials) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
           className: "has-text-white"
-        }, tutorials.title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, tutorials.description));
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+          href: tutorials.source_url,
+          target: "_blank"
+        }, tutorials.title)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, tutorials.description));
       })));
     }
   }]);

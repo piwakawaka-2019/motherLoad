@@ -24,7 +24,7 @@ class Tips extends React.Component {
                         return(
                             <Fragment>
                                 <h3 className="has-text-white">
-                                    {tips.title}
+                                    <a href={tips.source_url} target='_blank'>{tips.title}</a>
                                 </h3>
                                 <p>
                                     {tips.description}
