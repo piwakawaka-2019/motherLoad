@@ -8,6 +8,7 @@ class FilterItem extends React.Component {
           return(
             <Fragment>
               <div>
+                <h1>Type: {data.type}</h1>
                 <h1>{data.title}</h1><br/>
                 <p>{data.description}</p>
               </div>
