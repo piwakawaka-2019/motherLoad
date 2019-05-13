@@ -1,7 +1,7 @@
 import React , {Fragment} from 'react'
 import {connect} from 'react-redux'
 import Carousel from './Carousel'
-import RegisteredUsersHome from './RegisteredUserHome';
+// import RegisteredUsersHome from './RegisteredUserHome';
 
 
 class Main extends React.Component {
@@ -14,7 +14,6 @@ class Main extends React.Component {
             <Fragment>
 
             <Carousel />
-            <RegisteredUsersHome />
             </Fragment>
             
         )
