@@ -144,20 +144,7 @@ class PCParts extends React.Component{
 
                     <span>
 
-                        <h3>Power Supply (PSU)</h3>
-
-                        <p> 
-                            Power Supply (PSU): The power supply draws power from the wall to supply your computer with enough power in order for it to run 
-                            and operate with what you’re doing. It’s often a good idea to get one that’ll easily supply more power to the computer incase 
-                            you're doing heavy work.
-                        </p>
-
-                    </span>
-                    < br />
-
-                    <span>
-
-                        <h3>Optical Driver</h3>
+                        <h3>Optical Drive</h3>
 
                         <p> 
                             An optical drive is what allows you to read and write to a disc. But because of the internet, these are quickly becoming unneeded.
