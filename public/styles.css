@@ -2,26 +2,40 @@
 a {
     text-decoration: none;
 }
-body {
+/* body {
     background-color: #ffffff;
-}
+} */
 
 p {
-    font-family: Merriweather, serif;
-    color: #24305e!important;
+  font-family: Merriweather, serif;
+  color: #24305e!important;
 }
 
-h1, h2 {
-    font-family: 'Orbitron';
-    color: #303c6c!important;
+h1 {
+  font-family: 'Orbitron';
+  color: #303c6c!important;
+  z-index: 2;
+}
+h2 {
+  font-family: 'Orbitron';
+  color: #303c6c!important;
+  padding-top: 16px;
 }
 h3 {
-    color: #24305e!important;
-    font-family: 'Merriweather';
-    margin-top: 16px;
+  color: #24305e!important;
+  font-family: 'Merriweather';
+  margin-top: 16px;
 }
 h4, h5, h6, li, strong {
-    color: #24305e!important;
+  color: #24305e!important;
+}
+
+.addtip {
+  background-color: #d2fdff;
+  border: 1px solid #000000;
+  margin: auto;
+  padding: 4px;
+  width: 8em;
 }
 
 .carousel {
@@ -32,9 +46,17 @@ h4, h5, h6, li, strong {
     margin-bottom: 48px;
     width: 80%;
 }
-
+.content {
+  margin-left: 16px;
+  margin-right: 16px;
+}
 .menubar {
     background-color:#a8d0e6;
+}
+.navbar {
+  margin-left: auto;
+  width: 204px;
+  z-index: 1;
 }
 .slick-dots {
     left: -28px;
