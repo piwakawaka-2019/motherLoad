@@ -45,8 +45,7 @@ handleCategory(event){
 
 
       <Fragment>
-  <div className='content'>
-              <h2 className="title is-2">
+          <h2 className='title is-2 has-text-centered has-text-white'>
                   Tweet of advice 
               </h2>
               <form onSubmit={this.handleSubmit}>
@@ -97,7 +96,6 @@ handleCategory(event){
                       </div>
                   </div>
               </form>
-          </div>
       </Fragment>
     )
   }

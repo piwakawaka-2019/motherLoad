@@ -2,6 +2,7 @@ import React , {Fragment} from 'react'
 import {connect} from 'react-redux'
 
 import{fetchTutorials} from "../actions/receive"
+import Filter from "./Filter"
  
 
 class Tutorials extends React.Component {
@@ -12,13 +13,14 @@ class Tutorials extends React.Component {
     render() {
         return(
             <Fragment>
-                <div className='content'>
-                    <h2 className='title is-2'>Tutorials</h2>
+                <h2 className='title is-2 has-text-white has-text-centered'>Tutorials</h2>
+                <div className='content has-text-left' id="cleanUp">
+                    
 
                     {this.props.tutorials.map(tutorials => {
                         return(
                             <Fragment>
-                                <h3>
+                                <h3 className="has-text-white">
                                 {tutorials.title}
                             </h3>
                             <p>{tutorials.description}</p>
