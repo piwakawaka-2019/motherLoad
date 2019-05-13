@@ -50,7 +50,7 @@ export function App({auth}) {
           <Route path="/tutorials" component={Tutorials} />
           <Route path="/tips" component={Tips} />
           <Route path="/articles" component={Articles} />
-          <Route path="/advice" component={AdviceForm} />
+          {/* <Route path="/advice" component={AdviceForm} /> */}
           <Route path="/search" component={Filter} />
         </div>
 
