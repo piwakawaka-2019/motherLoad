@@ -12,15 +12,19 @@ class Articles extends React.Component{
                     <h2 className='title is-2'>Articles</h2>
                     
                     <div className="box">
-                        This is a article about the Power Supply.
+                        <p>This is a article about the Power Supply.</p>
                     </div>
 
                     <div className='box'>
-                        This is an article about computer Peripherals.
+                        <p>This is an article about computer Peripherals.</p>
                     </div>
 
                     <div className='box'>
-                        This is an article about Graphics Cards 
+                        <p>This is an article about Graphics Cards</p>
+                    </div>
+
+                    <div className='box'>
+                        <p>This is an article about how to use Windows 10</p>
                     </div>
                 </div>
             </Fragment>

@@ -3,13 +3,8 @@ const $ = require('cheerio')
 const url = 'https://www.tomshardware.com/reviews/monitor-buying-guide,5699.html'
 
 rp(url)
-    .then(function(html) {
+    .then(html => {
         //Success!
-
-        // console.log(html)
-
-        // const paras = $('div.content p', html)
-        // console.log(paras[0].children[0].data)
 
         const wikiUrls = [];
         const paras = $('div.content p', html)
@@ -21,20 +16,9 @@ rp(url)
 
         console.log(wikiUrls)
 
-        // console.log($('p > span', html).length);
-        // console.log($('p > span', html));
-
-        // return Promise.all(
-        //   wikiUrls.map (function(url) {
-        //     return potusParse('https://www.extremetech.com' + url);
-        //   })
-        // );
-
-        // console.log(html)
-
   })
 
-  .catch(function(err){
+  .catch(err => {
     //handle error
     console.log(err);
 });

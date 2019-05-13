@@ -3,9 +3,9 @@ const $ = require('cheerio')
 const url = 'https://www.furenexo.com/gaming-headsets/'
 
 rp(url)
-    .then(html => {
+    .then(function(html) {
         //Success!
-        
+
         // const paras = $('.itemBody p', html)
         // console.log(paras)
 
@@ -23,7 +23,7 @@ rp(url)
 
   })
 
-  .catch(err => {
+  .catch(function(err){
     //handle error
     console.log(err);
 });

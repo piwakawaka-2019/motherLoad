@@ -3,15 +3,8 @@ const $ = require('cheerio')
 const url = 'https://pureinfotech.com/choose-power-supply-pc/';
 
 rp(url)
-  .then(function(html){
+  .then(html => {
     //success!
-
-    // console.log(html)
-
-    // const paras = $('.entry-content p', html)
-    // console.log(paras[5].children[0].data)
-
-
 
     const wikiUrls = [];
     const paras = $('.entry-content p', html)
@@ -22,26 +15,11 @@ rp(url)
 
     // console.log(wikiUrls[0])
 
-    // console.log($('p > span', html).length);
-    // console.log($('p > span', html));
-
-    // return Promise.all(
-    //   wikiUrls.map (function(url) {
-    //     return potusParse('https://www.extremetech.com' + url);
-    //   })
-    // );
-
-    // console.log(html)
-
   })
 
-  .catch(function(err){
+  .catch(err => {
     //handle error
     console.log(err);
   });
 
-
-// const urlLoadPure = () => {
-//     console.log(wikiUrls[0])
-// }
 
