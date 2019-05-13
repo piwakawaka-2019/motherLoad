@@ -243,7 +243,7 @@ nav::before {
 
 /* helper */
 /* line 182, ../../sass/sass/screen.scss */
-.visuallyhidden {
+/* .visuallyhidden {
   border: 0;
   clip: rect(0 0 0 0);
   height: 1px;
@@ -252,8 +252,11 @@ nav::before {
   padding: 0;
   position: absolute;
   width: 1px;
-}
+} */
 
+.visuallyhidden {
+  padding-left: 125%;
+}
 
 #menu {
   /* margin-left: 3px; */
