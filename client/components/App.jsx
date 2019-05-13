@@ -27,7 +27,7 @@ export function App({auth}) {
         <Main />
 
         {auth.isAuthenticated &&
-            <Route path="/" component={RegisteredUsersHome} />
+            <Route exact path="/" component={RegisteredUsersHome} />
           }
         <br />
       

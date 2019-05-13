@@ -2,6 +2,7 @@ import React , {Fragment} from 'react'
 import {connect} from 'react-redux'
 
 import{fetchTutorials} from "../actions/receive"
+import Filter from "./Filter"
  
 
 class Tutorials extends React.Component {
@@ -12,6 +13,7 @@ class Tutorials extends React.Component {
     render() {
         return(
             <Fragment>
+                <Filter />
                 <div className='content'>
                     <h2 className='title is-2'>Tutorials</h2>
 
