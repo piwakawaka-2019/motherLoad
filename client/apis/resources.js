@@ -31,3 +31,11 @@ export function getDataByCategory (arr) {
             console.error("Tip API issues", err)
         });
 }
+export function getCatagories(){
+    return request
+    .get("/api/categories/get-category")
+    .then(res => res.body)
+    .catch(err => {
+        console.error("Tip API issues", err)
+    });
+}
