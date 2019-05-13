@@ -13,9 +13,9 @@ class Tutorials extends React.Component {
         return(
             <Fragment>
                 <div className='content'>
-                    <h2 className='title is-2'>Tutorials</h2>
+                <h2 className='title is-2 has-text-centered	'>Tutorials</h2>
 
-                    <p><a href="#/addtip">Add a Tip</a></p>
+                    <p className='addtip'><a href="#/addtip"><i className='fas fa-plus' />&nbsp;Add a Tip</a></p>
 
                     {this.props.tutorials.map(tutorials => {
                         return(

@@ -10,6 +10,7 @@ class List extends React.Component {
         return(
             <Fragment>
                 <div className='content'>
+                <br />
                 <Carousel />
                 <p>
                     <ListItem />

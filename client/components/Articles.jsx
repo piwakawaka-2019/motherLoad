@@ -10,7 +10,7 @@ class Articles extends React.Component{
         return(
             <Fragment>
                 <div className='content'>
-                    <h2 className='title is-2'>Articles</h2>
+                <h2 className='title is-2 has-text-centered	'>Articles</h2>
                     <ListItem />
                     {/*
                     {props.articleDB.map(article => {

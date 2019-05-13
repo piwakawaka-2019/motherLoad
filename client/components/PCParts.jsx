@@ -9,10 +9,8 @@ class PCParts extends React.Component{
     render(){
         return(
             <Fragment>
-                <h2 className='title is-2 has-text-centered	'>PC Parts &mdash; What Do They Do?</h2>
                 <div className='content has-text-left' id= "Parts" >
-                     
-
+                <h2 className='title is-2 has-text-centered	'>PC Parts &mdash; What Do They Do?</h2>
                     <span>
 
                         <h3>CPU (Central Processing Unit)</h3>
