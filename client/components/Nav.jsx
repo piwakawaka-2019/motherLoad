@@ -18,7 +18,7 @@ class Nav extends React.Component {
       const {auth, logout} = this.props
       const {showBurger} = this.state
 
-      return <nav className="navbar is-fixed-top">
+      return <div className="navbar ">
         <div className="container">
           <div className="navbar-brand">
             <span onClick={this.toggleBurger} className={`navbar-burger burger ${showBurger ? 'is-active': ''}`} data-target="navbarMenuHeroA">
@@ -35,16 +35,15 @@ class Nav extends React.Component {
                   <Link key="logout" to='/' className="navbar-item is-large" onClick={() => logout()}><i className='fas fa-sign-out-alt' />&nbsp;Logout</Link>
                 ]
                 : [
-                  <Link key= "login" onClick={this.toggleBurger} className="navbar-item is-large" to='/login'><i className='fas fa-sign-in-alt' />&nbsp;Login</Link>,
-                  <Link key= "register" onClick={this.toggleBurger} className="navbar-item" to='/register'><i className='fas fa-user-plus' />&nbsp;Register</Link>
+                  <Link key= "login" onClick={this.toggleBurger} className="navbar-item is-large" to='/login'><i className='fas fa-sign-in-alt' />Login</Link>,
+                  <Link key= "register" onClick={this.toggleBurger} className="navbar-item" to='/register'><i className='fas fa-user-plus' />Register</Link>
                 ]
               }
-              <Link key ="home" onClick={this.toggleBurger} to='/' className="navbar-item is-large" ><i className='fas fa-home' />&nbsp;Home</Link>
             </div>
             
           </div>
         </div>
-      </nav>
+      </div>
     }
   }
   

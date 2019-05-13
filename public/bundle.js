@@ -1348,7 +1348,7 @@ function (_React$Component) {
   _createClass(Main, [{
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null);
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Carousel__WEBPACK_IMPORTED_MODULE_2__["default"], null));
     }
   }]);
 
@@ -1412,8 +1412,7 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "selector"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: "#",
-        className: "active"
+        href: "#"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
         className: "fas fa-home"
       }), "\xA0Home"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
@@ -1512,8 +1511,8 @@ function (_React$Component) {
           auth = _this$props.auth,
           logout = _this$props.logout;
       var showBurger = this.state.showBurger;
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
-        className: "navbar is-fixed-top"
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "navbar "
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1544,21 +1543,14 @@ function (_React$Component) {
         to: "/login"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
         className: "fas fa-sign-in-alt"
-      }), "\xA0Login"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+      }), "Login"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
         key: "register",
         onClick: this.toggleBurger,
         className: "navbar-item",
         to: "/register"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
         className: "fas fa-user-plus"
-      }), "\xA0Register")], react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-        key: "home",
-        onClick: this.toggleBurger,
-        to: "/",
-        className: "navbar-item is-large"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        className: "fas fa-home"
-      }), "\xA0Home")))));
+      }), "Register")]))));
     }
   }]);
 
@@ -1978,7 +1970,13 @@ function (_React$Component) {
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Filter__WEBPACK_IMPORTED_MODULE_3__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
         className: "title is-2 has-text-centered has-text-white"
-      }, "Tips"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "Tips"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Know something we don't? \xA0", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "advice"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "#/advice"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fas fa-plus"
+      }), "\xA0Add a Tip"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "content has-text-left",
         id: "cleanUp"
       }, this.props.tips.map(function (tips) {
@@ -2058,9 +2056,15 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Filter__WEBPACK_IMPORTED_MODULE_3__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
         className: "title is-2 has-text-white has-text-centered"
-      }, "Tutorials"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "Tutorials"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Know something we don't? \xA0", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "advice"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "#/advice"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fas fa-plus"
+      }), "\xA0Add a Tip"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "content has-text-left",
         id: "cleanUp"
       }, this.props.tutorials.map(function (tutorials) {
@@ -28905,7 +28909,7 @@ function warning(message) {
 /*!***************************************************************!*\
   !*** ./node_modules/react-router-dom/esm/react-router-dom.js ***!
   \***************************************************************/
-/*! exports provided: BrowserRouter, HashRouter, Link, NavLink, MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, generatePath, matchPath, withRouter, __RouterContext */
+/*! exports provided: MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, generatePath, matchPath, withRouter, __RouterContext, BrowserRouter, HashRouter, Link, NavLink */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

@@ -17,6 +17,7 @@ class Tips extends React.Component {
 
                 <Filter />
                 <h2 className='title is-2 has-text-centered has-text-white' >Tips</h2>
+                <p>Know something we don't? &nbsp;<span className='advice'><a href="#/advice"><i className='fas fa-plus' />&nbsp;Add a Tip</a></span></p>
                 <div className='content has-text-left' id="cleanUp">
                     
                     {this.props.tips.map(tips => {

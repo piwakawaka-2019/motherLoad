@@ -10,6 +10,12 @@ html , body {
 a {
   text-decoration: none;
 }
+a:link, a:visited {
+  color: #5ab9ea;
+}
+a:hover {
+  color: #5ab9ea;
+}
 
 #header h1 {
   font-family: 'Orbitron';

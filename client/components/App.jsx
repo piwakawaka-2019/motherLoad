@@ -43,7 +43,8 @@ export function App({auth}) {
           }
           {!auth.isAuthenticated &&
             <Route path="/advice" component={Login} />
-          }        
+          }
+        
           <Route path="/login" component={Login} />
           <Route path="/register" component={Register} />
           <Route path="/pcparts" component={PCParts} />
