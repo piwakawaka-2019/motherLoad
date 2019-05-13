@@ -15,6 +15,7 @@ import Tips from './Tips'
 import Articles from './Articles'
 import AdviceForm from './AdviceForm'
 import RegisteredUsersHome from './RegisteredUsersHome.jsx';
+import Filter from './Filter';
 
 export function App({auth}) {
   return (
@@ -48,6 +49,7 @@ export function App({auth}) {
           <Route path="/tips" component={Tips} />
           <Route path="/articles" component={Articles} />
           <Route path="/advice" component={AdviceForm} />
+          <Route path="/search" component={Filter} />
         </div>
 
       </div>
