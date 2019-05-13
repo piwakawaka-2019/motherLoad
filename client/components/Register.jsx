@@ -61,7 +61,7 @@ class Register extends React.Component {
           </label>
         </div>
         <br />
-        <input className="button is-success is-large is-fullwidth" value="Register" type="submit" />
+        <input id="button" className="button is-success is-large is-fullwidth" value="Register" type="submit" />
       </form>
     )
   }

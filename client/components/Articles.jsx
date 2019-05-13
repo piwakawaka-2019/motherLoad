@@ -8,7 +8,7 @@ class Articles extends React.Component{
     render(){
         return(
             <Fragment>
-                <h2 className='title is-2 has-text-centered'>Articles</h2>
+                <h2 className='title is-2 has-text-centered has-text-white'>Articles</h2>
                 <div className='content' id="cleanUp">
             
 
