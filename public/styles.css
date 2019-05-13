@@ -108,10 +108,25 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#05abe0', end
 .carousel {
   background-color: #d2fdff;
   border: 1px solid;
-  border-color: #24305e;
+  border-color: #5ab9ea;
+  color: #24305e;
   margin: auto;
   margin-bottom: 48px;
   width: 80%;
+}
+.slick-dots {
+  left: 0px;
+}
+.slick-dots li button:before {
+  color: #d2fdff!important;
+}
+.slick-prev:before,
+.slick-next:before {
+color:#d2fdff!important;
+.wrapper{
+text-align:center;
+margin:16px auto;
+width:100%;
 }
 
 #navcheck {

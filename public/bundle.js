@@ -586,10 +586,14 @@ function App(_ref) {
   var auth = _ref.auth;
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["HashRouter"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "container has-text-centered"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Nav__WEBPACK_IMPORTED_MODULE_6__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Header__WEBPACK_IMPORTED_MODULE_3__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_MenuBar__WEBPACK_IMPORTED_MODULE_5__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Main__WEBPACK_IMPORTED_MODULE_4__["default"], null), auth.isAuthenticated && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Nav__WEBPACK_IMPORTED_MODULE_6__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Header__WEBPACK_IMPORTED_MODULE_3__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_MenuBar__WEBPACK_IMPORTED_MODULE_5__["default"], null), auth.isAuthenticated && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     exact: true,
     path: "/",
     component: _RegisteredUsersHome_jsx__WEBPACK_IMPORTED_MODULE_14__["default"]
+  }), !auth.isAuthenticated && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+    exact: true,
+    path: "/",
+    component: _Main__WEBPACK_IMPORTED_MODULE_4__["default"]
   }), !auth.isAuthenticated && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     exact: true,
     path: "/",
@@ -1646,7 +1650,7 @@ function (_React$Component) {
         className: "has-text-white"
       }, "HDD (Hard Disc Drive):"), " A HDD or often referred to as a hard drive is the typical storage that you might find in a laptop. You would also typically find a hard drive in a computer that would have multiple options to store your files."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", {
         className: "has-text-white"
-      }, "SSD (Solid State Drive):"), "  Unlike a hard drive an SSD doesn\u2019t have any moving parts and stores its information by using \u201Cflash memory\u201D, which will keep all its data/information when there is no power supplied. Because of the way this storage works you get faster speeds when reading and writing data to the SSD."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("storage", {
+      }, "SSD (Solid State Drive):"), "  Unlike a hard drive an SSD doesn\u2019t have any moving parts and stores its information by using \u201Cflash memory\u201D, which will keep all its data/information when there is no power supplied. Because of the way this storage works you get faster speeds when reading and writing data to the SSD."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", {
         className: "has-text-white"
       }, "SSHD (Solid State Hybrid Drive):"), " SSHDs combines both SSDs and HDDs. You\u2019re able to store data on the SSD side of the hybrid drive which people often use for storing their operating system. The HDD side of the hybrid drive is often used as a normal hard drive. Often there is a cache with this which will read often used blocks on the hard drive and store that data on the SSD portion of the hybrid drive for faster reading and writing."))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
         className: "has-text-white"
