@@ -1,22 +1,24 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import Slider from "react-slick";
+// import Slider from "react-slick";
 
 class Carousel extends React.Component {
     constructor(props){
         super(props)
     }
     render(){
-        const settings = {
-            dots: true,
-            infinite: true,
-            speed: 350,
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            autoplay: true,
-            autoplaySpeed: 5000
-        };
-        return(<div className='carousel'>
+        // const settings = {
+        //     dots: true,
+        //     infinite: true,
+        //     speed: 350,
+        //     slidesToShow: 1,
+        //     slidesToScroll: 1,
+        //     autoplay: true,
+        //     autoplaySpeed: 5000
+        //   };
+          
+        return(
+        <div className='carousel'>
         {/* <h2> Single Item</h2> */}
         {/* <Slider {...settings}>
           <div>
