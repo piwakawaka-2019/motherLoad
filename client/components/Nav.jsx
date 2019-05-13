@@ -17,7 +17,7 @@ class Nav extends React.Component {
     render() {
       const {auth, logout} = this.props
       const {showBurger} = this.state
-      return <nav className="navbar">
+      return <nav className="navbar is-fixed-top">
         <div className="container">
           <div className="navbar-brand">
             <span onClick={this.toggleBurger} className={`navbar-burger burger ${showBurger ? 'is-active': ''}`} data-target="navbarMenuHeroA">
@@ -30,15 +30,16 @@ class Nav extends React.Component {
             <div className="navbar-end">
               {auth.isAuthenticated
                 ? [
-                //   <Link to='/registerpet' className="navbar-item is-large" >Contribute</Link>,
-                  <Link to='/' className="navbar-item is-large" onClick={() => logout()}>Logout</Link>
+                // Logged in only.
+                  // <Link to='#' className="navbar-item is-large" >{this.state.user_name}</Link>,
+                  <Link to='/' className="navbar-item is-large" onClick={() => logout()}><i class="fas fa-sign-out-alt" />&nbsp;Logout</Link>
                 ]
-                : [
-                  <Link onClick={this.toggleBurger} className="navbar-item is-large" to='/login'>Login</Link>,
-                  <Link onClick={this.toggleBurger} className="navbar-item" to='/register'>Register</Link>
-                ]
-              }
-              <Link onClick={this.toggleBurger} to='/' className="navbar-item is-large" >Home</Link>
+                : [ //Logged out only.
+                  <Link onClick={this.toggleBurger} className="navbar-item is-large" to='/login'><i class="fas fa-sign-in-alt" />&nbsp;Login</Link>,
+                  <Link onClick={this.toggleBurger} className="navbar-item" to='/register'><i class="fas fa-user-plus" />&nbsp;Register</Link>
+                ] //Display in either logged in or out.
+              } 
+              <Link onClick={this.toggleBurger} to='/' className="navbar-item is-large" ><i class="fas fa-home" />&nbsp;Home</Link>
             </div>
             
           </div>

@@ -15,15 +15,14 @@ import Tutorials from './Tutorials'
 import Tips from './Tips'
 import Articles from './Articles'
 import AddTip from './AddTip'
-//import Contribute from './Contribute'
 
 export function App({auth}) {
   return (
     <Router>
       <div className="container has-text-centered">
-        <Header />
         <Nav />
-        <MenuBar />
+        <Header />
+        <MenuBar />        
 
         <div className=''>
           {auth.isAuthenticated &&
