@@ -1,11 +1,11 @@
-import {SAVE_DATA} from "../actions/add"
+import {GET_POSTSBYUSER} from "../actions/usersposts"
 
 const initialState = []
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case SAVE_DATA:
-    return state
+    case GET_POSTSBYUSER:
+    return action.post
     default:
       return state
   }

@@ -38,5 +38,29 @@ router.get("/tutorials" , (req, res) => {
     });
 
 });
+router.get('/byuser/:id', (req, res)=>{
+    let id = req.params.id
+    db.getPostsByUser(id)
+    .then(userAndPosts =>{
+        let someData = []
+        userAndPosts.map(data =>{
+            console.log('this is the data: ', data)
+            someData.push({
+                type: data.type,
+                title: data.title,
+                source_url: data.source_url,
+                id: data.posts_id,
+                description: data.description,
+                user_name: data.user_name
+            })
+        })
+      res.json(someData);
+    })
+    .catch(err => {
+        console.error(err);
+        res.setStatus(500).json({ error: "It Broke"});
+    });
+  })
+
 
 module.exports = router;

@@ -5,7 +5,7 @@ import tips from './tips'
 import tutorials from "./tutorials"
 import search from './search'
 import categories from './categories'
-import add from './add'
+import postsbyuser from './userposts'
 
 export default combineReducers({
   auth,
@@ -13,5 +13,5 @@ export default combineReducers({
   tutorials,
   search,
   categories,
-  add
+  postsbyuser
 })

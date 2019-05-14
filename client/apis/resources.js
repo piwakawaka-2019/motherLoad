@@ -1,4 +1,5 @@
 import request from "superagent";
+import { func } from "prop-types";
 
 export function getAllResources() {
     return request
@@ -47,4 +48,12 @@ export function addDataToDB (data){
     .then(()=>{
         console.log("done")
     })
+}
+export function getPostsByUser (user){
+    return request
+    .get("/api/resources/byuser/" + user)
+    .then(res => res.body)
+    .catch(err => {
+        console.error("Tip API issues", err)
+    });
 }
