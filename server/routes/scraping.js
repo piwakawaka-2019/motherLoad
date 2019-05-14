@@ -2,7 +2,7 @@ const router = require('express').Router()
 const $ = require('cheerio')
 const rp = require('request-promise')
 // const connection = require("./connection");
-const posts = require("../db/posts")
+const db = require("../db/posts")
 
 router.get('/pureinfotech', (req,res) => {
 
@@ -26,9 +26,10 @@ router.get('/pureinfotech', (req,res) => {
         wikiUrls.push(url,name)
         // res.json(wikiUrls)
 
-        const keyPairs = {title: 'Pureinfotech', description: wikiUrls[0], type: article, source_url: 'https://pureinfotech.com/choose-power-supply-pc/'}
+        const keyPairs = {title: 'Pureinfotech', description: wikiUrls[0], type: 'article', sourceUrl: 'https://pureinfotech.com/choose-power-supply-pc/'}
         
-        posts.addPost(keyPairs)
+        db.addPost(keyPairs)
+        // console.log(wikiUrls)
     })
 
     .catch(err => {
@@ -61,7 +62,11 @@ router.get('/tomshardware', (req,res) => {
         }
 
         wikiUrls.push(url,name)
-        res.json(wikiUrls)
+        // res.json(wikiUrls)
+
+        const keyPairs = {title: "Tom's Hardware", description: wikiUrls[0], type: 'article', source_url: 'https://www.tomshardware.com/reviews/monitor-buying-guide,5699.html'}
+        
+        // db.addPost(keyPairs)
     })
 
     .catch(err => {
@@ -94,7 +99,12 @@ router.get('/extremetech', (req,res) => {
         }
 
         wikiUrls.push(url,name)
-        res.json(wikiUrls)
+        // res.json(wikiUrls)
+
+
+        const keyPairs = {title: "Extreme Tech", description: wikiUrls[0], type: 'article', source_url: 'https://www.extremetech.com/computing/241872-choose-right-mechanical-keyboard/'}
+        
+        // db.addPost(keyPairs)
     })
 
     .catch(err => {
@@ -125,7 +135,12 @@ router.get('/furenexo', (req,res) => {
         }
         
         wikiUrls.push(url,name)
-        res.json(wikiUrls)
+        // res.json(wikiUrls)
+
+
+        const keyPairs = {title: "Furenexo", description: wikiUrls[0], type: 'article', source_url: 'https://www.furenexo.com/gaming-headsets/'}
+        
+        // db.addPost(keyPairs)
     })
 
     .catch(err => {
@@ -157,11 +172,11 @@ router.get('/pcgamer', (req,res) => {
         
         wikiUrls.push(url,name)
         // res.json(wikiUrls)
+
+
+        const keyPairs = {title: "PC Gamer", description: wikiUrls[0], type: 'article', source_url: 'https://www.pcgamer.com/au/how-to-choose-the-right-graphics-card-model/'}
         
-        return db('posts')
-            .then(() => {
-                return Promise
-            }) 
+        // db.addPost(keyPairs)
     })
 
     .catch(err => {
@@ -193,7 +208,12 @@ router.get('/laptopmag', (req,res) => {
         }
         
         wikiUrls.push(url,name)        
-        res.json(wikiUrls)
+        // res.json(wikiUrls)
+
+
+        const keyPairs = {title: "LaptopMag", description: wikiUrls[0], type: 'article', source_url: 'https://www.laptopmag.com/articles/how-to-use-windows-10/'}
+        
+        // db.addPost(keyPairs)
     })
 
     .catch(err => {

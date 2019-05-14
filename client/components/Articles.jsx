@@ -41,30 +41,6 @@ class Articles extends React.Component{
                              </div>
                         )
                     })}
-
-                    {/* {this.props.articles.map(article => {
-                        return (
-                            <div className='box'>
-                                {article.slice(1, 2).map(p => <p>{p}</p>)} 
-                            </div>
-                        )
-                    })}
-
-                    {this.props.articles.map(article => {
-                        return (
-                            <div className='box'>
-                                {article.slice(2, 0).map(p => <p>{p}</p>)}
-                            </div>
-                        )
-                    })}
-                        
-                    {this.props.articles.map(article => {
-                        return (
-                            <div className='box'>
-                                {article.slice(3, 2).map(p => <p>{p}</p>)}
-                            </div>
-                        )
-                    })} */}
                         
                 </div>
             </Fragment>
