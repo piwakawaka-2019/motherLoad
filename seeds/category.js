@@ -49,6 +49,14 @@ exports.seed = function(knex, Promise) {
         id: 11, 
         name: 'General Knowledge',
       },
+      {
+        id: 12, 
+        name: 'Software',
+      },
+      {
+        id: 13, 
+        name: 'Games',
+      },
       ]);
     });
 }; 

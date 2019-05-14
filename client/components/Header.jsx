@@ -7,7 +7,6 @@ class Header extends React.Component {
     }
     render() {
         return(
-
             <Fragment>
                 <div className="hero is-small" id="header">
             <div className="hero-body has-text-centered">

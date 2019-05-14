@@ -2,7 +2,6 @@ import React from 'react'
 import {HashRouter as Router, Route, Link} from 'react-router-dom'
 import {connect} from 'react-redux'
 
-
 import Header from './Header'
 import Main from './Main'
 import MenuBar from './MenuBar'
@@ -16,19 +15,26 @@ import Articles from './Articles'
 import AdviceForm from './AdviceForm'
 import RegisteredUsersHome from './RegisteredUsersHome.jsx';
 import Filter from './Filter';
+import List from './List'
 
 export function App({auth}) {
   return (
     <Router>
       <div className="container has-text-centered">
-        <Header />
         <Nav />
+        <Header />
         <MenuBar />
-        <Main />
+        {/* <Main /> */}
 
         {auth.isAuthenticated &&
-            <Route exact path="/" component={RegisteredUsersHome} />
-          }
+          <Route exact path="/" component={RegisteredUsersHome} />
+        }
+        {!auth.isAuthenticated &&
+          <Route exact path="/" component={Main} />
+        }        
+        {!auth.isAuthenticated &&
+          <Route exact path="/" component={List} />
+        }
         <br />
       
         <div className=''>
@@ -48,6 +54,7 @@ export function App({auth}) {
           <Route path="/tutorials" component={Tutorials} />
           <Route path="/tips" component={Tips} />
           <Route path="/articles" component={Articles} />
+          {/* <Route path="/advice" component={AdviceForm} /> */}
           <Route path="/search" component={Filter} />
         </div>
 
