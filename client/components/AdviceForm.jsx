@@ -45,60 +45,56 @@ handleCategory(event){
 
 
       <Fragment>
-          <h2 className='title is-2 has-text-centered has-text-white'>
+          <h2 className='title is-3 has-text-centered has-text-white'>
                   Tweet of advice 
               </h2>
-              <form onSubmit={this.handleSubmit}>
+              <form id="LnRForm"className="AdviceForm form box" onSubmit={this.handleSubmit}>
                   <div className="field">
 
-                      <label className="label has-text-white">
-                          Title
+                      <label className="column is-6 label has-text-left is-large has-text-white ">
+                          <h2 className="title is-2 has-text-white"> Title </h2>
                       </label>
                       <div className="control">
-                          <input className="input" type="text" name="title" placeholder='title'onChange={this.handleChange} /><br /><br />
+                          <input className="input textarea is-large has-text-grey" type="text" name="title" placeholder='Title'onChange={this.handleChange} />
                       </div>
+
+                      <label className="column is-6 label is-large has-text-white has-text-left"></label>
                       
-                      <label className="label has-text-white">
+                      <label className="column is-6 label is-large has-text-white has-text-left">
                           I'd like to give advice on:
                       </label>
-                      <div className="control">
+                      <div  className="control">
                       {this.props.categories.map(category =>{
                         return(
-                            <div key={category.id} className='b-checkbox is-inline '>
-                            
-                            <span className='has-text-white'>
-                            <input type="checkbox" name={category.name} value={category.id} onChange={this.handleCategory} />{category.name}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            </span>
+                            <div id="adviceChecks" className="column" key={category.id}>
+                            <input type="checkbox"  name={category.name} value={category.id} onChange={this.handleCategory} />
+                            <h2 className="has-text-white">{category.name}</h2>
                             </div>
                         )   
                         })}
                         <br /><br />
                       </div>
-
-
-
-
-
-                      <label className="label has-text-white">
+                      <label className="column is-6 label is-large has-text-white has-text-left">
                           Advice
                       </label>
                       <div className="control">
-                          <textarea className="textarea" name="description" placeholder="Enter a tweet of advice" onChange={this.handleChange}></textarea>
+                          <textarea className="textarea has-text-grey textarea is-medium" name="description" placeholder="Enter a tweet of advice" onChange={this.handleChange}></textarea>
                       </div>
-                      <div className="control is-inline">
-                        <span className='has-text-white'><input type="radio" name="type" value="tip" onChange={this.handleChange}/>&nbsp;Tip&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                        <span className='has-text-white'><input type="radio" name="type" value="tutorial" onChange={this.handleChange}/>&nbsp;Tutorial</span>
+                      <br />
+                      <div className="control">
+                      <div id="adviceR"><input type="radio" name="type" value="tip" onChange={this.handleChange}/><p>Tip</p></div>
+                        <div id="adviceR"><input type="radio" name="type" value="tutorial" onChange={this.handleChange}/><p>Tutorial</p></div>
+                        
                       </div>
-                      <br /><br />
-                      <label className="label has-text-white">
-                          URL for Tutorial
+                      <label className="column is-6 label is-large has-text-white has-text-left">
+                          Url for Tutorial
                       </label>
                       <div className="control">
-                          <input className="input" type="text" name="sourceUrl" placeholder='url here' onChange={this.handleChange} />
+                          <input className="input has-text-grey" type="text" name="sourceUrl" placeholder='url here' onChange={this.handleChange} />
                       </div> <br/>
                       <div className="control">
-                          <label className="label">
-                              <input className="input is-large is-success" type="submit" value='Submit' onSubmit={this.handleSubmit}/>
+                          <label className="column is-6 label is-large has-text-white has-text-left">
+                              <input className="input has-text-grey" type="submit" onSubmit={this.handleSubmit}/>
                           </label>
                       </div>
                   </div>
