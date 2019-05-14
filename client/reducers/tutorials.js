@@ -1,14 +1,14 @@
-import {GET_TUTORIAL} from "../actions/receive"
+import { GET_TUTORIAL } from "../actions/receive";
 
-const initialState = []
+const initialState = [];
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case GET_TUTORIAL:
-    return action.tutorials
+      return action.tutorials;
     default:
-      return state
+      return state;
   }
-}
+};
 
-export default reducer
+export default reducer;
