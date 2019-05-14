@@ -1,5 +1,4 @@
 import request from "superagent";
-import { func } from "prop-types";
 
 export function getAllResources() {
     return request

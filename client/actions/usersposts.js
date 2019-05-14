@@ -15,3 +15,9 @@ export function fetchPostsByUser(user){
       })
   }
 }
+
+export function savePostToUser(user, post){
+  return function (dispatch){
+    
+  }
+}
