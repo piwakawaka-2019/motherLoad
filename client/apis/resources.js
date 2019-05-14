@@ -40,13 +40,10 @@ export function getCatagories(){
     });
 }
 export function addDataToDB (data){
-    console.log("api Call")
     return request
     .post("/api/post/add")
     .send(data)
-    .then(()=>{
-        console.log("done")
-    })
+    
 }
 export function getPostsByUser (user){
     return request
@@ -55,4 +52,16 @@ export function getPostsByUser (user){
     .catch(err => {
         console.error("Tip API issues", err)
     });
+}
+export function addPostsByUser (userName, id){
+    let data = {name: userName, id: id}
+    return request
+    .post("/api/post/savepoststouser")
+    .send(data)
+}
+export function deletePostFromUser (userName, id){
+    let data = {name: userName, id: id}
+    return request
+    .post("/api/post/deletepostfromuser")
+    .send(data)
 }
