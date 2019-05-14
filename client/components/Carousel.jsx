@@ -17,7 +17,16 @@ export default class Carousel extends Component {
         {/* <h2> Single Item</h2> */}
         <Slider {...settings}>
           <div>
-            <h3>1</h3>
+            <div>
+              <h3 className="">A useful tool!</h3>
+            </div>
+            
+            <p className="has-text-left">
+              If you haven't come across it already, PC Part picker is a really good place that helps 
+              bring your build together. It tells you when parts don't work together and also gives 
+              you the best and cheapest places to get them. Another great feature they have, is that it allows
+              you to save your builds as well as look at other people's builds to gain ideas.
+            </p>
           </div>
           <div>
             <h3>2</h3>
