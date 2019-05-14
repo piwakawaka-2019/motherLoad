@@ -124,7 +124,6 @@ h3 {
   background: linear-gradient(45deg, #F8E9A1 0%,#F76C6C 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#F8E9A1', endColorstr='#F76C6C',GradientType=1 );
   overflow: visible;
-  
 }
 
 .carousel {
@@ -134,7 +133,12 @@ h3 {
     color: #24305e;
     margin: auto;
     margin-bottom: 48px;
+    margin-top: 20px;
     width: 80%;
+}
+.carousel h3 {
+  padding: 16px;
+  text-decoration-line: none;
 }
 
 .slick-dots li button:before {
