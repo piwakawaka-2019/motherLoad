@@ -35,16 +35,16 @@ class Form extends React.Component {
             <Fragment>
                 <input type="checkbox" id="navcheck" role="button" title="menu"></input>
 
-                <label htmlFor="navcheck" aria-hidden="true" title="menu">
-                    <span className="burger">
-                        <span className="bar">
-                            <span className="visuallyhidden">Filter</span>
+                <label for="navcheck" aria-hidden="true" title="menu">
+                    <span class="burger">
+                        <span class="bar">
+                            <span class="filter has-text-grey-lighter">Filter</span>
                         </span>
                     </span>
                 </label>
 
                 <nav id="menu">
-                    <h2 className="title is-2">Filter By:</h2>
+                    <h2 className="title is-2">Filter:</h2>
                     <div>
                         
                         

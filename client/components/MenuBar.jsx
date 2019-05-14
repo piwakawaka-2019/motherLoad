@@ -8,7 +8,7 @@ class MenuBar extends React.Component {
         return(
 
             <Fragment>
-                <div className="wrapper">
+                <div id="menuSlider" className="wrapper">
                     <div key="navbar" className="tabs">
                         <div className="selector"></div>
                         <a href="#" ><i className="fas fa-home"></i>Home</a>
