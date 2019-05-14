@@ -1,4 +1,5 @@
 import request from "superagent";
+import { func } from "prop-types";
 
 export function getAllResources() {
     return request
@@ -85,3 +86,29 @@ export function getLaptopmagData () {
             console.log("Web Scrapping API issues", err)
         });
 };
+}
+export function getCatagories(){
+    return request
+    .get("/api/categories/get-category")
+    .then(res => res.body)
+    .catch(err => {
+        console.error("Tip API issues", err)
+    });
+}
+export function addDataToDB (data){
+    console.log("api Call")
+    return request
+    .post("/api/post/add")
+    .send(data)
+    .then(()=>{
+        console.log("done")
+    })
+}
+export function getPostsByUser (user){
+    return request
+    .get("/api/resources/byuser/" + user)
+    .then(res => res.body)
+    .catch(err => {
+        console.error("Tip API issues", err)
+    });
+}

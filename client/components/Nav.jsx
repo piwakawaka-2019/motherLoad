@@ -17,7 +17,8 @@ class Nav extends React.Component {
     render() {
       const {auth, logout} = this.props
       const {showBurger} = this.state
-      return <nav className="navbar">
+
+      return <div className="navbar">
         <div className="container">
           <div className="navbar-brand">
             <span onClick={this.toggleBurger} className={`navbar-burger burger ${showBurger ? 'is-active': ''}`} data-target="navbarMenuHeroA">
@@ -31,19 +32,19 @@ class Nav extends React.Component {
               {auth.isAuthenticated
                 ? [
                 //   <Link to='/registerpet' className="navbar-item is-large" >Contribute</Link>,
-                  <Link to='/' className="navbar-item is-large" onClick={() => logout()}>Logout</Link>
+                  <Link key="logout" to='/' className="navbar-item is-large" onClick={() => logout()}>Logout</Link>
                 ]
                 : [
-                  <Link onClick={this.toggleBurger} className="navbar-item is-large" to='/login'>Login</Link>,
-                  <Link onClick={this.toggleBurger} className="navbar-item" to='/register'>Register</Link>
+                  <Link key= "login" onClick={this.toggleBurger} className="navbar-item is-large" to='/login'>Login</Link>,
+                  <Link key= "register" onClick={this.toggleBurger} className="navbar-item" to='/register'>Register</Link>
                 ]
               }
-              <Link onClick={this.toggleBurger} to='/' className="navbar-item is-large" >Home</Link>
+              <Link key ="home" onClick={this.toggleBurger} to='/' className="navbar-item is-large" >Home</Link>
             </div>
             
           </div>
         </div>
-      </nav>
+      </div>
     }
   }
   

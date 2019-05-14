@@ -7,6 +7,7 @@ const authRoutes = require('./routes/auth')
 const resourceRoutes = require('./routes/posts')
 const categoreyRoutes = require('./routes/category')
 const scrappingRoutes = require('./routes/scraping')
+const addRoutes = require('./routes/addPost')
 
 
 // const stuff = require('./db/category')
@@ -23,6 +24,7 @@ server.use('/api/resources', resourceRoutes)
 server.use('/api/categories', categoreyRoutes)
 server.use('/api/auth', authRoutes)
 server.use('/api/scrapping', scrappingRoutes)
+server.use('/api/post', addRoutes)
 
 
 

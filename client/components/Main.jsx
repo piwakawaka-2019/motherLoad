@@ -1,6 +1,7 @@
 import React , {Fragment} from 'react'
 import {connect} from 'react-redux'
 import Carousel from './Carousel'
+// import RegisteredUsersHome from './RegisteredUserHome';
 
 
 class Main extends React.Component {
@@ -11,9 +12,8 @@ class Main extends React.Component {
         return(
 
             <Fragment>
-                <div className='content'>
-            <Carousel />
-        </div>
+
+            {/* <Carousel /> */}
             </Fragment>
             
         )

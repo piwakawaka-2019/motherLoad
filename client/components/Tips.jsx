@@ -2,6 +2,8 @@ import React , {Fragment} from 'react'
 import {connect} from 'react-redux'
 
 import{fetchTips} from "../actions/receive"
+
+import Filter from "../components/Filter"
  
 
 class Tips extends React.Component {
@@ -12,16 +14,20 @@ class Tips extends React.Component {
     render() {
         return(
             <Fragment>
-                <div className='content'>
-                    <h2 className='title is-2'>Tips</h2>
 
+                <Filter />
+                <h2 className='title is-2 has-text-centered has-text-white' >Tips</h2>
+                <div className='content has-text-left' id="cleanUp">
+                    
                     {this.props.tips.map(tips => {
                         return(
                             <Fragment>
-                                <h3>
-                                {tips.title}
-                            </h3>
-                            <p>{tips.description}</p>
+                                <h3 className="has-text-white">
+                                    {tips.title}
+                                </h3>
+                                <p>
+                                    {tips.description}
+                                </p>
                             </Fragment>
                         )
                     })}

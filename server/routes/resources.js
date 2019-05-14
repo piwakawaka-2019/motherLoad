@@ -2,6 +2,7 @@ const express = require('express')
 const db = require('../db/db')
 const router = express.Router()
 
+
 router.get('/', (req, res) => {
   db.getBeers()
   .then(beers => {
@@ -16,5 +17,7 @@ router.get('/:id', (req, res) => {
     res.json(beer)
   })
 })
+
+
 
 module.exports = router
