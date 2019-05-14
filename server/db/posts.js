@@ -28,13 +28,10 @@ function addPostWithCategory(postObj, db = connection){
     })
 }
 function addPost(postObj, db = connection){
-    console.log('db called', postObj)
     return db("posts")
     .insert({title: postObj.title, description: postObj.description, type: postObj.type, source_url: postObj.sourceUrl})
-    
+    .then()
 }
-
-addPost({title: 'Pureinfotech', description: 'yeet', type: 'article', sourceUrl: 'https://pureinfotech.com/choose-power-supply-pc/'})
 
 function getPostsByUser (name, db = connection ){
     return db('posts')

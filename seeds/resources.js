@@ -1,3 +1,5 @@
+const { scrapeExtremetech, scrapeFurenexo, scrapeLaptop, scrapePcgamer, scrapePureinfotech, scrapeTomshardware } = require('../server/routes/scraping')
+
 exports.seed = function (knex, Promise) {
   // Deletes ALL existing entries
   return knex('posts').del()
@@ -26,5 +28,13 @@ exports.seed = function (knex, Promise) {
           source_url: ""
         },
       ])
+    })
+    .then(function () {
+      scrapeExtremetech()
+      scrapeFurenexo()
+      scrapeLaptop()
+      scrapePcgamer()
+      scrapePureinfotech()
+      scrapeTomshardware()
     })
 }
