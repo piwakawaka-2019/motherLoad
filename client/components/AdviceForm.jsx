@@ -67,7 +67,7 @@ handleCategory(event){
                             <div key={category.id} className='b-checkbox is-inline '>
                             
                             <span className='has-text-white'>
-                            <input type="checkbox" name={category.name} value={category.id} onChange={this.handleCategory} />&nbsp;{category.name}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <input type="checkbox" name={category.name} value={category.id} onChange={this.handleCategory} />{category.name}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             </span>
                             </div>
                         )   
