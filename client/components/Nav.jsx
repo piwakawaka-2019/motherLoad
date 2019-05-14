@@ -19,7 +19,7 @@ class Nav extends React.Component {
       const {showBurger} = this.state
 
       return <div className="navbar ">
-        <div className="container">
+        {/* <div className="container">
           <div className="navbar-brand">
             <span onClick={this.toggleBurger} className={`navbar-burger burger ${showBurger ? 'is-active': ''}`} data-target="navbarMenuHeroA">
               <span></span>
@@ -42,7 +42,19 @@ class Nav extends React.Component {
             </div>
             
           </div>
-        </div>
+        </div> */}
+        <div className="navbar-end">
+              {auth.isAuthenticated
+                ? [
+                //   <Link to='/registerpet' className="navbar-item is-large" >Contribute</Link>,
+                  <Link key="logout" to='/' className="navbar-item is-large has-text-grey-lighter" onClick={() => logout()}>Logout</Link>
+                ]
+                : [
+                  <Link key= "login" onClick={this.toggleBurger} className="navbar-item is-large has-text-grey-lighter	" to='/login'><i className='fas fa-sign-in-alt' />Login</Link>,
+                  <Link key= "register" onClick={this.toggleBurger} className="navbar-item has-text-grey-lighter	" to='/register'><i className='fas fa-user-plus' />Register</Link>
+                ]
+              }
+            </div>
       </div>
     }
   }

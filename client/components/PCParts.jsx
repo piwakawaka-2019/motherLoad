@@ -36,12 +36,12 @@ class PCParts extends React.Component{
 
                         <ul>
 
-                            <li>
+                            <li className="has-text-white">
                                 <strong className="has-text-white">Liquid cooling:</strong> a liquid cooling block is usually connected to the CPU and has a reservoir of extra 
                                 coolant waiting to be used to cool down the CPU.
                             </li>
 
-                            <li>
+                            <li className="has-text-white">
                                 <strong className="has-text-white">Fan cooling:</strong> Typically when using fan cooling you would have a heatsink attached to the fan, and the 
                                 heatsink is what gets attached to the CPU using thermal paste/compound, which helps dissipate the heat. 
                             </li>
@@ -85,20 +85,20 @@ class PCParts extends React.Component{
 
                         <ul>
 
-                            <li>
+                            <li className="has-text-white">
                                 <strong className="has-text-white">HDD (Hard Disc Drive):</strong> A HDD or often referred to as a hard drive is the typical storage 
                                 that you might find in a laptop. You would also typically find a hard drive in a computer that would have 
                                 multiple options to store your files.
                             </li>
 
-                            <li>
-                                <strong className="has-text-white">SSD (Solid State Drive):</strong>  Unlike a hard drive an SSD doesn’t have any moving parts and stores 
+                            <li className="has-text-white">
+                                <strong className="has-text-white" >SSD (Solid State Drive):</strong>  Unlike a hard drive an SSD doesn’t have any moving parts and stores 
                                 its information by using “flash memory”, which will keep all its data/information when there is no power supplied. 
                                 Because of the way this storage works you get faster speeds when reading and writing data to the SSD.
                             </li>
 
-                            <li>
-                                <storage className="has-text-white">SSHD (Solid State Hybrid Drive):</storage> SSHDs combines both SSDs and HDDs. You’re able to store data on the 
+                            <li className="has-text-white">
+                                <storage className="has-text-white" >SSHD (Solid State Hybrid Drive):</storage> SSHDs combines both SSDs and HDDs. You’re able to store data on the 
                                 SSD side of the hybrid drive which people often use for storing their operating system. The HDD side of the hybrid drive is 
                                 often used as a normal hard drive. Often there is a cache with this which will read often used blocks on the hard drive and 
                                 store that data on the SSD portion of the hybrid drive for faster reading and writing.

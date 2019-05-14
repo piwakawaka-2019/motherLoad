@@ -38,13 +38,13 @@ class Form extends React.Component {
                 <label for="navcheck" aria-hidden="true" title="menu">
                     <span class="burger">
                         <span class="bar">
-                            <span class="visuallyhidden">Filter</span>
+                            <span class="filter has-text-grey-lighter">Filter</span>
                         </span>
                     </span>
                 </label>
 
                 <nav id="menu">
-                    <h2 className="title is-2">Filter By:</h2>
+                    <h2 className="title is-2">Filter:</h2>
                     <div>
                         
                         
