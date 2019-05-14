@@ -10,24 +10,34 @@ class Form extends React.Component {
     constructor(props){
         super(props)
         this.state={
-
+            tips: true
         }
         this.handleChange = this.handleChange.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
     }
     componentDidMount(){
         this.props.dispatch(fetchCategories())
+        this.setState({
+            tips: true,
+        })
     }
     handleSubmit(event){
         event.preventDefault()
         let values = Object.values(this.state)
         this.props.dispatch(fetchSearch(values))
+        this.setState({
+            tips: false
+        })
     }
     handleChange(event){
         this.setState({
             [event.target.name]: event.target.value
           })
-
+    }
+    handleClear(){
+        this.setState({
+            tips: true
+        })
     }
     render() {
         return(
@@ -49,30 +59,27 @@ class Form extends React.Component {
                         
                         
                         <form className="filterForm" onSubmit={this.handleSubmit}>
-                            {this.props.categories.map(category =>{
+                            {this.state.tips && this.props.categories.map(category =>{
                                 return(
                                     <Fragment> 
-                                        <ul>
-                                        <li>
-                                            <label>
+                                    <ul>
+                                    <li>
+                                    <label>
                                         <input type="checkbox" name={category.id} value={category.id} onChange={this.handleChange} />
                                         <span>{category.name}</span>
                                     </label>
                                     </li>
                                     </ul>
-                                        
-                                    
-                                    {/* <h2>{category.name}</h2> */}
                                 </Fragment>  
                                 )   
                             })}
-                            <button type='submit'>Filter</button><button type="clear">Clear</button>
+                            <button type='submit'>Filter</button><button type="clear" >Clear</button>
                         </form>
                     </div>           
                 </nav>
 
                 <div>
-                    {this.props.search && <FilterItem/>}
+                    {this.props.search && <FilterItem />}
                 </div> 
 
                 
