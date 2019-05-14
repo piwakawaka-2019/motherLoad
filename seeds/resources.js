@@ -9,7 +9,7 @@ exports.seed = function (knex, Promise) {
         {
           id: 1,
           title: 'Compromise',
-          description: 'You do not need the most expensive pieces to start off start of with a good base and work your way up',
+          description: 'You do not need the most expensive pieces to start off with a good base and work your way up',
           type: 'tip',
           source_url: ""
         },

@@ -10,14 +10,6 @@ class Articles extends React.Component{
         }
     }
 
-    // urls () {
-
-    // }
-
-    // titles () {
-
-    // }
-
     componentDidMount () {
         this.props.dispatch(fetchPureinfotechData())
         // this.props.dispatch(fetchTomshardwareData())
@@ -49,10 +41,10 @@ class Articles extends React.Component{
     }
 }
 
-function mapStateToProps (state) {
-    return {
-        articles: state.articles
-    }
-}
+// function mapStateToProps (state) {
+//     return {
+//         articles: state.articles
+//     }
+// }
 
-export default connect(mapStateToProps)(Articles)
+export default Articles
