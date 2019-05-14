@@ -6,6 +6,7 @@ const passport = require('passport')
 const authRoutes = require('./routes/auth')
 const resourceRoutes = require('./routes/posts')
 const categoreyRoutes = require('./routes/category')
+const scrappingRoutes = require('./routes/scraping')
 const addRoutes = require('./routes/addPost')
 
 
@@ -22,6 +23,7 @@ server.use(express.static(path.join(__dirname, '../public')))
 server.use('/api/resources', resourceRoutes)
 server.use('/api/categories', categoreyRoutes)
 server.use('/api/auth', authRoutes)
+server.use('/api/scrapping', scrappingRoutes)
 server.use('/api/post', addRoutes)
 
 
