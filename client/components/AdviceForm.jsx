@@ -55,10 +55,8 @@ handleCategory(event){
                           Title
                       </label>
                       <div className="control">
-                          <input className="input" type="text" name="title" placeholder='title'onChange={this.handleChange} />
+                          <input className="input" type="text" name="title" placeholder='title'onChange={this.handleChange} /><br /><br />
                       </div>
-
-                      <label className="label has-text-white"></label>
                       
                       <label className="label has-text-white">
                           I'd like to give advice on:
@@ -66,23 +64,32 @@ handleCategory(event){
                       <div className="control">
                       {this.props.categories.map(category =>{
                         return(
-                            <div key={category.id}>
+                            <div key={category.id} className='b-checkbox is-inline '>
                             
-                            <h2 className='has-text-white'><input type="checkbox" name={category.name} value={category.id} onChange={this.handleCategory} />{category.name}</h2>
+                            <span className='has-text-white'>
+                            <input type="checkbox" name={category.name} value={category.id} onChange={this.handleCategory} />&nbsp;{category.name}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            </span>
                             </div>
                         )   
                         })}
+                        <br /><br />
                       </div>
+
+
+
+
+
                       <label className="label has-text-white">
                           Advice
                       </label>
                       <div className="control">
                           <textarea className="textarea" name="description" placeholder="Enter a tweet of advice" onChange={this.handleChange}></textarea>
                       </div>
-                      <div className="control">
-                        <h2 className='has-text-white'><input type="radio" name="type" value="tip" onChange={this.handleChange}/>Tip</h2>
-                        <h2 className='has-text-white'><input type="radio" name="type" value="tutorial" onChange={this.handleChange}/>Tutorial</h2>
+                      <div className="control is-inline">
+                        <span className='has-text-white'><input type="radio" name="type" value="tip" onChange={this.handleChange}/>&nbsp;Tip&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                        <span className='has-text-white'><input type="radio" name="type" value="tutorial" onChange={this.handleChange}/>&nbsp;Tutorial</span>
                       </div>
+                      <br /><br />
                       <label className="label has-text-white">
                           URL for Tutorial
                       </label>

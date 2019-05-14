@@ -97,7 +97,7 @@ class PCParts extends React.Component{
                                 Because of the way this storage works you get faster speeds when reading and writing data to the SSD.
                             </li>
 
-                            <li>
+                            <li className="has-text-white">
                                 <strong className="has-text-white">SSHD (Solid State Hybrid Drive):</strong> SSHDs combines both SSDs and HDDs. You’re able to store data on the 
                                 SSD side of the hybrid drive which people often use for storing their operating system. The HDD side of the hybrid drive is 
                                 often used as a normal hard drive. Often there is a cache with this which will read often used blocks on the hard drive and 
