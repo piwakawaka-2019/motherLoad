@@ -14,7 +14,7 @@ class RandomTips extends React.Component {
                     {this.props.tips.length &&
                         <Fragment>
                             <h2>
-                                <a href={this.props.tips[randomPick].source_url} target='_blank'>{this.props.tips[randomPick].title}</a>
+                                Tip: <a href={this.props.tips[randomPick].source_url} target='_blank'>{this.props.tips[randomPick].title}</a>
                             </h2>
                         <h4>{this.props.tips[randomPick].description}</h4>
                         </Fragment>

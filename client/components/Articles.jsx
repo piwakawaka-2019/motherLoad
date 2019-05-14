@@ -12,7 +12,7 @@ class Articles extends React.Component{
                 <div className='content' id="cleanUp">
             
 
-        </div>
+                </div>
             </Fragment>
 
         )
