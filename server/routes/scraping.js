@@ -5,6 +5,7 @@ const rp = require('request-promise')
 router.get('/pureinfotech', (req,res) => {
 
     var url = 'https://pureinfotech.com/choose-power-supply-pc/';
+    var name = 'Pureinfotech';
 
     rp(url)
     .then(html => {
@@ -20,6 +21,7 @@ router.get('/pureinfotech', (req,res) => {
                 wikiUrls.push(paras[i].children[0].data);
             }
         }
+        wikiUrls.push(url,name)
         res.json(wikiUrls)
     })
 
@@ -35,6 +37,7 @@ router.get('/pureinfotech', (req,res) => {
 router.get('/tomshardware', (req,res) => {
 
     var url = 'https://www.tomshardware.com/reviews/monitor-buying-guide,5699.html';
+    var name = "Tom's HARDWARE"
 
     rp(url)
     .then(html => {
@@ -51,6 +54,7 @@ router.get('/tomshardware', (req,res) => {
             }
         }
 
+        wikiUrls.push(url,name)
         res.json(wikiUrls)
     })
 
@@ -66,6 +70,7 @@ router.get('/tomshardware', (req,res) => {
 router.get('/extremetech', (req,res) => {
 
     var url = 'https://www.extremetech.com/computing/241872-choose-right-mechanical-keyboard/';
+    var name = 'Extreme Tech'
 
     rp(url)
     .then(html => {
@@ -82,6 +87,7 @@ router.get('/extremetech', (req,res) => {
             }
         }
 
+        wikiUrls.push(url,name)
         res.json(wikiUrls)
     })
 
@@ -97,6 +103,7 @@ router.get('/extremetech', (req,res) => {
 router.get('/furenexo', (req,res) => {
 
     var url ='https://www.furenexo.com/gaming-headsets/';
+    var name = 'Furenexo'
 
     rp(url)
     .then(html => {
@@ -110,7 +117,8 @@ router.get('/furenexo', (req,res) => {
                 wikiUrls.push(paras[i].children[0].data);
             }
         }
-
+        
+        wikiUrls.push(url,name)
         res.json(wikiUrls)
     })
 
@@ -126,6 +134,7 @@ router.get('/furenexo', (req,res) => {
 router.get('/pcgamer', (req,res) => {
 
     var url = 'https://www.pcgamer.com/au/how-to-choose-the-right-graphics-card-model/';
+    var name = 'PC Gamer'
 
     rp(url)
     .then(html => {
@@ -140,6 +149,7 @@ router.get('/pcgamer', (req,res) => {
             }
         }
         
+        wikiUrls.push(url,name)
         res.json(wikiUrls)
     })
 
@@ -156,6 +166,7 @@ router.get('/pcgamer', (req,res) => {
 router.get('/laptopmag', (req,res) => {
 
     var url = 'https://www.laptopmag.com/articles/how-to-use-windows-10/';
+    var name = 'LaptopMag'
 
     rp(url)
     .then(html => {
@@ -170,6 +181,7 @@ router.get('/laptopmag', (req,res) => {
             }
         }
         
+        wikiUrls.push(url,name)        
         res.json(wikiUrls)
     })
 
@@ -179,3 +191,5 @@ router.get('/laptopmag', (req,res) => {
     });
 
 });
+
+module.exports = router

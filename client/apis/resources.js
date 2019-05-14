@@ -34,7 +34,7 @@ export function getDataByCategory (arr) {
 
 export function getPureinfotechData () {
     return request 
-        .get("/api/resources/pureinfotech")
+        .get("/api/scrapping/pureinfotech")
         .then(res => res.body)
         .catch(err => {
             console.log("Web Scrapping API issues", err)
@@ -43,7 +43,7 @@ export function getPureinfotechData () {
 
 export function getTomshardwareData () {
     return request 
-        .get("/api/resources/tomshardware")
+        .get("/api/scrapping/tomshardware")
         .then(res => res.body)
         .catch(err => {
             console.log("Web Scrapping API issues", err)
@@ -52,7 +52,7 @@ export function getTomshardwareData () {
 
 export function getExtremetechData () {
     return request 
-        .get("/api/resources/extremetech")
+        .get("/api/scrapping/extremetech")
         .then(res => res.body)
         .catch(err => {
             console.log("Web Scrapping API issues", err)
@@ -61,7 +61,7 @@ export function getExtremetechData () {
 
 export function getFurenexoData () {
     return request 
-        .get("/api/resources/furenexo")
+        .get("/api/scrapping/furenexo")
         .then(res => res.body)
         .catch(err => {
             console.log("Web Scrapping API issues", err)
@@ -70,7 +70,7 @@ export function getFurenexoData () {
 
 export function getPcgamerData () {
     return request 
-        .get("/api/resources/pcgamer")
+        .get("/api/scrapping/pcgamer")
         .then(res => res.body)
         .catch(err => {
             console.log("Web Scrapping API issues", err)
@@ -79,7 +79,7 @@ export function getPcgamerData () {
 
 export function getLaptopmagData () {
     return request 
-        .get("/api/resources/laptopmag")
+        .get("/api/scrapping/laptopmag")
         .then(res => res.body)
         .catch(err => {
             console.log("Web Scrapping API issues", err)
