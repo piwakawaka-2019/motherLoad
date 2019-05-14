@@ -14,6 +14,7 @@ class Postsbyuser extends React.Component {
     this.props.dispatch(
       deletePostSavedToUser(this.props.auth.user.user_name, event.target.name)
     );
+    alert("deleted");
   }
   componentDidMount() {
     this.props.dispatch(fetchPostsByUser(this.props.auth.user.user_name));

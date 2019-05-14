@@ -22,9 +22,9 @@ export function getTutorials() {
     });
 }
 
-export function getDataByCategory(arr) {
+export function getDataByCategory(arr, location) {
   return request
-    .get("/api/categories/category/" + arr)
+    .get("/api/categories/category/" + arr + '/'+ location)
     .then(res => res.body)
     .catch(err => {
       console.error("Tip API issues", err);

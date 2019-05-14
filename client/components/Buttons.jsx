@@ -17,6 +17,7 @@ class Buttons extends React.Component {
   }
 
   render() {
+    console.log(this.props.id)
     return (
       <Fragment>
         <button id="addButton" name={this.props.id} onClick={this.handleAdd}>

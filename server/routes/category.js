@@ -8,9 +8,10 @@ router.get("/get-category", (req, res) => {
     res.json(data);
   });
 });
-router.get("/category/:id", (req, res) => {
+router.get("/category/:id/:location", (req, res) => {
   let id = req.params.id;
-  db.getPostsByCategory(id)
+  let loc = req.params.location
+  db.getPostsByCategory(id, loc)
     .then(response => {
       res.json(response);
     })
