@@ -60,9 +60,6 @@ class Form extends React.Component {
                                     </label>
                                     </li>
                                     </ul>
-                                        
-                                    
-                                    {/* <h2>{category.name}</h2> */}
                                 </Fragment>  
                                 )   
                             })}

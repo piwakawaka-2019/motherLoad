@@ -92,8 +92,8 @@ handleCategory(event){
                           <input className="input has-text-grey" type="text" name="sourceUrl" placeholder='url here' onChange={this.handleChange} />
                       </div> <br/>
                       <div className="control">
-                          <label className="column is-6 label is-large has-text-white has-text-left">
-                              <input className="input has-text-grey" type="submit" onSubmit={this.handleSubmit}/>
+                          <label className="column is-6 label is-large has-text-white has-text-left is-centered">
+                              <input id="button1" className="button " type="submit" onSubmit={this.handleSubmit}/>
                           </label>
                       </div>
                   </div>

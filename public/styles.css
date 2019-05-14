@@ -59,6 +59,14 @@ h3 {
   font-family: 'Merriweather', serif;
 }
 
+#button1 {
+
+  background-color: #97D8B2;
+  color: #33032F;
+  font-family: 'Merriweather', serif;
+  margin-left: 90%;
+}
+
 .navbar{
   background-color: #33032F;
   font-family: 'Merriweather', serif;
@@ -314,6 +322,10 @@ nav::before {
 
 #contribute{
   margin-left: 70%;
+}
+
+#contribute a {
+  color: #F76C6C;
 }
 #menu span {
   padding-bottom: 15px;
