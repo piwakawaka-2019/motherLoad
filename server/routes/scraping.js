@@ -1,6 +1,8 @@
 const router = require('express').Router()
 const $ = require('cheerio')
 const rp = require('request-promise')
+// const connection = require("./connection");
+const posts = require("../db/posts")
 
 router.get('/pureinfotech', (req,res) => {
 
@@ -22,7 +24,11 @@ router.get('/pureinfotech', (req,res) => {
             }
         }
         wikiUrls.push(url,name)
-        res.json(wikiUrls)
+        // res.json(wikiUrls)
+
+        const keyPairs = {title: 'Pureinfotech', description: wikiUrls[0], type: article, source_url: 'https://pureinfotech.com/choose-power-supply-pc/'}
+        
+        posts.addPost(keyPairs)
     })
 
     .catch(err => {
@@ -150,7 +156,12 @@ router.get('/pcgamer', (req,res) => {
         }
         
         wikiUrls.push(url,name)
-        res.json(wikiUrls)
+        // res.json(wikiUrls)
+        
+        return db('posts')
+            .then(() => {
+                return Promise
+            }) 
     })
 
     .catch(err => {

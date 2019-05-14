@@ -86,7 +86,7 @@ export function getLaptopmagData () {
             console.log("Web Scrapping API issues", err)
         });
 };
-}
+
 export function getCatagories(){
     return request
     .get("/api/categories/get-category")

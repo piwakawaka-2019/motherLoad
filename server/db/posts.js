@@ -36,6 +36,12 @@ function getPostsByUser (name, db = connection ){
     .where("users.user_name", name)
 }
 
+function getScrappedData (wikiUrls, db = connection) {
+    return db('posts')
+    
+    .insert({title: null, description: null, type: article, source_url: 'https://pureinfotech.com/choose-power-supply-pc/'})
+} 
+
 // getPostsByUser('eyeball').then((console.log))
 module.exports = {
     getPosts,
@@ -43,4 +49,5 @@ module.exports = {
     getTutorials,
     addPost,
     getPostsByUser,
+    getScrappedData
 }
