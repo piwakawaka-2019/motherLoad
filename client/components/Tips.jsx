@@ -4,7 +4,8 @@ import {connect} from 'react-redux'
 import{fetchTips} from "../actions/receive"
 
 import Filter from "../components/Filter"
- 
+
+
 
 class Tips extends React.Component {
 

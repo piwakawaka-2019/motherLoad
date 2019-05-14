@@ -1,7 +1,11 @@
 import React, { Component } from "react";
 import Slider from "react-slick";
-import{fetchTips} from "../actions/receive"
-import{fetchTutorials} from "../actions/receive"
+import {connect} from 'react-redux'
+import RandomTips from './RandomTips'
+import RandomTutorials from './RandomTutorials'
+
+//const pickOne = Math.floor(Math.random() * (arrayToPull + 1));
+
 
 export default class Carousel extends Component {
   // componentDidMount(){
@@ -50,10 +54,10 @@ export default class Carousel extends Component {
             <h3>At <a href='https://www.computerhope.com'>Computer Hope</a>, you can find people who have a lot of knowledge and have your best intentions at heart.</h3>
           </div>
           <div>
-            <h3>5</h3>
+            <h3><RandomTips /></h3>
           </div>
           <div>
-            <h3>6</h3>
+            <h3><RandomTutorials /></h3>
           </div>
           <div>
             <h3>7</h3>

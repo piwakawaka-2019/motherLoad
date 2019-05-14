@@ -136,6 +136,9 @@ h3 {
     margin-top: 20px;
     width: 80%;
 }
+.carousel a {
+  font-weight: bold;
+}
 .carousel h3 {
   padding: 16px;
   text-decoration-line: none;
