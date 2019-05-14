@@ -12,7 +12,6 @@ function getPostsByCategory (categoryId, db = connection){
     .join("categorise_posts" , "categorise_posts.posts_id", "posts.id")
     .join("category" , "categorise_posts.category_id", "category.id")
     .whereIn("categorise_posts.category_id", arr)
-
 }
 
 function getPostDetailByID(id){

@@ -36,9 +36,9 @@ class Form extends React.Component {
                 <input type="checkbox" id="navcheck" role="button" title="menu"></input>
 
                 <label for="navcheck" aria-hidden="true" title="menu">
-                    <span class="burger">
-                        <span class="bar">
-                            <span class="filter has-text-grey-lighter">Filter</span>
+                    <span className="burger">
+                        <span className="bar">
+                            <span className="filter has-text-grey-lighter">Filter</span>
                         </span>
                     </span>
                 </label>

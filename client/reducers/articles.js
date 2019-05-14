@@ -1,11 +1,11 @@
-import {SAVE_DATA} from "../actions/add"
+import {SAVE_ARTICLES} from "../actions/receive"
 
 const initialState = []
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case SAVE_DATA:
-    return state
+    case SAVE_ARTICLES:
+    return [...state, ...action.articles]
     default:
       return state
   }

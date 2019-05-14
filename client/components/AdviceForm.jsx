@@ -2,7 +2,6 @@ import React , {Fragment} from 'react'
 import {connect} from 'react-redux'
 import { addDataToDB } from '../apis/resources'
 import{ fetchCategories } from "../actions/categories"
-import {addToDataBase} from '../actions/add'
 
 
 class AdviceForm extends React.Component {
@@ -106,7 +105,6 @@ handleCategory(event){
 function mapStateToProps(state) {
     return{
         categories: state.categories,
-        add: state.add
     }
 }
 export default connect(mapStateToProps)(AdviceForm)
