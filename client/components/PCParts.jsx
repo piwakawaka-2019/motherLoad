@@ -98,7 +98,7 @@ class PCParts extends React.Component{
                             </li>
 
                             <li>
-                                <storage className="has-text-white">SSHD (Solid State Hybrid Drive):</storage> SSHDs combines both SSDs and HDDs. You’re able to store data on the 
+                                <strong className="has-text-white">SSHD (Solid State Hybrid Drive):</strong> SSHDs combines both SSDs and HDDs. You’re able to store data on the 
                                 SSD side of the hybrid drive which people often use for storing their operating system. The HDD side of the hybrid drive is 
                                 often used as a normal hard drive. Often there is a cache with this which will read often used blocks on the hard drive and 
                                 store that data on the SSD portion of the hybrid drive for faster reading and writing.

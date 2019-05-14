@@ -103,9 +103,14 @@ a {
     background-color: #d2fdff;
     border: 1px solid;
     border-color: #24305e;
+    color: #24305e;
     margin: auto;
     margin-bottom: 48px;
     width: 80%;
+}
+
+.slick-dots li button:before {
+  color: #d2fdff!important;
 }
 
 #navcheck {

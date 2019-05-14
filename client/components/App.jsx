@@ -24,11 +24,14 @@ export function App({auth}) {
         <Header />
         <Nav />
         <MenuBar />
-        <Main />
+        {/* <Main /> */}
 
         {auth.isAuthenticated &&
-            <Route exact path="/" component={RegisteredUsersHome} />
-          }
+          <Route exact path="/" component={RegisteredUsersHome} />
+        }
+        {!auth.isAuthenticated &&
+          <Route exact path="/" component={Main} />
+        }        
         <br />
       
         <div className=''>
