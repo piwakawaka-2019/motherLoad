@@ -26,6 +26,7 @@ class Form extends React.Component {
       [event.target.name]: event.target.value
     });
   }
+
   render() {
     return (
       <Fragment>
@@ -65,7 +66,7 @@ class Form extends React.Component {
               <button id="filterButton" type="submit">
                 Filter
               </button>
-              <button id="filterButton" type="clear">
+              <button onClick={this.handleClear} id="filterButton" type="clear">
                 Clear
               </button>
             </form>

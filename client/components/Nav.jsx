@@ -18,7 +18,7 @@ class Nav extends React.Component {
     const { auth, logout } = this.props;
 
     return (
-      <div className="navbar ">
+      <div className="navbar">
         <div className="navbar-end">
           {auth.isAuthenticated
             ? [
