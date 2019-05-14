@@ -25,7 +25,7 @@ class Tips extends React.Component {
     render() {
         return(
             <Fragment>
-                <p id="contribute">Know something we don't? &nbsp;<span className='advice'><a href="#/advice"><i className='fas fa-plus' />&nbsp;Add a Tip</a></span></p>
+                <p id="contribute">Know something we don't? &nbsp;<span className='advice'><a href="#/advice"><i className='fas fa-plus' />&nbsp;Grow the base!</a></span></p>
                 <Filter />
                 <h2 className='title is-2 has-text-centered has-text-white' >Tips</h2>
                 
