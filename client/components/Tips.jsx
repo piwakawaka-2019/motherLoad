@@ -3,21 +3,12 @@ import {connect} from 'react-redux'
 
 import{fetchTips} from "../actions/receive"
 import{ savePostToUser } from "../actions/usersposts"
-
+import Buttons from "./Buttons"
 import Filter from "../components/Filter"
 
  
 
 class Tips extends React.Component {
-    constructor(props){
-        super(props)
-        this.handleAdd = this.handleAdd.bind(this)
-    }
-    handleAdd(){
-        event.preventDefault()
-        this.props.dispatch(savePostToUser(this.props.auth.user.user_name, event.target.name))
-        alert('Saved!')
-    }
 
     componentDidMount(){
         this.props.dispatch(fetchTips())
@@ -40,7 +31,8 @@ class Tips extends React.Component {
                                 <p>
                                     {tips.description}
                                 </p>
-                                <button name={tips.id} onClick={this.handleAdd}>add</button>
+
+                                {this.props.auth.isAuthenticated && <Buttons id={tips.id}/>}
                             </Fragment>
                         )
                     })}
