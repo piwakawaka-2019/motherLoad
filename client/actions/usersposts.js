@@ -1,5 +1,5 @@
 export const GET_POSTSBYUSER = "GET_POSTSBYUSER"
-import { getPostsByUser } from "../apis/resources";
+import { getPostsByUser, addPostsByUser, deletePostFromUser} from "../apis/resources";
 export function showPostsByUser(post){
   return {
       type: GET_POSTSBYUSER,
@@ -7,11 +7,28 @@ export function showPostsByUser(post){
   }
 }
 
-export function fetchPostsByUser(user){
+export function fetchPostsByUser(userName){
   return function(dispatch){
-    getPostsByUser(user)
+    getPostsByUser(userName)
       .then(post => {
           dispatch(showPostsByUser(post))
+      })
+  }
+}
+
+export function savePostToUser(userName, post){
+  return function (dispatch){
+    addPostsByUser(userName, post)
+      .then(() =>{
+        dispatch(fetchPostsByUser(userName))
+      })
+  }
+}
+export function deletePostSavedToUser (userName, post){
+  return function (dispatch){
+    deletePostFromUser(userName, post)
+      .then(() =>{
+        dispatch(fetchPostsByUser(userName))
       })
   }
 }

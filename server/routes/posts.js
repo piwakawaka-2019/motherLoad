@@ -44,7 +44,6 @@ router.get('/byuser/:id', (req, res)=>{
     .then(userAndPosts =>{
         let someData = []
         userAndPosts.map(data =>{
-            console.log('this is the data: ', data)
             someData.push({
                 type: data.type,
                 title: data.title,
@@ -61,6 +60,5 @@ router.get('/byuser/:id', (req, res)=>{
         res.setStatus(500).json({ error: "It Broke"});
     });
   })
-
 
 module.exports = router;

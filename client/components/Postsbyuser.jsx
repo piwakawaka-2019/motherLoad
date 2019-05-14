@@ -1,13 +1,19 @@
 import React , {Fragment} from 'react'
 import {connect} from 'react-redux'
 
-import{fetchPostsByUser} from "../actions/usersposts"
+import{fetchPostsByUser, deletePostSavedToUser} from "../actions/usersposts"
  
-
 class Postsbyuser extends React.Component {
 
+  handleDelete(event){
+    event.preventDefault()
+    console.log("delete")
+    const userName = this.props.auth.user.user_name
+    this.props.dispatch(deletePostSavedToUser(userName, event.target.name))
+  }
   componentDidMount(){
-    this.props.dispatch(fetchPostsByUser(this.props.auth.user.user_name))
+    const userName = this.props.auth.user.user_name
+    this.props.dispatch(fetchPostsByUser(userName))
   }
   render() {
     return(
@@ -22,6 +28,7 @@ class Postsbyuser extends React.Component {
                 <p>
                     {post.description}
                 </p>
+                <button name={post.id} onClick={this.handleDelete}>delete</button>
               </Fragment>
             )
           })}
