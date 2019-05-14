@@ -22,6 +22,7 @@ class Login extends React.Component {
     e.preventDefault()
     let {user_name, password} = this.state
     this.props.dispatch(loginUser({user_name, password}))
+    this.props.history.goBack()
   }
   render() {
     const {auth} = this.props
@@ -34,7 +35,7 @@ class Login extends React.Component {
           <input required className="input has-text-centered is-large is-fullwidth" placeholder="User Name" type="text" name="user_name" onChange={this.updateDetails}/>
         </label>
         <label className="label is-large has-text-white has-text-centered">Password
-          <input required className="input has-text-white has-text-centered is-large is-fullwidth" placeholder="Password" type="password" name="password" onChange={this.updateDetails}/>
+          <input required className="input has-text-centered is-large is-fullwidth" placeholder="Password" type="password" name="password" onChange={this.updateDetails}/>
         </label>
         <input id="button" className="button is-large is-fullwidth is-success" value='Login' type="submit" />
       </form>
