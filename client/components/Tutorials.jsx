@@ -14,7 +14,7 @@ class Tutorials extends React.Component {
         return(
             <Fragment>
                 <Filter />
-                <p id="contribute">Know something we don't? &nbsp;<span className='advice'><a href="#/advice"><i className='fas fa-plus' />&nbsp;Add a Tip</a></span></p>
+                <p id="contribute">Know something we don't?<br /><span className='advice'><a href="#/advice"><i className='fas fa-plus' />&nbsp;Add a Tip</a></span></p>
                 <h2 className='title is-2 has-text-white has-text-centered'>Tutorials</h2>
                 
                 <div className='content has-text-left' id="cleanUp">
