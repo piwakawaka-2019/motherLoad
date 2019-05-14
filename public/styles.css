@@ -15,13 +15,16 @@ a {
     text-decoration: none;
 }
 
+h3 {
+  text-decoration: underline;
+}
+
 #header h1 {
     font-family: 'Orbitron';
 }
 
 #header {
   background-color: #33032F;
-  padding: 15px;
   right: 10%;
   font-size: 80px;
 
@@ -29,7 +32,24 @@ a {
 
 #LnRForm {
   background-color: #531253;
+  width: 60%;
+  margin-left: 20%;
 
+}
+#adviceChecks{
+  display: inline-block;
+  padding:2%;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.486)
+}
+#adviceR{
+  display: inline-block;
+  padding:2%;
+ 
+}
+
+#LnRButtons:hover {
+  background-color: #97D8B2;
+  color: #33032F !important;
 }
 
 #button {
@@ -304,8 +324,13 @@ nav::before {
 
 /* size content boxes  */
 #cleanUp {
-    width: 60%;
-    margin-left:20%;
+    width: 80%;
+    margin-left:10%;
+    background-color: #33032F;
+    padding-bottom: 10%;
+    padding-top: 5%;
+    padding-left: 10%;
+    padding-right: 10%;
 }
 
 

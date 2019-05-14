@@ -29,6 +29,7 @@ class Register extends React.Component {
     let {user_name, email, password, confirm_password, first_name, last_name} = this.state
     if (confirm_password != password) return this.props.dispatch(loginError("Passwords don't match"))
     this.props.dispatch(registerUserRequest(this.state))
+    this.props.history.goBack()
   }
   render() {
     const {auth} = this.props
@@ -37,12 +38,15 @@ class Register extends React.Component {
         <h2 className="title is-2 has-text-white">Register</h2>
         <hr />
         {auth.errorMessage && <span className="has-text-danger has-text-white is-large">{auth.errorMessage}</span>}
-          <label className="column is-6 is-offset-one-quarter label is-large has-text-white has-text-centered">*Username
-            <input required className="input is-large has-text-centered is-fullwidth" placeholder="User Name" type="text" name="user_name" onChange={this.updateDetails}/>
-          </label>
-          <label className="column is-6 is-offset-one-quarter label has-text-white is-large has-text-centered">*E-mail
-            <input required className="input is-large has-text-centered is-fullwidth" placeholder="E-mail" type="text" name="email" onChange={this.updateDetails}/>
-          </label>
+        <div className="columns">
+          <label className="column is-6 label is-large has-text-white has-text-centered">*Email
+              <input required className="input is-large  has-text-centered is-fullwidth" placeholder="Email" type="text" name="email" onChange={this.updateDetails}/>
+            </label>
+            <label className="column is-6 label is-large has-text-white has-text-centered">*Username
+              <input required className="input is-large  has-text-centered is-fullwidth" placeholder="User Name" type="text" name="user_name" onChange={this.updateDetails}/>
+            </label>
+        </div>
+          
         <div className="columns">
           <label className="column is-6 label is-large has-text-white has-text-centered">*First Name
             <input required className="input is-large has-text-centered is-fullwidth" placeholder="First Name" type="text" name="first_name" onChange={this.updateDetails}/>
