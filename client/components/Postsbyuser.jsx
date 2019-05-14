@@ -4,16 +4,17 @@ import {connect} from 'react-redux'
 import{fetchPostsByUser, deletePostSavedToUser} from "../actions/usersposts"
  
 class Postsbyuser extends React.Component {
-
+  constructor(props){
+    super(props)
+    this.handleDelete = this.handleDelete.bind(this)
+  }
   handleDelete(event){
     event.preventDefault()
     console.log("delete")
-    const userName = this.props.auth.user.user_name
-    this.props.dispatch(deletePostSavedToUser(userName, event.target.name))
+    this.props.dispatch(deletePostSavedToUser(this.props.auth.user.user_name, event.target.name))
   }
   componentDidMount(){
-    const userName = this.props.auth.user.user_name
-    this.props.dispatch(fetchPostsByUser(userName))
+    this.props.dispatch(fetchPostsByUser(this.props.auth.user.user_name))
   }
   render() {
     return(

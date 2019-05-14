@@ -28,9 +28,9 @@ router.post('/savepoststouser', (req, res)=>{
 })
 router.post('/deletepostfromuser', (req, res)=>{
   let post = req.body
-  db.savePostToUser(post)
-  .then(()=>{
-    // res.setStatus(200).json({ message: "Success" });
+  db.deletePostFromUser(post)
+  .then(data => {
+    console.log("done")
   })
   .catch(err => {
     console.error(err);
