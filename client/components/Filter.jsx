@@ -66,7 +66,7 @@ class Form extends React.Component {
                                 </Fragment>  
                                 )   
                             })}
-                            <button type='submit'>Filter</button>
+                            <button type='submit'>Filter</button><button type="clear">Clear</button>
                         </form>
                     </div>           
                 </nav>
