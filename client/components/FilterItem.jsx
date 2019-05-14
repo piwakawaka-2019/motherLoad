@@ -8,9 +8,9 @@ class FilterItem extends React.Component {
           return(
             <Fragment>
               <div>
-                <h2 className='title is-2 has-text-centered has-text-white'>Type: {data.type}</h2>
-                <h2 className='title is-2 has-text-centered has-text-white'>{data.title}</h2><br/>
-                <p>{data.description}</p>
+                <h5 className='title is-5 has-text-centered has-text-white'>Type: {data.type}</h5>
+                <h4 className='title is-4 has-text-centered has-text-white'><a href={data.source_url} target='_blank'>{data.title}</a></h4>
+                <p>{data.description}</p><hr />
               </div>
             </Fragment>
           )
