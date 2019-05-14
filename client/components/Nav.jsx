@@ -47,11 +47,11 @@ class Nav extends React.Component {
               {auth.isAuthenticated
                 ? [
                 //   <Link to='/registerpet' className="navbar-item is-large" >Contribute</Link>,
-                  <Link key="logout" to='/' className="navbar-item is-large has-text-grey-lighter" onClick={() => logout()} id="LnRButtons">Logout</Link>
+                  <Link key="logout" to='/' className="navbar-item is-large has-text-grey-lighter" onClick={() => logout()} id="LnRButtons"><i class="fas fa-arrow-alt-circle-left"></i> Logout</Link>
                 ]
                 : [
-                  <Link key= "login" onClick={this.toggleBurger} className="navbar-item is-large has-text-grey-lighter	" to='/login' id="LnRButtons"><i className='fas fa-sign-in-alt' />Login</Link>,
-                  <Link key= "register" onClick={this.toggleBurger} className="navbar-item has-text-grey-lighter	" to='/register' id="LnRButtons"><i className='fas fa-user-plus' />Register</Link>
+                  <Link key= "login" onClick={this.toggleBurger} className="navbar-item is-large has-text-grey-lighter	" to='/login' id="LnRButtons"><i className='fas fa-sign-in-alt' /> Login</Link>,
+                  <Link key= "register" onClick={this.toggleBurger} className="navbar-item has-text-grey-lighter	" to='/register' id="LnRButtons"><i className='fas fa-user-plus' /> Register</Link>
                 ]
               }
             </div>
