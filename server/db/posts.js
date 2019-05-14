@@ -16,7 +16,7 @@ function getTutorials (db = connection){
     .where("type" , "tutorial")
 };
 
-function addPost(postObj, db = connection){
+function addPostWithCategory(postObj, db = connection){
     return db("posts")
     .insert({title: postObj.title, description: postObj.description, type: postObj.type, source_url: postObj.sourceUrl})
     .then(ids =>{
@@ -26,6 +26,11 @@ function addPost(postObj, db = connection){
             .insert({posts_id: postId, category_id: category_id})
         }))
     })
+}
+function addPost(postObj, db = connection){
+    return db("posts")
+    .insert({title: postObj.title, description: postObj.description, type: postObj.type, source_url: postObj.sourceUrl})
+    
 }
 function getPostsByUser (name, db = connection ){
     return db('posts')
@@ -41,7 +46,17 @@ function savePostToUser (post, db = connection){
         .insert({users_id: user.id, posts_id: post.id})
     })
 }
-
+function deletePostFromUser (post, db = connection){
+    getUserByUsername(post.name)
+    .then(user=>{
+        return db('users_posts')
+        .where("users_id", user.id)
+        .andWhere("posts_id", post.id)
+        .del()
+    })
+}
+// deletePostFromUser({name: "eyeball", id: 4})
+// savePostToUser({name: "eyeball", id: 4})
 // getPostsByUser('eyeball').then((console.log))
 module.exports = {
     getPosts,
@@ -49,5 +64,7 @@ module.exports = {
     getTutorials,
     addPost,
     getPostsByUser,
-    savePostToUser
+    savePostToUser,
+    deletePostFromUser,
+    addPostWithCategory
 }
