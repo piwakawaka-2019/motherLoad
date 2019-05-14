@@ -13,7 +13,7 @@ class Main extends React.Component {
 
             <Fragment>
 
-            <Carousel />
+                <Carousel />
             </Fragment>
             
         )
