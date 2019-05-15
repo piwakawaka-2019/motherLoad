@@ -122,7 +122,7 @@ color:#33032f!important;
   border: 1px solid;
   border-color: #24305e;
   margin: auto;
-  margin-bottom: 48px;
+  margin-bottom: 56px;
   width: 80%;
   
 }
@@ -133,7 +133,9 @@ color:#33032f!important;
   padding: 16px;
   text-decoration-line: none;
 }
-
+.slick-dots {
+  bottom: 0px;
+}
 .slick-dots li button:before {
   color: #d2fdff!important;
 }

@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import Slider from "react-slick";
+import RandomTips from "./RandomTips"
+import RandomTutorials from "./RandomTutorials"
 
 export default class Carousel extends Component {
   render() {
