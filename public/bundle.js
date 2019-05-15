@@ -929,13 +929,15 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "content"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
-        className: "title is-2"
-      }, "Articles"), this.props.articles.map(function (article) {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+        className: "title is-size-2 has-text-white"
+      }, "Articles"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "content has-text-left container",
+        id: "articleHolder"
+      }, this.props.articles.map(function (article) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "box"
+          className: "is-child",
+          id: "articleCard"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
           href: article.source_url,
           target: "_blank"

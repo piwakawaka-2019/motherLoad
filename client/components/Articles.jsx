@@ -17,11 +17,12 @@ class Articles extends React.Component{
     render(){
       return(
         <Fragment>
-          <div className='content'>
-            <h2 className='title is-2'>Articles</h2>
+          <h2 className='title is-size-2 has-text-white'>Articles</h2>
+          <div className='content has-text-left container' id="articleHolder">
+            
             {this.props.articles.map(article => {
               return (
-                <div className="box">
+                <div className="is-child" id="articleCard">
                   <a href={article.source_url} target='_blank'><h3><b>{article.title}</b></h3></a>
                   {article.description}
 
