@@ -934,12 +934,15 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
         className: "title is-2"
       }, "Articles"), this.props.articles.map(function (article) {
+        var urlParts = article.source_url.replace('http://', '').replace('https://', '').replace('www.', '').replace('.com', '').split(/[/?#]/);
+        var url = urlParts[0];
+        var domain = article.source_url;
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "box"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-          href: article.source_url,
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("b", null, article.title)), article.description, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "Source: ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+          href: domain,
           target: "_blank"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("b", null, article.title))), article.description);
+        }, url));
       })));
     }
   }]);
