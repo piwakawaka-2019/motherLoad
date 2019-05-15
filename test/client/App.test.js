@@ -5,7 +5,7 @@ import {App} from '../../client/components/App'
 
 test('Title renders on App', () => {
   // Arrange
-  const expected = '$how Me The Money'
+  const expected = 'MotherLoad'
 
   // Act
   const wrapper = shallow(<App auth={{isAuthenticated: false}}/>)

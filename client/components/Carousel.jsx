@@ -60,7 +60,7 @@ export default class Carousel extends Component {
             <h3><RandomTutorials /></h3>
           </div>
           <div>
-            <h3>7</h3>
+            <h3>Article:</h3>
           </div>
         </Slider>
       </div>
