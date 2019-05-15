@@ -1,9 +1,18 @@
 import React, { Component } from "react";
 import Slider from "react-slick";
-import RandomTips from "./RandomTips"
-import RandomTutorials from "./RandomTutorials"
+import {connect} from 'react-redux'
+import RandomTips from './RandomTips'
+import RandomTutorials from './RandomTutorials'
+import RandomArticles from './RandomArticles'
+
 
 export default class Carousel extends Component {
+  // componentDidMount(){
+  //   this.props.dispatch(fetchTips())
+  // }
+  // componentDidMount(){
+  //   this.props.dispatch(fetchTutorials())
+  // }
   render() {
     const settings = {
       dots: true,
@@ -18,7 +27,7 @@ export default class Carousel extends Component {
       <div className='carousel'>
         {/* <h2> Single Item</h2> */}
         <Slider {...settings}>
-          <div>
+        <div>
             <div>
               <h2 id="carouselHeader" className="is-size-3">A useful tool!</h2>
             </div>
@@ -57,10 +66,11 @@ export default class Carousel extends Component {
             <h3><RandomTutorials /></h3>
           </div>
           <div>
-            <h3>Article:</h3>
+            <h3><RandomArticles /></h3>
           </div>
         </Slider>
       </div>
     );
   }
 }
+

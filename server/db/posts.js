@@ -35,13 +35,13 @@ function addPostWithCategory(postObj, db = connection) {
 }
 
 function addPost(postObj, db = connection) {
-  console.log("db called", postObj);
   return db("posts").insert({
     title: postObj.title,
     description: postObj.description,
     type: postObj.type,
     source_url: postObj.sourceUrl
-  });
+  })
+  .then()
 }
 
 function getPostsByUser(name, db = connection) {
@@ -50,11 +50,11 @@ function getPostsByUser(name, db = connection) {
     .join("users", "users_posts.users_id", "users.id")
     .where("users.user_name", name);
 }
+function getArticles (db = connection){
+  return db("posts")
+  .where("type" , "article")
+};
 
-// function getScrappedData (wikiUrls, db = connection) {
-//     return db('posts')
-//     .insert({title: null, description: null, type: article, source_url: 'https://pureinfotech.com/choose-power-supply-pc/'})
-// }
 
 function savePostToUser(post, db = connection) {
   return getUserByUsername(post.name).then(user => {
@@ -71,12 +71,13 @@ function deletePostFromUser(post, db = connection) {
   });
 }
 module.exports = {
-  getPosts,
-  getTips,
-  getTutorials,
-  addPost,
-  getPostsByUser,
-  savePostToUser,
-  deletePostFromUser,
-  addPostWithCategory
-};
+    getPosts,
+    getTips,
+    getTutorials,
+    getArticles,
+    addPost,
+    getPostsByUser,
+    savePostToUser,
+    deletePostFromUser,
+    addPostWithCategory
+}

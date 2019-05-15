@@ -1,13 +1,6 @@
-import {
-  getTips,
-  getTutorials,
-  getPureinfotechData,
-  getTomshardwareData,
-  getExtremetechData,
-  getFurenexoData,
-  getPcgamerData,
-  getLaptopmagData
-} from "../apis/resources";
+import { getTips,
+getTutorials, 
+getArticleData} from "../apis/resources";
 
 export const GET_TIP = "GET_TIP";
 export const GET_TUTORIAL = "GET_TUTORIAL";
@@ -50,50 +43,11 @@ export function saveArticles(articles) {
   };
 }
 
-export function fetchPureinfotechData() {
-  return function(dispatch) {
-    getPureinfotechData().then(articles => {
-      dispatch(saveArticles([articles]));
-    });
-  };
-}
-
-export function fetchTomshardwareData() {
-  return function(dispatch) {
-    getTomshardwareData().then(articles => {
-      dispatch(saveArticles([articles]));
-    });
-  };
-}
-
-export function fetchExtremetechData() {
-  return function(dispatch) {
-    getExtremetechData().then(articles => {
-      dispatch(saveArticles([articles]));
-    });
-  };
-}
-
-export function fetchFurenexoData() {
-  return function(dispatch) {
-    getFurenexoData().then(articles => {
-      dispatch(saveArticles([articles]));
-    });
-  };
-}
-
-export function fetchPcgamerData() {
-  return function(dispatch) {
-    getPcgamerData().then(articles => {
-      dispatch(saveArticles([articles]));
-    });
-  };
-}
-
-export function fetchLaptopmagData() {
-  return function(dispatch) {
-    getLaptopmagData().then(articles => {
-      dispatch(saveArticles([articles]));
-    });
-  };
+export function fetchArticleData () {
+    return ((dispatch) => {
+        getArticleData()
+        .then(articles => {
+            dispatch(saveArticles(articles))
+        })
+    })
 }

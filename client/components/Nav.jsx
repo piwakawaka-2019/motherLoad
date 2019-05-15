@@ -22,7 +22,6 @@ class Nav extends React.Component {
         <div className="navbar-end">
           {auth.isAuthenticated
             ? [
-                //   <Link to='/registerpet' className="navbar-item is-large" >Contribute</Link>,
                 <Link
                   key="logout"
                   to="/"

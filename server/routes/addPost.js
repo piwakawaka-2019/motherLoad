@@ -5,13 +5,14 @@ const router = express.Router();
 
 router.post("/add", (req, res) => {
   let post = req.body;
+
   db.addPostWithCategory(post)
     .then(() => {
-      // res.setStatus(200).json({ message: "Success" });
+      res.status(200).json({ message: "Success" });
     })
     .catch(err => {
       console.error(err);
-      // res.setStatus(500).json({ error: "It Broke" });
+      res.status(500).json({ error: "It Broke" });
     });
 });
 
@@ -30,7 +31,6 @@ router.post("/deletepostfromuser", (req, res) => {
   let post = req.body;
   db.deletePostFromUser(post)
     .then(data => {
-      console.log("done");
     })
     .catch(err => {
       console.error(err);

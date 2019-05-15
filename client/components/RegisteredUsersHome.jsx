@@ -1,7 +1,8 @@
-import React, { Fragment } from "react";
-import { connect } from "react-redux";
+import React , {Fragment} from 'react'
+import {connect} from 'react-redux'
+import Carousel from './Carousel'
 import Postsbyuser from "./Postsbyuser";
-import Carousel from "./Carousel"
+//import {fetchSaved} from "../actions/receive"
 
 class RegisteredUsersHome extends React.Component {
   constructor(props) {

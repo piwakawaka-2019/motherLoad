@@ -10,7 +10,6 @@ class Postsbyuser extends React.Component {
   }
   handleDelete(event) {
     event.preventDefault();
-    console.log("delete");
     this.props.dispatch(
       deletePostSavedToUser(this.props.auth.user.user_name, event.target.name)
     );

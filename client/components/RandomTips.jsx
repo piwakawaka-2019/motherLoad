@@ -13,8 +13,8 @@ class RandomTips extends React.Component {
                 <div>
                     {this.props.tips.length &&
                         <Fragment>
-                            <h2>
-                                Tip: <a href={this.props.tips[randomPick].source_url} target='_blank'>{this.props.tips[randomPick].title}</a>
+                            <h2 id="carouselHeader" className="is-size-3">
+                                Tip: <p>{this.props.tips[randomPick].title}</p>
                             </h2>
                         <h4>{this.props.tips[randomPick].description}</h4>
                         </Fragment>

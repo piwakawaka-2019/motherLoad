@@ -7,7 +7,11 @@ class AdviceForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      categories: []
+      categories: [],
+      description: "",
+      type: "",
+      sourceUrl: "",
+      title: ""
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -17,10 +21,19 @@ class AdviceForm extends React.Component {
     this.props.dispatch(fetchCategories());
   }
   handleSubmit(event) {
+    this.setState({
+      categories: [],
+      description: "",
+      type: "",
+      sourceUrl: "",
+      title: ""
+    })
     event.preventDefault();
     addDataToDB(this.state);
+    alert('Submitted')
   }
   handleChange(event) {
+
     this.setState({
       [event.target.name]: event.target.value
     });
@@ -38,7 +51,6 @@ class AdviceForm extends React.Component {
     // if it exists in array then remove it else add it
   }
   render() {
-    console.log(this.state);
     return (
       <Fragment>
         <h2 className="title is-3 has-text-centered has-text-white">
@@ -60,6 +72,7 @@ class AdviceForm extends React.Component {
                 name="title"
                 placeholder="Title"
                 onChange={this.handleChange}
+                value={this.state.title}
               />
             </div>
             <label className="column is-6 label is-large has-text-white has-text-left" />
@@ -74,7 +87,8 @@ class AdviceForm extends React.Component {
                       type="checkbox"
                       name={category.name}
                       value={category.id}
-                      onChange={this.handleCategory}
+                      onClick={this.handleCategory}
+                      checked={this.state.categories.includes(String(category.id))}
                     />
                     <h2 className="has-text-white">{category.name}</h2>
                   </div>
@@ -90,6 +104,7 @@ class AdviceForm extends React.Component {
                 name="description"
                 placeholder="Enter a tweet of advice"
                 onChange={this.handleChange}
+                value={this.state.description}
               />
             </div>
             <br />
@@ -100,6 +115,7 @@ class AdviceForm extends React.Component {
                   name="type"
                   value="tip"
                   onChange={this.handleChange}
+                  checked= {this.state.type.includes("tip")}
                 />
                 <p>Tip</p>
               </div>
@@ -107,8 +123,10 @@ class AdviceForm extends React.Component {
                 <input
                   type="radio"
                   name="type"
-                  value="tutorial"
+                  value="tutorial" 
+                  required
                   onChange={this.handleChange}
+                  checked ={this.state.type.includes('tutorial')}
                 />
                 <p>Tutorial</p>
               </div>
@@ -122,9 +140,11 @@ class AdviceForm extends React.Component {
                 type="text"
                 name="sourceUrl"
                 placeholder="url here"
+                value={this.state.sourceUrl}
                 onChange={this.handleChange}
+                
               />
-            </div>{" "}
+            </div>
             <br />
             <div className="control">
               <label className="column is-6 label is-large has-text-white has-text-left is-centered">

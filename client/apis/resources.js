@@ -31,58 +31,13 @@ export function getDataByCategory(arr, location) {
     });
 }
 
-export function getPureinfotechData() {
-  return request
-    .get("/api/scrapping/pureinfotech")
-    .then(res => res.body)
-    .catch(err => {
-      console.log("Web Scrapping API issues", err);
-    });
-}
-
-export function getTomshardwareData() {
-  return request
-    .get("/api/scrapping/tomshardware")
-    .then(res => res.body)
-    .catch(err => {
-      console.log("Web Scrapping API issues", err);
-    });
-}
-
-export function getExtremetechData() {
-  return request
-    .get("/api/scrapping/extremetech")
-    .then(res => res.body)
-    .catch(err => {
-      console.log("Web Scrapping API issues", err);
-    });
-}
-
-export function getFurenexoData() {
-  return request
-    .get("/api/scrapping/furenexo")
-    .then(res => res.body)
-    .catch(err => {
-      console.log("Web Scrapping API issues", err);
-    });
-}
-
-export function getPcgamerData() {
-  return request
-    .get("/api/scrapping/pcgamer")
-    .then(res => res.body)
-    .catch(err => {
-      console.log("Web Scrapping API issues", err);
-    });
-}
-
-export function getLaptopmagData() {
-  return request
-    .get("/api/scrapping/laptopmag")
-    .then(res => res.body)
-    .catch(err => {
-      console.log("Web Scrapping API issues", err);
-    });
+export function getArticleData () {
+    return request 
+        .get("/api/resources/articles")
+        .then(res => res.body)
+        .catch(err => {
+            console.error("Article API issues", err)
+        });
 }
 
 export function getCatagories() {
@@ -94,7 +49,10 @@ export function getCatagories() {
     });
 }
 export function addDataToDB(data) {
-  return request.post("/api/post/add").send(data);
+  return request
+  .post("/api/post/add")
+  .send(data)
+  .then(res => res.body)
 }
 export function getPostsByUser(user) {
   return request
@@ -106,9 +64,15 @@ export function getPostsByUser(user) {
 }
 export function addPostsByUser(userName, id) {
   let data = { name: userName, id: id };
-  return request.post("/api/post/savepoststouser").send(data);
+  return request
+  .post("/api/post/savepoststouser")
+  .send(data)
+  .then(res => res.body)
 }
 export function deletePostFromUser(userName, id) {
   let data = { name: userName, id: id };
-  return request.post("/api/post/deletepostfromuser").send(data);
+  return request
+  .post("/api/post/deletepostfromuser")
+  .send(data)
+  .then(res => res.body)
 }
