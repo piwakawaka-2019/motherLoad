@@ -38,3 +38,12 @@ test('App has one less route when logged in', () => {
   // Assert
   expect(actual).toEqual(expected)
 })
+
+// test('Advice route goes to login page when logged out', ( => {
+//   //Arrange
+//   const expected = '/login'
+//   //Act
+//   const actual = 
+//   //Assert
+//   expect(actual).toEqual(expected)
+// }))

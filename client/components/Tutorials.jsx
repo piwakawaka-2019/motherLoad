@@ -18,7 +18,7 @@ class Tutorials extends React.Component {
         <Filter />
 
         <p id="contribute">
-          Know something we don't? &nbsp;
+          Know something we don't?<br />
           <span className="advice">
             <a href="#/advice">
               <i className="fas fa-plus" />
