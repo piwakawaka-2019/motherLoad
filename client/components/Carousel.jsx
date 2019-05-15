@@ -27,7 +27,11 @@ export default class Carousel extends Component {
       <div className='carousel'>
         {/* <h2> Single Item</h2> */}
         <Slider {...settings}>
-          <div>
+        <div>
+            <div>
+              <h2 id="carouselHeader" className="is-size-3">A useful tool!</h2>
+            </div>
+            
             <p className="has-text-left">
               If you haven't come across it already,<a href="https://nz.pcpartpicker.com/" target="_blank">
               <strong> PC Part picker</strong></a> is a really good place that helps 
