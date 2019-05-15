@@ -26,7 +26,7 @@ class Articles extends React.Component{
                 var domain = article.source_url
 
               return (
-                <div className="box">
+                <div className="is-child" id="articleCard">
                   <h3><b>{article.title}</b></h3>
                   {article.description}<br />
                   Source: <a href={domain} target='_blank'>{url}</a>
