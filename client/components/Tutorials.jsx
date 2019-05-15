@@ -15,7 +15,7 @@ class Tutorials extends React.Component {
   render() {
     return (
       <Fragment>
-        <Filter />
+        <Filter filter={false} />
 
         <p id="contribute">
           Know something we don't?<br />
@@ -32,17 +32,17 @@ class Tutorials extends React.Component {
         </h2>
 
         <div className="content has-text-left" id="cleanUp">
+
           {this.props.tutorials.map(tutorials => {
             return (
               <Fragment>
                 <div id="adviceBox">
-                  <h3 className="has-text-white">{tutorials.title}</h3>
-                  <p>{tutorials.description}</p>
 
                   {this.props.auth.isAuthenticated && (
                     <Buttons id={tutorials.id} />
                   )}
                 </div>
+                
               </Fragment>
             );
           })}

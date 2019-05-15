@@ -23,7 +23,7 @@ class Tips extends React.Component {
             </a>
           </span>
         </p>
-        <Filter />
+        <Filter filter={false} />
         <h2 className="title is-2 has-text-centered has-text-white">Tips</h2>
 
         <div className="content has-text-left" id="cleanUp">
