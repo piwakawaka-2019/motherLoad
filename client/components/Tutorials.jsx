@@ -43,6 +43,7 @@ class Tutorials extends React.Component {
                     <Buttons id={tutorials.id} />
                   )}
                 </div>
+                
               </Fragment>
             );
           })}

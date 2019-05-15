@@ -47,8 +47,6 @@ class AdviceForm extends React.Component {
       : this.setState({
           categories: [...this.state.categories, event.target.value]
         });
-
-    // if it exists in array then remove it else add it
   }
   render() {
     return (

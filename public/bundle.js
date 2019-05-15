@@ -671,7 +671,7 @@ function (_React$Component) {
       var index = arr.indexOf(thing);
       return index > -1 ? arr.splice(index, 1) : this.setState({
         categories: [].concat(_toConsumableArray(this.state.categories), [event.target.value])
-      }); // if it exists in array then remove it else add it
+      });
     }
   }, {
     key: "render",
