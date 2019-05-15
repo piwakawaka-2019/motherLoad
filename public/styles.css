@@ -130,6 +130,17 @@ color:#33032f!important;
   width: 80%;
   
 }
+.carousel a {
+  font-weight: bold;
+}
+.carousel h3 {
+  padding: 16px;
+  text-decoration-line: none;
+}
+
+.slick-dots li button:before {
+  color: #d2fdff!important;
+}
 
 /* the start of the hamburger menu */
 

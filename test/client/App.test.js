@@ -5,7 +5,7 @@ import {App} from '../../client/components/App'
 
 test('Title renders on App', () => {
   // Arrange
-  const expected = '$how Me The Money'
+  const expected = 'MotherLoad'
 
   // Act
   const wrapper = shallow(<App auth={{isAuthenticated: false}}/>)
@@ -17,7 +17,7 @@ test('Title renders on App', () => {
 
 test('App has some routes when not logged in', () => {
   // Arrange
-  const expected = 5
+  const expected = 9
 
   // Act
   const wrapper = shallow(<App auth={{isAuthenticated: false}}/>)
@@ -29,7 +29,7 @@ test('App has some routes when not logged in', () => {
 
 test('App has one less route when logged in', () => {
   // Arrange
-  const expected = 4
+  const expected = 9
 
   // Act
   const wrapper = shallow(<App auth={{isAuthenticated: true}}/>)
