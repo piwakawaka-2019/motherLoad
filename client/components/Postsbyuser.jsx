@@ -1,51 +1,50 @@
-import React , {Fragment} from 'react'
-import {connect} from 'react-redux'
+import React, { Fragment } from "react";
+import { connect } from "react-redux";
 
-import{fetchPostsByUser, deletePostSavedToUser} from "../actions/usersposts"
- 
+import { fetchPostsByUser, deletePostSavedToUser } from "../actions/usersposts";
+
 class Postsbyuser extends React.Component {
-  constructor(props){
-    super(props)
-    this.handleDelete = this.handleDelete.bind(this)
+  constructor(props) {
+    super(props);
+    this.handleDelete = this.handleDelete.bind(this);
   }
-  handleDelete(event){
-    event.preventDefault()
-    console.log("delete")
-    this.props.dispatch(deletePostSavedToUser(this.props.auth.user.user_name, event.target.name))
+  handleDelete(event) {
+    event.preventDefault();
+    console.log("delete");
+    this.props.dispatch(
+      deletePostSavedToUser(this.props.auth.user.user_name, event.target.name)
+    );
+    alert("deleted");
   }
-  componentDidMount(){
-    this.props.dispatch(fetchPostsByUser(this.props.auth.user.user_name))
+  componentDidMount() {
+    this.props.dispatch(fetchPostsByUser(this.props.auth.user.user_name));
   }
   render() {
-    return(
+    return (
       <Fragment>
         <div>
           {this.props.postsbyuser.map(post => {
-            return(
+            return (
               <Fragment key={post.id}>
-                <h3 className="has-text-white">
-                    {post.title}
-                </h3>
-                <p>
-                    {post.description}
-                </p>
-                <button name={post.id} onClick={this.handleDelete}>delete</button>
+                <h3 className="has-text-white">{post.title}</h3>
+                <p>{post.description}</p>
+                <button name={post.id} onClick={this.handleDelete}>
+                  delete
+                </button>
               </Fragment>
-            )
+            );
           })}
-
-          </div>
+        </div>
       </Fragment>
-        
-    )
+    );
   }
 }
 
 function mapStateToProps(state) {
-    return{
-      postsbyuser: state.postsbyuser,
-      auth: state.auth
-    }
+  return {
+    postsbyuser: state.postsbyuser,
+    auth: state.auth
+  };
 }
 
-export default connect(mapStateToProps)(Postsbyuser)
+export default connect(mapStateToProps)(Postsbyuser);
