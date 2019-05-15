@@ -1,6 +1,6 @@
 import React , {Fragment} from 'react'
 import {connect} from 'react-redux'
-import { fetchPureinfotechData, fetchTomshardwareData, fetchExtremetechData, fetchFurenexoData, fetchPcgamerData, fetchLaptopmagData } from '../actions/receive';
+import { fetchArticleData } from '../actions/receive';
 
 class Articles extends React.Component{
     constructor(props){
@@ -11,12 +11,13 @@ class Articles extends React.Component{
     }
 
     componentDidMount () {
-        this.props.dispatch(fetchPureinfotechData())
-        // this.props.dispatch(fetchTomshardwareData())
-        this.props.dispatch(fetchExtremetechData())
-        this.props.dispatch(fetchFurenexoData())
-        // this.props.dispatch(fetchPcgamerData())
-        this.props.dispatch(fetchLaptopmagData())
+        // this.props.dispatch(fetchPureinfotechData())
+        // // this.props.dispatch(fetchTomshardwareData())
+        // this.props.dispatch(fetchExtremetechData())
+        // this.props.dispatch(fetchFurenexoData())
+        // // this.props.dispatch(fetchPcgamerData())
+        // this.props.dispatch(fetchLaptopmagData())
+        this.props.dispatch(fetchArticleData())
     }
 
     render(){
@@ -28,8 +29,9 @@ class Articles extends React.Component{
                     {this.props.articles.map(article => {
                         return (
                             <div className="box">
-                                <a href={article[article.length-2]} target='_blank'><h3>{article[article.length-1]}</h3></a>
-                                {article.slice(0,1).map(p => <p>{p}</p>)}
+                                <a href={article.source_url} target='_blank'><h3><b>{article.title}</b></h3></a>
+                                {article.description}
+
                              </div>
                         )
                     })}
@@ -41,10 +43,10 @@ class Articles extends React.Component{
     }
 }
 
-// function mapStateToProps (state) {
-//     return {
-//         articles: state.articles
-//     }
-// }
+function mapStateToProps (state) {
+    return {
+        articles: state.articles
+    }
+}
 
-export default Articles
+export default connect(mapStateToProps)(Articles)

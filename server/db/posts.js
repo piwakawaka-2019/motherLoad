@@ -16,6 +16,11 @@ function getTutorials (db = connection){
     .where("type" , "tutorial")
 };
 
+function getArticles (db = connection){
+    return db("posts")
+    .where("type" , "article")
+};
+
 function addPostWithCategory(postObj, db = connection){
     return db("posts")
     .insert({title: postObj.title, description: postObj.description, type: postObj.type, source_url: postObj.sourceUrl})
@@ -68,6 +73,7 @@ module.exports = {
     getPosts,
     getTips,
     getTutorials,
+    getArticles,
     addPost,
     getPostsByUser,
     savePostToUser,

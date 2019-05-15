@@ -15,6 +15,18 @@ router.get("/all" , (req, res) => {
 
 });
 
+router.get("/articles" , (req, res) => {
+    db.getArticles()
+    .then(posts =>{
+        res.json(posts);
+    })
+    .catch(err => {
+        console.error(err);
+        res.setStatus(500).json({ error: "It Broke"});
+    });
+
+});
+
 router.get("/tips" , (req, res) => {
     db.getTips()
     .then(tips =>{

@@ -164,7 +164,6 @@ function loginUser(creds) {
     return Object(_apis_auth__WEBPACK_IMPORTED_MODULE_1__["login"])(creds).then(function (token) {
       var userInfo = Object(_utils_auth__WEBPACK_IMPORTED_MODULE_0__["saveUserToken"])(token);
       dispatch(receiveLogin(userInfo));
-      document.location = '/#/';
     })["catch"](function (err) {
       dispatch(loginError(err.response.body.message));
     });
@@ -218,21 +217,25 @@ function logoutUser() {
 /*!***********************************!*\
   !*** ./client/actions/receive.js ***!
   \***********************************/
-/*! exports provided: GET_TIP, GET_TUTORIAL, saveTips, fetchTips, saveTutorials, fetchTutorials */
+/*! exports provided: GET_TIP, GET_TUTORIAL, SAVE_ARTICLES, saveTips, fetchTips, saveTutorials, fetchTutorials, saveArticles, fetchArticleData */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GET_TIP", function() { return GET_TIP; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GET_TUTORIAL", function() { return GET_TUTORIAL; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SAVE_ARTICLES", function() { return SAVE_ARTICLES; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "saveTips", function() { return saveTips; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchTips", function() { return fetchTips; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "saveTutorials", function() { return saveTutorials; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchTutorials", function() { return fetchTutorials; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "saveArticles", function() { return saveArticles; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchArticleData", function() { return fetchArticleData; });
 /* harmony import */ var _apis_resources__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../apis/resources */ "./client/apis/resources.js");
 
 var GET_TIP = 'GET_TIP';
 var GET_TUTORIAL = 'GET_TUTORIAL';
+var SAVE_ARTICLES = 'SAVE_ARTICLES';
 function saveTips(tips) {
   return {
     type: GET_TIP,
@@ -256,6 +259,67 @@ function fetchTutorials() {
   return function (dispatch) {
     Object(_apis_resources__WEBPACK_IMPORTED_MODULE_0__["getTutorials"])().then(function (tutorials) {
       dispatch(saveTutorials(tutorials));
+    });
+  };
+}
+function saveArticles(articles) {
+  return {
+    type: SAVE_ARTICLES,
+    articles: articles
+  };
+} // export function fetchPureinfotechData(){
+//     return function(dispatch){
+//         getPureinfotechData()
+//         .then(articles => {
+//             dispatch(saveArticles([articles]))
+//         })
+//     }
+// }
+// export function fetchTomshardwareData() {
+//     return function(dispatch){
+//         getTomshardwareData()
+//         .then(articles => {
+//             dispatch(saveArticles([articles]))
+//         })
+//     }
+// }
+// export function fetchExtremetechData(){
+//     return function(dispatch){
+//         getExtremetechData()
+//         .then(articles => {
+//             dispatch(saveArticles([articles]))
+//         })
+//     }
+// }
+// export function fetchFurenexoData(){
+//     return function(dispatch){
+//         getFurenexoData()
+//         .then(articles => {
+//             dispatch(saveArticles([articles]))
+//         })
+//     }
+// }
+// export function fetchPcgamerData(){
+//     return function(dispatch){
+//         getPcgamerData()
+//         .then(articles => {
+//             dispatch(saveArticles([articles]))
+//         })
+//     }
+// }
+// export function fetchLaptopmagData(){
+//     return function(dispatch){
+//         getLaptopmagData()
+//         .then(articles => {
+//             dispatch(saveArticles([articles]))
+//         })
+//     }
+// }
+
+function fetchArticleData() {
+  return function (dispatch) {
+    Object(_apis_resources__WEBPACK_IMPORTED_MODULE_0__["getArticleData"])().then(function (articles) {
+      dispatch(saveArticles(articles));
     });
   };
 }
@@ -323,6 +387,53 @@ function fetchSearch(arr) {
 
 /***/ }),
 
+/***/ "./client/actions/usersposts.js":
+/*!**************************************!*\
+  !*** ./client/actions/usersposts.js ***!
+  \**************************************/
+/*! exports provided: GET_POSTSBYUSER, showPostsByUser, fetchPostsByUser, savePostToUser, deletePostSavedToUser */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GET_POSTSBYUSER", function() { return GET_POSTSBYUSER; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "showPostsByUser", function() { return showPostsByUser; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchPostsByUser", function() { return fetchPostsByUser; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "savePostToUser", function() { return savePostToUser; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deletePostSavedToUser", function() { return deletePostSavedToUser; });
+/* harmony import */ var _apis_resources__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../apis/resources */ "./client/apis/resources.js");
+var GET_POSTSBYUSER = "GET_POSTSBYUSER";
+
+function showPostsByUser(post) {
+  return {
+    type: GET_POSTSBYUSER,
+    post: post
+  };
+}
+function fetchPostsByUser(userName) {
+  return function (dispatch) {
+    Object(_apis_resources__WEBPACK_IMPORTED_MODULE_0__["getPostsByUser"])(userName).then(function (post) {
+      dispatch(showPostsByUser(post));
+    });
+  };
+}
+function savePostToUser(userName, post) {
+  return function (dispatch) {
+    Object(_apis_resources__WEBPACK_IMPORTED_MODULE_0__["addPostsByUser"])(userName, post).then(function () {
+      dispatch(fetchPostsByUser(userName));
+    });
+  };
+}
+function deletePostSavedToUser(userName, post) {
+  return function (dispatch) {
+    Object(_apis_resources__WEBPACK_IMPORTED_MODULE_0__["deletePostFromUser"])(userName, post).then(function () {
+      dispatch(fetchPostsByUser(userName));
+    });
+  };
+}
+
+/***/ }),
+
 /***/ "./client/apis/auth.js":
 /*!*****************************!*\
   !*** ./client/apis/auth.js ***!
@@ -378,7 +489,7 @@ function login(creds) {
 /*!**********************************!*\
   !*** ./client/apis/resources.js ***!
   \**********************************/
-/*! exports provided: getAllResources, getTips, getTutorials, getDataByCategory, getCatagories */
+/*! exports provided: getAllResources, getTips, getTutorials, getDataByCategory, getArticleData, getCatagories, addDataToDB, getPostsByUser, addPostsByUser, deletePostFromUser */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -387,7 +498,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getTips", function() { return getTips; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getTutorials", function() { return getTutorials; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getDataByCategory", function() { return getDataByCategory; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getArticleData", function() { return getArticleData; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getCatagories", function() { return getCatagories; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "addDataToDB", function() { return addDataToDB; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getPostsByUser", function() { return getPostsByUser; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "addPostsByUser", function() { return addPostsByUser; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deletePostFromUser", function() { return deletePostFromUser; });
 /* harmony import */ var superagent__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! superagent */ "./node_modules/superagent/lib/client.js");
 /* harmony import */ var superagent__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(superagent__WEBPACK_IMPORTED_MODULE_0__);
 
@@ -417,12 +533,91 @@ function getDataByCategory(arr) {
     console.error("Tip API issues", err);
   });
 }
+function getArticleData() {
+  return superagent__WEBPACK_IMPORTED_MODULE_0___default.a.get("/api/resources/articles").then(function (res) {
+    return res.body;
+  })["catch"](function (err) {
+    console.error("Article API issues", err);
+  });
+} // export function getPureinfotechData () {
+//     return request 
+//         .get("/api/scrapping/pureinfotech")
+//         .then(res => res.body)
+//         .catch(err => {
+//             console.log("Web Scrapping API issues", err)
+//         });
+// };
+// export function getTomshardwareData () {
+//     return request 
+//         .get("/api/scrapping/tomshardware")
+//         .then(res => res.body)
+//         .catch(err => {
+//             console.log("Web Scrapping API issues", err)
+//         });
+// };
+// export function getExtremetechData () {
+//     return request 
+//         .get("/api/scrapping/extremetech")
+//         .then(res => res.body)
+//         .catch(err => {
+//             console.log("Web Scrapping API issues", err)
+//         });
+// };
+// export function getFurenexoData () {
+//     return request 
+//         .get("/api/scrapping/furenexo")
+//         .then(res => res.body)
+//         .catch(err => {
+//             console.log("Web Scrapping API issues", err)
+//         });
+// };
+// export function getPcgamerData () {
+//     return request 
+//         .get("/api/scrapping/pcgamer")
+//         .then(res => res.body)
+//         .catch(err => {
+//             console.log("Web Scrapping API issues", err)
+//         });
+// };
+// export function getLaptopmagData () {
+//     return request 
+//         .get("/api/scrapping/laptopmag")
+//         .then(res => res.body)
+//         .catch(err => {
+//             console.log("Web Scrapping API issues", err)
+//         });
+// };
+
 function getCatagories() {
   return superagent__WEBPACK_IMPORTED_MODULE_0___default.a.get("/api/categories/get-category").then(function (res) {
     return res.body;
   })["catch"](function (err) {
     console.error("Tip API issues", err);
   });
+}
+function addDataToDB(data) {
+  return superagent__WEBPACK_IMPORTED_MODULE_0___default.a.post("/api/post/add").send(data);
+}
+function getPostsByUser(user) {
+  return superagent__WEBPACK_IMPORTED_MODULE_0___default.a.get("/api/resources/byuser/" + user).then(function (res) {
+    return res.body;
+  })["catch"](function (err) {
+    console.error("Tip API issues", err);
+  });
+}
+function addPostsByUser(userName, id) {
+  var data = {
+    name: userName,
+    id: id
+  };
+  return superagent__WEBPACK_IMPORTED_MODULE_0___default.a.post("/api/post/savepoststouser").send(data);
+}
+function deletePostFromUser(userName, id) {
+  var data = {
+    name: userName,
+    id: id
+  };
+  return superagent__WEBPACK_IMPORTED_MODULE_0___default.a.post("/api/post/deletepostfromuser").send(data);
 }
 
 /***/ }),
@@ -439,7 +634,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _apis_resources__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../apis/resources */ "./client/apis/resources.js");
+/* harmony import */ var _actions_categories__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../actions/categories */ "./client/actions/categories.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
+
+function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -449,13 +656,15 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
 
 
 
@@ -466,21 +675,54 @@ function (_React$Component) {
   _inherits(AdviceForm, _React$Component);
 
   function AdviceForm(props) {
+    var _this;
+
     _classCallCheck(this, AdviceForm);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(AdviceForm).call(this, props));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(AdviceForm).call(this, props));
+    _this.state = {
+      categories: []
+    };
+    _this.handleChange = _this.handleChange.bind(_assertThisInitialized(_this));
+    _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
+    _this.handleCategory = _this.handleCategory.bind(_assertThisInitialized(_this));
+    return _this;
   }
 
   _createClass(AdviceForm, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.props.dispatch(Object(_actions_categories__WEBPACK_IMPORTED_MODULE_3__["fetchCategories"])());
+    }
+  }, {
+    key: "handleSubmit",
+    value: function handleSubmit(event) {
+      event.preventDefault();
+      Object(_apis_resources__WEBPACK_IMPORTED_MODULE_2__["addDataToDB"])(this.state);
+    }
+  }, {
+    key: "handleChange",
+    value: function handleChange(event) {
+      this.setState(_defineProperty({}, event.target.name, event.target.value));
+    }
+  }, {
+    key: "handleCategory",
+    value: function handleCategory(event) {
+      var arr = this.state.categories;
+      var thing = event.target.value;
+      var index = arr.indexOf(thing);
+      return index > -1 ? arr.splice(index, 1) : this.setState({
+        categories: [].concat(_toConsumableArray(this.state.categories), [event.target.value])
+      }); // if it exists in array then remove it else add it
+    }
+  }, {
     key: "render",
     value: function render() {
+      console.log(this.state);
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
         className: "title is-2 has-text-centered has-text-white"
-      }, "Tweet of advice"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "content has-text-left"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
-        action: "/addTip",
-        method: "POST"
+      }, "Tweet of advice"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+        onSubmit: this.handleSubmit
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "field"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
@@ -490,7 +732,9 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         className: "input",
         type: "text",
-        placeholder: "text"
+        name: "title",
+        placeholder: "title",
+        onChange: this.handleChange
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
         className: "label"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
@@ -515,7 +759,9 @@ function (_React$Component) {
         className: "control"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("textarea", {
         className: "textarea",
-        placeholder: "Enter a tweet of advice"
+        name: "description",
+        placeholder: "Enter a tweet of advice",
+        onChange: this.handleChange
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
         className: "label is-large has-text-centered"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -526,14 +772,20 @@ function (_React$Component) {
         className: "button is-success is-large is-fullwidth",
         type: "submit",
         name: "Submit"
-      })))))));
+      }))))));
     }
   }]);
 
   return AdviceForm;
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
-/* harmony default export */ __webpack_exports__["default"] = (AdviceForm);
+function mapStateToProps(state) {
+  return {
+    categories: state.categories
+  };
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapStateToProps)(AdviceForm));
 
 /***/ }),
 
@@ -653,7 +905,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var _ListItem__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ListItem */ "./client/components/ListItem.jsx");
+/* harmony import */ var _actions_receive__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../actions/receive */ "./client/actions/receive.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -682,27 +934,54 @@ function (_React$Component) {
   _inherits(Articles, _React$Component);
 
   function Articles(props) {
+    var _this;
+
     _classCallCheck(this, Articles);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(Articles).call(this, props));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Articles).call(this, props));
+    _this.state = {};
+    return _this;
   }
 
   _createClass(Articles, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      // this.props.dispatch(fetchPureinfotechData())
+      // // this.props.dispatch(fetchTomshardwareData())
+      // this.props.dispatch(fetchExtremetechData())
+      // this.props.dispatch(fetchFurenexoData())
+      // // this.props.dispatch(fetchPcgamerData())
+      // this.props.dispatch(fetchLaptopmagData())
+      this.props.dispatch(Object(_actions_receive__WEBPACK_IMPORTED_MODULE_2__["fetchArticleData"])());
+    }
+  }, {
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
-        className: "title is-2 has-text-centered has-text-white"
-      }, "Articles"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "content",
-        id: "cleanUp"
-      }));
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "content"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+        className: "title is-2"
+      }, "Articles"), this.props.articles.map(function (article) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "box"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+          href: article.source_url,
+          target: "_blank"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("b", null, article.title))), article.description);
+      })));
     }
   }]);
 
   return Articles;
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
-/* harmony default export */ __webpack_exports__["default"] = (Articles);
+function mapStateToProps(state) {
+  return {
+    articles: state.articles
+  };
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapStateToProps)(Articles));
 
 /***/ }),
 
@@ -876,7 +1155,7 @@ function (_React$Component) {
         id: "menu"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
         className: "title is-2"
-      }, "Filter By:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+      }, "Filter:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
         className: "filterForm",
         onSubmit: this.handleSubmit
       }, this.props.categories.map(function (category) {
@@ -1249,6 +1528,7 @@ function (_React$Component) {
         user_name: user_name,
         password: password
       }));
+      this.props.history.goBack();
     }
   }, {
     key: "render",
@@ -1275,7 +1555,7 @@ function (_React$Component) {
         className: "label is-large has-text-white has-text-centered"
       }, "Password", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         required: true,
-        className: "input has-text-white has-text-centered is-large is-fullwidth",
+        className: "input has-text-centered is-large is-fullwidth",
         placeholder: "Password",
         type: "password",
         name: "password",
@@ -1409,6 +1689,7 @@ function (_React$Component) {
     key: "render",
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        id: "menuSlider",
         className: "wrapper"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         key: "navbar",
@@ -1518,43 +1799,30 @@ function (_React$Component) {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "navbar "
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "container"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "navbar-brand"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        onClick: this.toggleBurger,
-        className: "navbar-burger burger ".concat(showBurger ? 'is-active' : ''),
-        "data-target": "navbarMenuHeroA"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        id: "navbarMenuHeroA",
-        className: "navbar-menu ".concat(showBurger ? "is-active" : '')
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "navbar-end"
       }, auth.isAuthenticated ? [//   <Link to='/registerpet' className="navbar-item is-large" >Contribute</Link>,
       react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
         key: "logout",
         to: "/",
-        className: "navbar-item is-large",
+        className: "navbar-item is-large has-text-grey-lighter",
         onClick: function onClick() {
           return logout();
         }
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        className: "fas fa-sign-out-alt"
-      }), "\xA0Logout")] : [react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+      }, "Logout")] : [react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
         key: "login",
         onClick: this.toggleBurger,
-        className: "navbar-item is-large",
+        className: "navbar-item is-large has-text-grey-lighter\t",
         to: "/login"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
         className: "fas fa-sign-in-alt"
       }), "Login"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
         key: "register",
         onClick: this.toggleBurger,
-        className: "navbar-item",
+        className: "navbar-item has-text-grey-lighter\t",
         to: "/register"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
         className: "fas fa-user-plus"
-      }), "Register")]))));
+      }), "Register")]));
     }
   }]);
 
@@ -1636,9 +1904,13 @@ function (_React$Component) {
         className: "has-text-white"
       }, "CPU (Central Processing Unit)"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "The CPU is the brain of the computer it runs all of the calculations for the computer.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
         className: "has-text-white"
-      }, "CPU Cooler"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "This cools down the CPU so it can run at an optimal temperature to ensure that it doesn\u2019t overheat and cause damage to the CPU or more. There are different types of cooling systems:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", {
+      }, "CPU Cooler"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "This cools down the CPU so it can run at an optimal temperature to ensure that it doesn\u2019t overheat and cause damage to the CPU or more. There are different types of cooling systems:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         className: "has-text-white"
-      }, "Liquid cooling:"), " a liquid cooling block is usually connected to the CPU and has a reservoir of extra coolant waiting to be used to cool down the CPU."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", {
+        className: "has-text-white"
+      }, "Liquid cooling:"), " a liquid cooling block is usually connected to the CPU and has a reservoir of extra coolant waiting to be used to cool down the CPU."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "has-text-white"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", {
         className: "has-text-white"
       }, "Fan cooling:"), " Typically when using fan cooling you would have a heatsink attached to the fan, and the heatsink is what gets attached to the CPU using thermal paste/compound, which helps dissipate the heat."))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
         className: "has-text-white"
@@ -1646,9 +1918,13 @@ function (_React$Component) {
         className: "has-text-white"
       }, "Memory (RAM)"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Makes it easier to run multiple applications or applications that require more resources/power to run.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
         className: "has-text-white"
-      }, "Storage"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Holds your files, such as games, programs and documents. There are different types of storage such as HDD (Hard Disc Drive), SSD (Solid State Drive), SSHD (Solid State Hybrid Drive)."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", {
+      }, "Storage"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Holds your files, such as games, programs and documents. There are different types of storage such as HDD (Hard Disc Drive), SSD (Solid State Drive), SSHD (Solid State Hybrid Drive)."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         className: "has-text-white"
-      }, "HDD (Hard Disc Drive):"), " A HDD or often referred to as a hard drive is the typical storage that you might find in a laptop. You would also typically find a hard drive in a computer that would have multiple options to store your files."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", {
+        className: "has-text-white"
+      }, "HDD (Hard Disc Drive):"), " A HDD or often referred to as a hard drive is the typical storage that you might find in a laptop. You would also typically find a hard drive in a computer that would have multiple options to store your files."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "has-text-white"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", {
         className: "has-text-white"
       }, "SSD (Solid State Drive):"), "  Unlike a hard drive an SSD doesn\u2019t have any moving parts and stores its information by using \u201Cflash memory\u201D, which will keep all its data/information when there is no power supplied. Because of the way this storage works you get faster speeds when reading and writing data to the SSD."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", {
         className: "has-text-white"
@@ -1670,6 +1946,98 @@ function (_React$Component) {
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
 /* harmony default export */ __webpack_exports__["default"] = (PCParts);
+
+/***/ }),
+
+/***/ "./client/components/Postsbyuser.jsx":
+/*!*******************************************!*\
+  !*** ./client/components/Postsbyuser.jsx ***!
+  \*******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _actions_usersposts__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../actions/usersposts */ "./client/actions/usersposts.js");
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+
+
+var Postsbyuser =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(Postsbyuser, _React$Component);
+
+  function Postsbyuser() {
+    _classCallCheck(this, Postsbyuser);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(Postsbyuser).apply(this, arguments));
+  }
+
+  _createClass(Postsbyuser, [{
+    key: "handleDelete",
+    value: function handleDelete(event) {
+      event.preventDefault();
+      console.log("delete");
+      var userName = this.props.auth.user.user_name;
+      this.props.dispatch(Object(_actions_usersposts__WEBPACK_IMPORTED_MODULE_2__["deletePostSavedToUser"])(userName, event.target.name));
+    }
+  }, {
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      var userName = this.props.auth.user.user_name;
+      this.props.dispatch(Object(_actions_usersposts__WEBPACK_IMPORTED_MODULE_2__["fetchPostsByUser"])(userName));
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this = this;
+
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, this.props.postsbyuser.map(function (post) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], {
+          key: post.id
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
+          className: "has-text-white"
+        }, post.title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, post.description), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+          name: post.id,
+          onClick: _this.handleDelete
+        }, "delete"));
+      })));
+    }
+  }]);
+
+  return Postsbyuser;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+function mapStateToProps(state) {
+  return {
+    postsbyuser: state.postsbyuser,
+    auth: state.auth
+  };
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapStateToProps)(Postsbyuser));
 
 /***/ }),
 
@@ -1866,6 +2234,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _Postsbyuser__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Postsbyuser */ "./client/components/Postsbyuser.jsx");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -1883,6 +2252,7 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
 
 
 
@@ -1905,7 +2275,7 @@ function (_React$Component) {
         className: "title is-2 has-text-centered has-text-white"
       }, "Saved resources:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "content has-text-left"
-      }));
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Postsbyuser__WEBPACK_IMPORTED_MODULE_2__["default"], null)));
     }
   }]);
 
@@ -1972,15 +2342,17 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Filter__WEBPACK_IMPORTED_MODULE_3__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
-        className: "title is-2 has-text-centered has-text-white"
-      }, "Tips"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Know something we don't? \xA0", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        id: "contribute"
+      }, "Know something we don't? \xA0", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "advice"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         href: "#/advice"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
         className: "fas fa-plus"
-      }), "\xA0Add a Tip"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }), "\xA0Add a Tip"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Filter__WEBPACK_IMPORTED_MODULE_3__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+        className: "title is-2 has-text-centered has-text-white"
+      }, "Tips"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "content has-text-left",
         id: "cleanUp"
       }, this.props.tips.map(function (tips) {
@@ -2063,15 +2435,17 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Filter__WEBPACK_IMPORTED_MODULE_3__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
-        className: "title is-2 has-text-white has-text-centered"
-      }, "Tutorials"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Know something we don't? \xA0", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Filter__WEBPACK_IMPORTED_MODULE_3__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        id: "contribute"
+      }, "Know something we don't? \xA0", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "advice"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         href: "#/advice"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
         className: "fas fa-plus"
-      }), "\xA0Add a Tip"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }), "\xA0Add a Tip"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+        className: "title is-2 has-text-white has-text-centered"
+      }, "Tutorials"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "content has-text-left",
         id: "cleanUp"
       }, this.props.tutorials.map(function (tutorials) {
@@ -2131,6 +2505,36 @@ document.addEventListener('DOMContentLoaded', function () {
     store: store
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_App__WEBPACK_IMPORTED_MODULE_6__["default"], null)), document.getElementById('app'));
 });
+
+/***/ }),
+
+/***/ "./client/reducers/articles.js":
+/*!*************************************!*\
+  !*** ./client/reducers/articles.js ***!
+  \*************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _actions_receive__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../actions/receive */ "./client/actions/receive.js");
+
+var initialState = [];
+
+var reducer = function reducer() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;
+  var action = arguments.length > 1 ? arguments[1] : undefined;
+
+  switch (action.type) {
+    case _actions_receive__WEBPACK_IMPORTED_MODULE_0__["SAVE_ARTICLES"]:
+      return action.articles;
+
+    default:
+      return state;
+  }
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (reducer);
 
 /***/ }),
 
@@ -2253,8 +2657,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _auth__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./auth */ "./client/reducers/auth.js");
 /* harmony import */ var _tips__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./tips */ "./client/reducers/tips.js");
 /* harmony import */ var _tutorials__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./tutorials */ "./client/reducers/tutorials.js");
-/* harmony import */ var _search__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./search */ "./client/reducers/search.js");
-/* harmony import */ var _categories__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./categories */ "./client/reducers/categories.js");
+/* harmony import */ var _articles__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./articles */ "./client/reducers/articles.js");
+/* harmony import */ var _search__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./search */ "./client/reducers/search.js");
+/* harmony import */ var _categories__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./categories */ "./client/reducers/categories.js");
+/* harmony import */ var _userposts__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./userposts */ "./client/reducers/userposts.js");
+
+
 
 
 
@@ -2265,8 +2673,10 @@ __webpack_require__.r(__webpack_exports__);
   auth: _auth__WEBPACK_IMPORTED_MODULE_1__["default"],
   tips: _tips__WEBPACK_IMPORTED_MODULE_2__["default"],
   tutorials: _tutorials__WEBPACK_IMPORTED_MODULE_3__["default"],
-  search: _search__WEBPACK_IMPORTED_MODULE_4__["default"],
-  categories: _categories__WEBPACK_IMPORTED_MODULE_5__["default"]
+  articles: _articles__WEBPACK_IMPORTED_MODULE_4__["default"],
+  search: _search__WEBPACK_IMPORTED_MODULE_5__["default"],
+  categories: _categories__WEBPACK_IMPORTED_MODULE_6__["default"],
+  postsbyuser: _userposts__WEBPACK_IMPORTED_MODULE_7__["default"]
 }));
 
 /***/ }),
@@ -2351,6 +2761,36 @@ var reducer = function reducer() {
   switch (action.type) {
     case _actions_receive__WEBPACK_IMPORTED_MODULE_0__["GET_TUTORIAL"]:
       return action.tutorials;
+
+    default:
+      return state;
+  }
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (reducer);
+
+/***/ }),
+
+/***/ "./client/reducers/userposts.js":
+/*!**************************************!*\
+  !*** ./client/reducers/userposts.js ***!
+  \**************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _actions_usersposts__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../actions/usersposts */ "./client/actions/usersposts.js");
+
+var initialState = [];
+
+var reducer = function reducer() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;
+  var action = arguments.length > 1 ? arguments[1] : undefined;
+
+  switch (action.type) {
+    case _actions_usersposts__WEBPACK_IMPORTED_MODULE_0__["GET_POSTSBYUSER"]:
+      return action.post;
 
     default:
       return state;
