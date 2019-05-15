@@ -1,14 +1,16 @@
-exports.seed = function (knex, Promise) {
+exports.seed = function(knex, Promise) {
   // Deletes ALL existing entries
-  return knex('posts').del()
-    .then(function () {
+  return knex("posts")
+    .del()
+    .then(function() {
       // Inserts seed entries
-      return knex('posts').insert([
+      return knex("posts").insert([
         {
           id: 1,
-          title: 'Compromise',
-          description: 'You do not need the most expensive pieces to start off start of with a good base and work your way up',
-          type: 'tip',
+          title: "Compromise",
+          description:
+            "You do not need the most expensive pieces to start off start of with a good base and work your way up",
+          type: "tip",
           source_url: ""
         },
         {
