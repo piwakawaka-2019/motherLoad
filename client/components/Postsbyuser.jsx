@@ -33,6 +33,7 @@ class Postsbyuser extends React.Component {
               <Fragment key={post.id}>
                 <h3 className="has-text-white">{post.title}</h3>
                 <p>{post.description}</p>
+                <p>{post.source_url}</p>
                 <button id="addButton" name={post.id} onClick={this.handleDelete}>
                   delete
                 </button>

@@ -20,6 +20,9 @@ class FilterItem extends React.Component {
                 <p className="has-text-white has-text-left">
                 {data.description}
                 </p>
+                <p>
+                  {data.sourcec_url}
+                </p>
                 {this.props.auth.isAuthenticated && <Buttons id={data.posts_id} />}
                 </div>
             </Fragment>
