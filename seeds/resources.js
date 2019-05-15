@@ -128,16 +128,16 @@ exports.seed = function (knex, Promise) {
     })
     .then(function () {
       return Promise.all([
-        scrapeExtremetech(),
-        scrapeFurenexo(),
-        scrapeLaptop(),
-        scrapePcgamer(),
-        scrapePureinfotech(),
-        scrapeTomshardware(),
-        scrapeWindowscentral(),
-        scrapeEasypcmod(),
-        scrapePcworld(),
-        scrapeMuo()
+        scrapeExtremetech(17),
+        scrapeFurenexo(18),
+        scrapeLaptop(19),
+        scrapePcgamer(20),
+        scrapePureinfotech(21),
+        scrapeTomshardware(22),
+        scrapeWindowscentral(23),
+        scrapeEasypcmod(24),
+        scrapePcworld(25),
+        scrapeMuo(26)
     ])
   })
 }
