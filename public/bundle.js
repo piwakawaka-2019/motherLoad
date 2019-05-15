@@ -2715,9 +2715,7 @@ function (_React$Component) {
       }, this.props.tutorials.map(function (tutorials) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           id: "adviceBox"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
-          className: "has-text-white"
-        }, tutorials.title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, tutorials.description), _this.props.auth.isAuthenticated && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Buttons__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        }, _this.props.auth.isAuthenticated && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Buttons__WEBPACK_IMPORTED_MODULE_4__["default"], {
           id: tutorials.id
         })));
       })));
