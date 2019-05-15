@@ -365,23 +365,39 @@ function fetchSearch(arr, location) {
 /*!**************************************!*\
   !*** ./client/actions/usersposts.js ***!
   \**************************************/
-/*! exports provided: GET_POSTSBYUSER, showPostsByUser, fetchPostsByUser, savePostToUser, deletePostSavedToUser */
+/*! exports provided: GET_POSTSBYUSER, DEL_POSTSBYUSER, showPostsByUser, deletePost, deletePostFromUserInRedux, fetchPostsByUser, savePostToUser, deletePostSavedToUser */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GET_POSTSBYUSER", function() { return GET_POSTSBYUSER; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DEL_POSTSBYUSER", function() { return DEL_POSTSBYUSER; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "showPostsByUser", function() { return showPostsByUser; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deletePost", function() { return deletePost; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deletePostFromUserInRedux", function() { return deletePostFromUserInRedux; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchPostsByUser", function() { return fetchPostsByUser; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "savePostToUser", function() { return savePostToUser; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deletePostSavedToUser", function() { return deletePostSavedToUser; });
 /* harmony import */ var _apis_resources__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../apis/resources */ "./client/apis/resources.js");
 var GET_POSTSBYUSER = "GET_POSTSBYUSER";
+var DEL_POSTSBYUSER = "DEL_POSTSBYUSER";
 
 function showPostsByUser(post) {
   return {
     type: GET_POSTSBYUSER,
     post: post
+  };
+}
+function deletePost() {
+  return {
+    type: DEL_POSTSBYUSER
+  };
+}
+function deletePostFromUserInRedux(userName) {
+  return function (dispatch) {
+    Object(_apis_resources__WEBPACK_IMPORTED_MODULE_0__["getPostsByUser"])(userName).then(function (post) {
+      dispatch(showPostsByUser(post));
+    });
   };
 }
 function fetchPostsByUser(userName) {
@@ -401,7 +417,7 @@ function savePostToUser(userName, post) {
 function deletePostSavedToUser(userName, post) {
   return function (dispatch) {
     Object(_apis_resources__WEBPACK_IMPORTED_MODULE_0__["deletePostFromUser"])(userName, post).then(function () {
-      dispatch(fetchPostsByUser(userName));
+      dispatch(deletePostFromUserInRedux(userName));
     });
   };
 }
@@ -547,7 +563,7 @@ function deletePostFromUser(userName, id) {
   };
   return superagent__WEBPACK_IMPORTED_MODULE_0___default.a.post("/api/post/deletepostfromuser").send(data).then(function (res) {
     return res.body;
-  });
+  }).then();
 }
 
 /***/ }),
@@ -1055,7 +1071,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_slick__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_slick__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _RandomTips__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./RandomTips */ "./client/components/RandomTips.jsx");
-/* harmony import */ var _RandomTutorials__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./RandomTutorials */ "./client/components/RandomTutorials.jsx");
+/* harmony import */ var _RandomArticle__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./RandomArticle */ "./client/components/RandomArticle.jsx");
+/* harmony import */ var _RandomTutorials__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./RandomTutorials */ "./client/components/RandomTutorials.jsx");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -1073,6 +1090,7 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
 
 
 
@@ -1135,7 +1153,7 @@ function (_Component) {
       }, "If you're unsure of what direction to begin looking in ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         href: "https://www.logicalincrements.com/",
         target: "_blank"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, "Logical Increments")), " is a great place to start. The site has options that can take in your needs and give you possible builds based on them. The only thing that isn't to great about it is that it doesn't have room for compromise if the build is mid range then all the parts will be midrange. There's no mix and match. A recommendation would be to use them as a rough guide and then use PC Part p")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_RandomTips__WEBPACK_IMPORTED_MODULE_3__["default"], null))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_RandomTutorials__WEBPACK_IMPORTED_MODULE_4__["default"], null))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Article:"))));
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, "Logical Increments")), " is a great place to start. The site has options that can take in your needs and give you possible builds based on them. The only thing that isn't to great about it is that it doesn't have room for compromise if the build is mid range then all the parts will be midrange. There's no mix and match. A recommendation would be to use them as a rough guide and then use PC Part p")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_RandomTips__WEBPACK_IMPORTED_MODULE_3__["default"], null))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_RandomTutorials__WEBPACK_IMPORTED_MODULE_5__["default"], null))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_RandomArticle__WEBPACK_IMPORTED_MODULE_4__["default"], null)))));
     }
   }]);
 
@@ -1240,6 +1258,15 @@ function (_React$Component) {
     value: function render() {
       var _this2 = this;
 
+      // console.log('you on the', this.props.filter, 'page')
+      // const pageType = this.props.filter;
+      // let clearButton;
+      // console.log(pageType, "pageType") 
+      // if(pageType == true){
+      //   clearButton= <button id="filterButton" type="clear" onClick={this.handleClear} >Back</button>
+      // } else {
+      //   clearButton= <Fragment></Fragment>
+      // }
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "checkbox",
         id: "navcheck",
@@ -1278,11 +1305,11 @@ function (_React$Component) {
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         id: "filterButton",
         type: "submit"
-      }, "Filter"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      }, "Filter"), this.props.filter && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         id: "filterButton",
         type: "clear",
         onClick: this.handleClear
-      }, "Clear")))));
+      }, "Back")))));
     }
   }]);
 
@@ -1361,6 +1388,7 @@ function (_React$Component) {
         className: "content has-text-left",
         id: "cleanUp"
       }, this.props.search.map(function (data) {
+        console.log(data);
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           id: "adviceBox"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
@@ -1368,7 +1396,7 @@ function (_React$Component) {
         }, data.title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
           className: "has-text-white has-text-left"
         }, data.description), _this.props.auth.isAuthenticated && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Buttons__WEBPACK_IMPORTED_MODULE_3__["default"], {
-          id: data.id
+          id: data.posts_id
         })));
       })));
     }
@@ -2033,7 +2061,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var _actions_usersposts__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../actions/usersposts */ "./client/actions/usersposts.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var _actions_usersposts__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../actions/usersposts */ "./client/actions/usersposts.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -2056,6 +2085,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
+
 var Postsbyuser =
 /*#__PURE__*/
 function (_React$Component) {
@@ -2067,6 +2097,9 @@ function (_React$Component) {
     _classCallCheck(this, Postsbyuser);
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(Postsbyuser).call(this, props));
+    _this.state = {
+      redirect: false
+    };
     _this.handleDelete = _this.handleDelete.bind(_assertThisInitialized(_this));
     return _this;
   }
@@ -2075,13 +2108,16 @@ function (_React$Component) {
     key: "handleDelete",
     value: function handleDelete(event) {
       event.preventDefault();
-      this.props.dispatch(Object(_actions_usersposts__WEBPACK_IMPORTED_MODULE_2__["deletePostSavedToUser"])(this.props.auth.user.user_name, event.target.name));
+      this.props.dispatch(Object(_actions_usersposts__WEBPACK_IMPORTED_MODULE_3__["deletePostSavedToUser"])(this.props.auth.user.user_name, event.target.name));
+      this.setState({
+        redirect: true
+      });
       alert("yup.. it's gone.");
     }
   }, {
     key: "componentDidMount",
     value: function componentDidMount() {
-      this.props.dispatch(Object(_actions_usersposts__WEBPACK_IMPORTED_MODULE_2__["fetchPostsByUser"])(this.props.auth.user.user_name));
+      this.props.dispatch(Object(_actions_usersposts__WEBPACK_IMPORTED_MODULE_3__["fetchPostsByUser"])(this.props.auth.user.user_name));
     }
   }, {
     key: "render",
@@ -2113,6 +2149,85 @@ function mapStateToProps(state) {
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapStateToProps)(Postsbyuser));
+
+/***/ }),
+
+/***/ "./client/components/RandomArticle.jsx":
+/*!*********************************************!*\
+  !*** ./client/components/RandomArticle.jsx ***!
+  \*********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _actions_receive__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../actions/receive */ "./client/actions/receive.js");
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+
+
+var RandomArticle =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(RandomArticle, _React$Component);
+
+  function RandomArticle() {
+    _classCallCheck(this, RandomArticle);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(RandomArticle).apply(this, arguments));
+  }
+
+  _createClass(RandomArticle, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.props.dispatch(Object(_actions_receive__WEBPACK_IMPORTED_MODULE_2__["fetchArticleData"])());
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      console.log();
+      var randomPick = Math.floor(Math.random() * this.props.articles.length);
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, this.props.articles.length && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+        id: "carouselHeader",
+        className: "is-size-3"
+      }, "Article: ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: this.props.articles[randomPick].source_url,
+        target: "_blank"
+      }, this.props.articles[randomPick].title)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, this.props.articles[randomPick].description))));
+    }
+  }]);
+
+  return RandomArticle;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+function mapStateToProps(state) {
+  return {
+    articles: state.articles
+  };
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapStateToProps)(RandomArticle));
 
 /***/ }),
 
@@ -2595,7 +2710,9 @@ function (_React$Component) {
         href: "#/advice"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
         className: "fas fa-plus"
-      }), "\xA0Grow the base!"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Filter__WEBPACK_IMPORTED_MODULE_4__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+      }), "\xA0Grow the base!"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Filter__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        filter: false
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
         className: "title is-2 has-text-centered has-text-white"
       }, "Tips"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "content has-text-left",
@@ -2696,7 +2813,9 @@ function (_React$Component) {
     value: function render() {
       var _this = this;
 
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Filter__WEBPACK_IMPORTED_MODULE_3__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Filter__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        filter: false
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         id: "contribute"
       }, "Know something we don't? \xA0", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "advice"
@@ -3093,6 +3212,9 @@ var reducer = function reducer() {
   switch (action.type) {
     case _actions_usersposts__WEBPACK_IMPORTED_MODULE_0__["GET_POSTSBYUSER"]:
       return action.post;
+
+    case _actions_usersposts__WEBPACK_IMPORTED_MODULE_0__["DEL_POSTSBYUSER"]:
+      return Object.assign(state, initialState);
 
     default:
       return state;

@@ -75,4 +75,5 @@ export function deletePostFromUser(userName, id) {
   .post("/api/post/deletepostfromuser")
   .send(data)
   .then(res => res.body)
+  .then()
 }

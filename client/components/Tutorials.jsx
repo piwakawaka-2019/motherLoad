@@ -15,7 +15,7 @@ class Tutorials extends React.Component {
   render() {
     return (
       <Fragment>
-        <Filter />
+        <Filter filter={false} />
 
         <p id="contribute">
           Know something we don't? &nbsp;

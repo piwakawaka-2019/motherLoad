@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Slider from "react-slick";
 import {connect} from 'react-redux'
 import RandomTips from './RandomTips'
+import RandomArticle from './RandomArticle'
 import RandomTutorials from './RandomTutorials'
 
 
@@ -66,7 +67,7 @@ export default class Carousel extends Component {
             <h3><RandomTutorials /></h3>
           </div>
           <div>
-            <h3>Article:</h3>
+            <h3><RandomArticle /></h3>
           </div>
         </Slider>
       </div>
