@@ -94,8 +94,7 @@ h3 {
 .carousel {
   background-color: hsl(0, 0%, 96%);
   border: 1px solid;
-  border-color: #5ab9ea;
-  color: #24305e;
+  border-color: black;
   margin: auto;
   margin-bottom: 5%;
   margin-top: 4%;
@@ -128,6 +127,8 @@ color:#33032f!important;
 }
 .carousel a {
   font-weight: bold;
+  color: #f76c6c;
+  text-decoration-line: underline;
 }
 .carousel h3 {
   padding: 16px;
@@ -399,7 +400,7 @@ nav::before {
   width: 80%;
   margin-left: 10%;
   background-color: #33032f;
-  padding-bottom: 10%;
+  padding-bottom: 5%;
   padding-top: 5%;
   padding-left: 10%;
   padding-right: 10%;
@@ -410,4 +411,25 @@ nav::before {
   margin-left: 10%;
   background-color: #33032f;
   padding: 5%;
+}
+
+#articleHolder {
+  width: 100%;
+  background-color: #33032f;
+  padding-top: .5%;
+  padding-left: 8%;
+}
+
+#articleCard {
+  display: inline-block;
+  vertical-align: middle;
+  width:27%;
+  margin: 2%;
+  padding: 3%;
+  background-color: hsl(0, 0%, 96%);
+  border-radius: 35px;
+  border: 1px solid black;
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.719);
+
+
 }

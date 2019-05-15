@@ -17,15 +17,16 @@ class Articles extends React.Component{
     render(){
       return(
         <Fragment>
-          <div className='content'>
-            <h2 className='title is-2'>Articles</h2>
+          <h2 className='title is-size-2 has-text-white'>Articles</h2>
+          <div className='content has-text-left container' id="articleHolder">
+            
             {this.props.articles.map(article => {
                 var urlParts = article.source_url.replace('http://','').replace('https://','').replace('www.','').replace('.com','').split(/[/?#]/)
                 var url = urlParts[0]
                 var domain = article.source_url
 
               return (
-                <div className="box">
+                <div className="is-child" id="articleCard">
                   <h3><b>{article.title}</b></h3>
                   {article.description}<br />
                   Source: <a href={domain} target='_blank'>{url}</a>
