@@ -21,10 +21,11 @@ function scrapePureinfotech () {
             }
         }
 
-        wikiUrls.push(url,name)
+        // wikiUrls.shift()
+        // console.log(wikiUrls)
 
 
-        const keyPairs = {title: 'Pureinfotech', description: wikiUrls[0], type: 'article', sourceUrl: 'https://pureinfotech.com/choose-power-supply-pc/'}
+        const keyPairs = {title: 'How to choose the right power supply for your PC', description: wikiUrls[0], type: 'article', sourceUrl: 'https://pureinfotech.com/choose-power-supply-pc/'}
         
         return db.addPost(keyPairs)
     })
@@ -58,11 +59,11 @@ function scrapeTomshardware () {
             }
         }
 
-        wikiUrls.push(url,name)
+        // wikiUrls.push(url,name)
         // res.json(wikiUrls)
 
 
-        const keyPairs = {title: "Tom's Hardware", description: wikiUrls[4], type: 'article', sourceUrl: 'https://www.tomshardware.com/reviews/monitor-buying-guide,5699.html'}
+        const keyPairs = {title: "How to Choose a PC Monitor: A 2019 Guide", description: wikiUrls[4], type: 'article', sourceUrl: 'https://www.tomshardware.com/reviews/monitor-buying-guide,5699.html'}
         
         return db.addPost(keyPairs)
     })
@@ -96,10 +97,10 @@ function scrapeExtremetech () {
             }
         }
 
-        wikiUrls.push(url,name)
+        // wikiUrls.push(url,name)
 
 
-        const keyPairs = {title: "Extreme Tech", description: wikiUrls[0], type: 'article', sourceUrl: 'https://www.extremetech.com/computing/241872-choose-right-mechanical-keyboard/'}
+        const keyPairs = {title: "How to Choose the Best Mechanical Keyboard in 2019", description: wikiUrls[0], type: 'article', sourceUrl: 'https://www.extremetech.com/computing/241872-choose-right-mechanical-keyboard/'}
         
         return db.addPost(keyPairs)
     })
@@ -132,10 +133,10 @@ function scrapeFurenexo () {
             }
         }
         
-        wikiUrls.push(url,name)
+        // wikiUrls.push(url,name)
 
 
-        const keyPairs = {title: "Furenexo", description: wikiUrls[0], type: 'article', sourceUrl: 'https://www.furenexo.com/gaming-headsets/'}
+        const keyPairs = {title: "8 Tips on How to choose the best gaming headset?", description: wikiUrls[0], type: 'article', sourceUrl: 'https://www.furenexo.com/gaming-headsets/'}
         
         return db.addPost(keyPairs)
     })
@@ -168,10 +169,10 @@ function scrapePcgamer () {
             }
         }
         
-        wikiUrls.push(url,name)
+        // wikiUrls.push(url,name)
 
 
-        const keyPairs = {title: "PC Gamer", description: wikiUrls[1], type: 'article', sourceUrl: 'https://www.pcgamer.com/au/how-to-choose-the-right-graphics-card-model/'}
+        const keyPairs = {title: "How to choose the right graphics card model", description: wikiUrls[1], type: 'article', sourceUrl: 'https://www.pcgamer.com/au/how-to-choose-the-right-graphics-card-model/'}
         
         return db.addPost(keyPairs)
     })
@@ -205,10 +206,10 @@ function scrapeLaptop () {
             }
         }
         
-        wikiUrls.push(url,name)        
+        // wikiUrls.push(url,name)        
 
 
-        const keyPairs = {title: "LaptopMag", description: wikiUrls[0], type: 'article', sourceUrl: 'https://www.laptopmag.com/articles/how-to-use-windows-10/'}
+        const keyPairs = {title: "How to Use Windows 10", description: wikiUrls[0], type: 'article', sourceUrl: 'https://www.laptopmag.com/articles/how-to-use-windows-10/'}
         
         return db.addPost(keyPairs)
     })
@@ -239,9 +240,9 @@ function scrapeWindowscentral () {
             }
         }
 
-        wikiUrls.push(url,name)
+        // wikiUrls.push(url,name)
 
-        const keyPairs = {title: "Windows Central", description: wikiUrls[1], type: "article", sourceUrl: "https://www.windowscentral.com/how-prevent-frying-your-pc-insides-static-electricity/"}
+        const keyPairs = {title: "How to prevent frying your PC insides with static electricity", description: wikiUrls[1], type: "article", sourceUrl: "https://www.windowscentral.com/how-prevent-frying-your-pc-insides-static-electricity/"}
 
         return db.addPost(keyPairs)
     })
@@ -271,9 +272,9 @@ function scrapeEasypcmod () {
             }
         }
 
-        wikiUrls.push(url,name)
+        // wikiUrls.push(url,name)
 
-        const keyPairs = {title: "EasyPCMod", description: wikiUrls[1], type: "article", sourceUrl: "https://www.easypcmod.com/remove-old-cpu-processor-install-new-one-tutorial-336/"}
+        const keyPairs = {title: "How to remove old CPU or processor and install a new one", description: wikiUrls[1], type: "article", sourceUrl: "https://www.easypcmod.com/remove-old-cpu-processor-install-new-one-tutorial-336/"}
 
         return db.addPost(keyPairs)
     })
@@ -305,7 +306,7 @@ function scrapePcworld () {
 
         wikiUrls.push(url,name)
 
-        const keyPairs = {title: "PCWorld", description: wikiUrls[6], type: "article", sourceUrl: "https://www.pcworld.com/article/3331854/ces-2019-pc-trends-announcements.html"}
+        const keyPairs = {title: "6 important CES 2019 reveals and trends that PC enthusiasts need to know about", description: wikiUrls[6], type: "article", sourceUrl: "https://www.pcworld.com/article/3331854/ces-2019-pc-trends-announcements.html"}
 
         return db.addPost(keyPairs)
     })
@@ -332,8 +333,8 @@ function scrapeMuo () {
 
         wikiUrls.push(url,name)
 
-
-        const keyPairs = {title: "Make Use Of", description: wikiUrls[7], type: "article", sourceUrl: "https://www.makeuseof.com/tag/upgrades-will-improve-pc-performance/"}
+ 
+        const keyPairs = {title: 'These Upgrades will Improve Your PC Performance The Most!', description: wikiUrls[7], type: "article", sourceUrl: "https://www.makeuseof.com/tag/upgrades-will-improve-pc-performance/"}
 
         return db.addPost(keyPairs)
     })
