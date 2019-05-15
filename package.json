@@ -1,6 +1,9 @@
 {
   "name": "motherload",
   "version": "0.2.0",
+  "engines": {
+    "node": "11.12.0"
+  },
   "description": "Motherload",
   "repository": "https://github.com/piwakawaka-2019/motherLoad.git",
   "main": "server/index.js",
