@@ -37,7 +37,7 @@ class Tutorials extends React.Component {
             return (
               <Fragment>
                 <div id="adviceBox">
-
+                <embed width="420" height="315" src={tutorials.source_url} />
                   {this.props.auth.isAuthenticated && (
                     <Buttons id={tutorials.id} />
                   )}
