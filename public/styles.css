@@ -23,11 +23,7 @@ h3 {
   font-size: 80px;
 }
 
-#LnRForm {
-  background-color: #531253;
-  width: 60%;
-  margin-left: 20%;
-}
+
 
 .navbar {
   background-color: #33032f;
@@ -96,7 +92,7 @@ h3 {
 }
 
 .carousel {
-  background-color: #c1c8e4;
+  background-color: hsl(0, 0%, 96%);
   border: 1px solid;
   border-color: #5ab9ea;
   color: #24305e;
@@ -140,6 +136,15 @@ color:#33032f!important;
 
 .slick-dots li button:before {
   color: #d2fdff!important;
+}
+
+.carousel p {
+  color:  #33032f !important;
+}
+#carouselHeader {
+
+  margin-bottom:3%;
+  color:  #33032f
 }
 
 /* the start of the hamburger menu */
@@ -362,6 +367,11 @@ nav::before {
   padding-bottom: 5%;
 }
 
+#LnRForm {
+  background-color: #531253;
+  width: 60%;
+  margin-left: 20%;
+}
 #LnRButtons:hover {
   background-color: #97d8b2;
   color: #33032f !important;

@@ -28,30 +28,33 @@ export default class Carousel extends Component {
         {/* <h2> Single Item</h2> */}
         <Slider {...settings}>
           <div>
-            <h3>
-              Welcome to MotherLoad! Our aim is to bring information around PC building to make your life easier.
-              Whether you're new to the area or an expert, we hope you leave us learning something new.
-              We also encourage viewers to share whatever knowledge they have that we may have missed,
-              as an expert you probably have come across a few things you wish you had learnt sooner,
-              so don't be afraid to share!
-            </h3>
+            <p className="has-text-left">
+              If you haven't come across it already,<a href="https://nz.pcpartpicker.com/" target="_blank">
+              <strong> PC Part picker</strong></a> is a really good place that helps 
+              bring your build together. It tells you when parts don't work together and also gives 
+              you the best and cheapest places to get them. Another great feature they have, is that it allows
+              you to save your builds as well as look at other people's builds to gain ideas.
+            </p>
+            
           </div>
           <div>
-            <h3>
-              If you haven't come across it already, <a href='https://pcpartpicker.com'>PC Partpicker</a> is a really good place that helps bring your build together.
-              It tells you when parts don't work together and also gives you the best and cheapest places to get them from.
-              You can save your builds as well as look at other people's builds.
-            </h3>
+          <h2 id="carouselHeader" className="is-size-3">Want help from a human?</h2>
+          <p className="has-text-left">
+          If you can't find what you're looking for on our site, or want to chat through your builds and bugs with an 
+          expereinced person, <a href="https://www.computerhope.com/" target="_blank"><strong>Computer Hope</strong></a> is the place for you. 
+          You'll find a community with a great pool of knowledge who will have your best interests in mind.
+            </p>
           </div>
           <div>
-            <h3><a href='https://www.logicalincrements.com'>Logical Increments</a> is a great place in that it can take in your needs and give you possible builds based on those.
-              The only thing that isn't so great about it is that it doesn't have room for compromise if the build is mid-range, then all the parts will be mid-range.
-              There's no mix-and-match.
-            </h3>
+          <h2 id="carouselHeader" className="is-size-3">Need a place to start?</h2>
+          <p className="has-text-left">
+            If you're unsure of what direction to begin looking in <a href="https://www.logicalincrements.com/" target="_blank"><strong>Logical Increments</strong></a> is a great place to start.
+            The site has options that can take in your needs and give you possible builds based on 
+            them. The only thing that isn't to great about it is that it doesn't have room for compromise if the build 
+            is mid range then all the parts will be midrange. There's no mix and match. A recommendation would be to use them as a rough guide and then use PC Part p
+          </p>
           </div>
-          <div>
-            <h3>At <a href='https://www.computerhope.com'>Computer Hope</a>, you can find people who have a lot of knowledge and have your best intentions at heart.</h3>
-          </div>
+
           <div>
             <h3><RandomTips /></h3>
           </div>

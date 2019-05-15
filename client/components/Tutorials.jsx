@@ -4,10 +4,13 @@ import { connect } from "react-redux";
 import { fetchTutorials } from "../actions/receive";
 import Filter from "./Filter";
 import Buttons from "./Buttons";
+import { saveLocation} from '../actions/location'
 
 class Tutorials extends React.Component {
   componentDidMount() {
     this.props.dispatch(fetchTutorials());
+    this.props.dispatch(saveLocation({location: 'tutorial', url: '/tutorials'}))
+
   }
   render() {
     return (

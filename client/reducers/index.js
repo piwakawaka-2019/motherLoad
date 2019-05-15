@@ -7,6 +7,7 @@ import articles from "./articles";
 import search from "./search";
 import categories from "./categories";
 import postsbyuser from "./userposts";
+import location from './location'
 
 export default combineReducers({
   auth,
@@ -15,5 +16,6 @@ export default combineReducers({
   articles,
   search,
   categories,
-  postsbyuser
+  postsbyuser,
+  location
 });

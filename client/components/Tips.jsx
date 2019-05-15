@@ -3,11 +3,13 @@ import { connect } from "react-redux";
 
 import { fetchTips } from "../actions/receive";
 import Buttons from "./Buttons";
-import Filter from "./Filter";
+import Filter from "../components/Filter";
+import { saveLocation } from "../actions/location";
 
 class Tips extends React.Component {
   componentDidMount() {
     this.props.dispatch(fetchTips());
+    this.props.dispatch(saveLocation({location: 'tip', url: '/tips'}))
   }
   render() {
     return (
@@ -47,7 +49,8 @@ function mapStateToProps(state) {
   return {
     postsbyuser: state.postsbyuser,
     tips: state.tips,
-    auth: state.auth
+    auth: state.auth,
+    location: state.location
   };
 }
 

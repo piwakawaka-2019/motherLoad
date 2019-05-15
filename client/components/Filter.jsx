@@ -1,17 +1,21 @@
 import React, { Fragment } from "react";
 import { connect } from "react-redux";
+import { Redirect } from 'react-router-dom'
 
 import { fetchCategories } from "../actions/categories";
 import { fetchSearch } from "../actions/search";
 
-import FilterItem from "./FilterItem";
 
 class Form extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+        redirect: false,
+        clear: false
+    };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleClear = this.handleClear.bind(this);
   }
   componentDidMount() {
     this.props.dispatch(fetchCategories());
@@ -19,8 +23,17 @@ class Form extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
     let values = Object.values(this.state);
-    this.props.dispatch(fetchSearch(values));
+    this.props.dispatch(fetchSearch(values, this.props.location.location));
+    this.setState({
+        redirect: true
+    })
   }
+  handleClear(){
+    this.setState({
+        clear: true
+    })
+  }
+
   handleChange(event) {
     this.setState({
       [event.target.name]: event.target.value
@@ -32,7 +45,7 @@ class Form extends React.Component {
       <Fragment>
         <input type="checkbox" id="navcheck" role="button" title="menu" />
 
-        <label for="navcheck" aria-hidden="true" title="menu">
+        <label htmlFor="navcheck" aria-hidden="true" title="menu">
           <span className="burger">
             <span className="bar">
               <span className="filter has-text-grey-lighter">Filter</span>
@@ -46,7 +59,7 @@ class Form extends React.Component {
             <form className="filterForm" onSubmit={this.handleSubmit}>
               {this.props.categories.map(category => {
                 return (
-                  <Fragment>
+                  <Fragment key={category.id}>
                     <ul>
                       <li>
                         <label>
@@ -63,17 +76,18 @@ class Form extends React.Component {
                   </Fragment>
                 );
               })}
-              <button id="filterButton" type="submit">
-                Filter
+             {this.state.clear && <Redirect to={this.props.location.url} />}
+             {this.state.redirect && !this.props.filter &&<Redirect to="/filtered" />}
+              <button  id="filterButton" type="submit">
+              Filter 
               </button>
-              <button onClick={this.handleClear} id="filterButton" type="clear">
+              <button id="filterButton" type="clear" onClick={this.handleClear} >
                 Clear
               </button>
             </form>
           </div>
         </nav>
 
-        <div>{this.props.search && <FilterItem />}</div>
       </Fragment>
     );
   }
@@ -82,7 +96,8 @@ function mapStateToProps(state) {
   return {
     search: state.search,
     categories: state.categories,
-    tips: state.tips
+    tips: state.tips,
+    location: state.location
   };
 }
 export default connect(mapStateToProps)(Form);

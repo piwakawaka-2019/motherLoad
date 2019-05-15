@@ -16,6 +16,7 @@ import RegisteredUsersHome from "./RegisteredUsersHome.jsx";
 import NonRegisteredHome from "./NonRegisteredHome"
 import Filter from "./Filter";
 import Footer from "./Footer";
+import FilterItem from "./FilterItem";
 
 export function App({ auth }) {
   return (
@@ -50,7 +51,7 @@ export function App({ auth }) {
           <Route path="/tutorials" component={Tutorials} />
           <Route path="/tips" component={Tips} />
           <Route path="/articles" component={Articles} />
-          <Route path="/search" component={Filter} />
+          <Route path="/filtered" component={FilterItem} />
         </div>
       </div>
       <Footer />
