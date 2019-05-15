@@ -1,34 +1,41 @@
 import React, { Fragment } from "react";
 import { connect } from "react-redux";
 import Filter from './Filter'
+import Buttons from "./Buttons"
+
+
 class FilterItem extends React.Component {
   render() {
     return (
       <Fragment>
         <Filter filter='true' />
+        <div className="content has-text-left" id="cleanUp">
         {this.props.search.map(data => {
           return (
             <Fragment>
-              <div>
-                <h2 className="title is-2 has-text-centered has-text-white">
-                  Type: {data.type}
-                </h2>
-                <h2 className="title is-2 has-text-centered has-text-white">
-                  {data.title}
-                </h2>
-                <br />
-                <p>{data.description}</p>
-              </div>
+              
+                
+                <div id="adviceBox">
+                  <h3 className="is-3 has-text-white">{data.title}
+                </h3>
+                <p className="has-text-white has-text-left">
+                {data.description}
+                </p>
+                {console.log(data , "hi")}
+                {this.props.auth.isAuthenticated && <Buttons id={data.id} />}
+                </div>
             </Fragment>
           );
-        })}
+        })}</div>
       </Fragment>
     );
   }
 }
 function mapStateToProps(state) {
   return {
-    search: state.search
+    search: state.search,
+    auth: state.auth,
+    
   };
 }
 export default connect(mapStateToProps)(FilterItem);

@@ -2,7 +2,6 @@ import React, { Fragment } from "react";
 import { connect } from "react-redux";
 
 import { fetchTips } from "../actions/receive";
-import { savePostToUser } from "../actions/usersposts";
 import Buttons from "./Buttons";
 import Filter from "../components/Filter";
 import { saveLocation } from "../actions/location";

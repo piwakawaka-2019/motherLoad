@@ -14,7 +14,7 @@ class Postsbyuser extends React.Component {
     this.props.dispatch(
       deletePostSavedToUser(this.props.auth.user.user_name, event.target.name)
     );
-    alert("deleted");
+    alert("yup.. it's gone.");
   }
   componentDidMount() {
     this.props.dispatch(fetchPostsByUser(this.props.auth.user.user_name));
@@ -28,7 +28,7 @@ class Postsbyuser extends React.Component {
               <Fragment key={post.id}>
                 <h3 className="has-text-white">{post.title}</h3>
                 <p>{post.description}</p>
-                <button name={post.id} onClick={this.handleDelete}>
+                <button id="addButton" name={post.id} onClick={this.handleDelete}>
                   delete
                 </button>
               </Fragment>

@@ -3,7 +3,6 @@ import { HashRouter as Router, Route, Link } from "react-router-dom";
 import { connect } from "react-redux";
 
 import Header from "./Header";
-import Main from "./Main";
 import MenuBar from "./MenuBar";
 import Nav from "./Nav";
 import Login from "./Login";
@@ -14,6 +13,7 @@ import Tips from "./Tips";
 import Articles from "./Articles";
 import AdviceForm from "./AdviceForm";
 import RegisteredUsersHome from "./RegisteredUsersHome.jsx";
+import NonRegisteredHome from "./NonRegisteredHome"
 import Filter from "./Filter";
 import Footer from "./Footer";
 import FilterItem from "./FilterItem";
@@ -25,7 +25,11 @@ export function App({ auth }) {
         <Header />
         <Nav />
         <MenuBar />
-        <Main />
+
+
+        {!auth.isAuthenticated && (
+          <Route exact path="/" component={NonRegisteredHome} />
+        )}
 
         {auth.isAuthenticated && (
           <Route exact path="/" component={RegisteredUsersHome} />
