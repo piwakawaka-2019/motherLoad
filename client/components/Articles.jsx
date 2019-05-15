@@ -21,10 +21,15 @@ class Articles extends React.Component{
           <div className='content has-text-left container' id="articleHolder">
             
             {this.props.articles.map(article => {
+                var urlParts = article.source_url.replace('http://','').replace('https://','').replace('www.','').replace('.com','').split(/[/?#]/)
+                var url = urlParts[0]
+                var domain = article.source_url
+
               return (
-                <div className="is-child" id="articleCard">
-                  <a href={article.source_url} target='_blank'><h3><b>{article.title}</b></h3></a>
-                  {article.description}
+                <div className="box">
+                  <h3><b>{article.title}</b></h3>
+                  {article.description}<br />
+                  Source: <a href={domain} target='_blank'>{url}</a>
 
                   </div>
               )
