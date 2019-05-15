@@ -42,7 +42,6 @@ class AdviceForm extends React.Component {
     const arr = this.state.categories;
     const thing = event.target.value;
     const index = arr.indexOf(thing);
-    console.log(typeof thing)
     return index > -1
       ? arr.splice(index, 1)
       : this.setState({
@@ -52,7 +51,6 @@ class AdviceForm extends React.Component {
     // if it exists in array then remove it else add it
   }
   render() {
-    console.log(this.state)
     return (
       <Fragment>
         <h2 className="title is-3 has-text-centered has-text-white">

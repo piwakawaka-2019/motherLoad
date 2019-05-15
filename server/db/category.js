@@ -19,10 +19,6 @@ function getPostDetailByID(id) {
   //where id matches id
 }
 
-// console.log('yus!')
-// getPostsByCategory(1).then((console.log))
-// getCategory().then((console.log))
-
 module.exports = {
   getCategory,
   getPostsByCategory

@@ -2,11 +2,9 @@ const express = require("express");
 const db = require("../db/posts");
 
 const router = express.Router();
-console.log("addPost router is being called")
 
 router.post("/add", (req, res) => {
   let post = req.body;
-  console.log('route being called', post)
 
   db.addPostWithCategory(post)
     .then(() => {
@@ -33,7 +31,6 @@ router.post("/deletepostfromuser", (req, res) => {
   let post = req.body;
   db.deletePostFromUser(post)
     .then(data => {
-      console.log("done");
     })
     .catch(err => {
       console.error(err);

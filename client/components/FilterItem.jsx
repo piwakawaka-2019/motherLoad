@@ -21,7 +21,6 @@ class FilterItem extends React.Component {
                 <p className="has-text-white has-text-left">
                 {data.description}
                 </p>
-                {console.log(data , "hi")}
                 {this.props.auth.isAuthenticated && <Buttons id={data.id} />}
                 </div>
             </Fragment>

@@ -22,8 +22,8 @@ export function App({ auth }) {
   return (
     <Router>
       <div className="container has-text-centered">
-        <Header />
         <Nav />
+        <Header />
         <MenuBar />
 
 
