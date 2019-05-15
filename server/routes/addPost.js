@@ -2,16 +2,19 @@ const express = require("express");
 const db = require("../db/posts");
 
 const router = express.Router();
+console.log("addPost router is being called")
 
 router.post("/add", (req, res) => {
   let post = req.body;
+  console.log('route being called', post)
+
   db.addPostWithCategory(post)
     .then(() => {
-      // res.setStatus(200).json({ message: "Success" });
+      res.status(200).json({ message: "Success" });
     })
     .catch(err => {
       console.error(err);
-      // res.setStatus(500).json({ error: "It Broke" });
+      res.status(500).json({ error: "It Broke" });
     });
 });
 

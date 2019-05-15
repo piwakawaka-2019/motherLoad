@@ -94,7 +94,11 @@ export function getCatagories() {
     });
 }
 export function addDataToDB(data) {
-  return request.post("/api/post/add").send(data);
+  console.log(data, 'api call here')
+  return request
+  .post("/api/post/add")
+  .send(data)
+  .then(res => res.body)
 }
 export function getPostsByUser(user) {
   return request
@@ -106,9 +110,15 @@ export function getPostsByUser(user) {
 }
 export function addPostsByUser(userName, id) {
   let data = { name: userName, id: id };
-  return request.post("/api/post/savepoststouser").send(data);
+  return request
+  .post("/api/post/savepoststouser")
+  .send(data)
+  .then(res => res.body)
 }
 export function deletePostFromUser(userName, id) {
   let data = { name: userName, id: id };
-  return request.post("/api/post/deletepostfromuser").send(data);
+  return request
+  .post("/api/post/deletepostfromuser")
+  .send(data)
+  .then(res => res.body)
 }

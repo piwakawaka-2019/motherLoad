@@ -14,6 +14,7 @@ function getTutorials(db = connection) {
 }
 
 function addPostWithCategory(postObj, db = connection) {
+  console.log('db function here', postObj)
   return db("posts")
     .insert({
       title: postObj.title,
@@ -23,6 +24,7 @@ function addPostWithCategory(postObj, db = connection) {
     })
     .then(ids => {
       const postId = ids[0];
+      console.log(postObj.categories, ids)
       return Promise.all(
         postObj.categories.map(category_id => {
           return db("categorise_posts").insert({
