@@ -35,6 +35,7 @@ class Postsbyuser extends React.Component {
                 <p>{post.description}</p>
                 <embed width="420" height="315" src={post.source_url} />
                 <br />
+                
                 <button id="addButton" name={post.id} onClick={this.handleDelete}>
                   delete
                 </button>
