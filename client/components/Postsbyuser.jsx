@@ -29,11 +29,12 @@ class Postsbyuser extends React.Component {
       <Fragment>
         <div>
           {this.props.postsbyuser.map(post => {
+            console.log(post.type)
             return (
               <Fragment key={post.id}>
                 <h3 className="has-text-white">{post.title}</h3>
                 <p>{post.description}</p>
-                <embed width="420" height="315" src={post.source_url} />
+                {post.type == "tutorial" && <embed width="420" height="315" src={post.source_url} />}
                 <br />
                 <button id="addButton" name={post.id} onClick={this.handleDelete}>
                   delete
