@@ -3,6 +3,11 @@
 
 The focuse of this app is to provide accesible and easy to understand knowledge around building a PC. Looking at the parts themselves and tips, tutorials and any relevant articles. But also having a place where people can share what they have learnt in their build journey. 
 
+## Incoming features and patches (June 2019)
+
+* Looking into Heroku to get it 100% live. Currently it isn't showing any data from the database. 
+* Adding more features for a registered user. Such as: Being able to comment on tips and tutorials, up voting on comments, suggesting articles/edits etc.
+* Adding an admin feature to edit tips. Making room for potential features.
 
 ## The Tech
 
