@@ -11,17 +11,19 @@ class FilterItem extends React.Component {
         <Filter filter='true' />
         <div className="content has-text-left" id="cleanUp">
         {this.props.search.map(data => {
+          console.log(data)
           return (
             <Fragment>
-              
-                
                 <div id="adviceBox">
                   <h3 className="is-3 has-text-white">{data.title}
                 </h3>
                 <p className="has-text-white has-text-left">
                 {data.description}
                 </p>
-                {this.props.auth.isAuthenticated && <Buttons id={data.id} />}
+                <p>
+                  {data.sourcec_url}
+                </p>
+                {this.props.auth.isAuthenticated && <Buttons id={data.posts_id} />}
                 </div>
             </Fragment>
           );

@@ -41,6 +41,15 @@ class Form extends React.Component {
   }
 
   render() {
+    // console.log('you on the', this.props.filter, 'page')
+    // const pageType = this.props.filter;
+    // let clearButton;
+    // console.log(pageType, "pageType") 
+    // if(pageType == true){
+    //   clearButton= <button id="filterButton" type="clear" onClick={this.handleClear} >Back</button>
+    // } else {
+    //   clearButton= <Fragment></Fragment>
+    // }
     return (
       <Fragment>
         <input type="checkbox" id="navcheck" role="button" title="menu" />
@@ -81,9 +90,8 @@ class Form extends React.Component {
               <button  id="filterButton" type="submit">
               Filter 
               </button>
-              <button id="filterButton" type="clear" onClick={this.handleClear} >
-                Clear
-              </button>
+              {/* { clearButton }  */}
+              {this.props.filter && <button id="filterButton" type="clear" onClick={this.handleClear} >Back</button>}
             </form>
           </div>
         </nav>

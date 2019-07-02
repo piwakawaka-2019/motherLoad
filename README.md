@@ -23,6 +23,11 @@ To run in production:
 npm start
 ```
 
+## Incoming features and patches (June 2019)
+
+* Looking into Heroku to get it 100% live. Currently it isn't showing any data from the database. 
+* Adding more features for a registered user. Such as: Being able to comment on tips and tutorials, up voting on comments, suggesting articles/edits etc.
+* Adding an admin feature to edit tips. Making room for potential features.
 
 ## The Tech
 

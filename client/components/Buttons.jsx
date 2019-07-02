@@ -13,7 +13,7 @@ class Buttons extends React.Component {
     this.props.dispatch(
       savePostToUser(this.props.auth.user.user_name, event.target.name)
     );
-    alert("Saved!");
+    alert("Saved! Find me on the home page!");
   }
 
   render() {

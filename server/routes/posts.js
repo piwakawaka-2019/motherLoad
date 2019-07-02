@@ -10,7 +10,7 @@ router.get("/all", (req, res) => {
     })
     .catch(err => {
       console.error(err);
-      res.setStatus(500).json({ error: "It Broke" });
+      res.status(500).json({ error: "It Broke" });
     });
 });
 
@@ -21,7 +21,7 @@ router.get("/articles" , (req, res) => {
     })
     .catch(err => {
         console.error(err);
-        res.setStatus(500).json({ error: "It Broke"});
+        res.status(500).json({ error: "It Broke"});
     });
 
 });
@@ -33,7 +33,7 @@ router.get("/tips" , (req, res) => {
     })
     .catch(err => {
       console.error(err);
-      res.setStatus(500).json({ error: "It Broke" });
+      res.status(500).json({ error: "It Broke" });
     });
 });
 
@@ -44,7 +44,7 @@ router.get("/tutorials", (req, res) => {
     })
     .catch(err => {
       console.error(err);
-      res.setStatus(500).json({ error: "It Broke" });
+      res.status(500).json({ error: "It Broke" });
     });
 });
 router.get("/byuser/:id", (req, res) => {
@@ -66,7 +66,7 @@ router.get("/byuser/:id", (req, res) => {
     })
     .catch(err => {
       console.error(err);
-      res.setStatus(500).json({ error: "It Broke" });
+      res.status(500).json({ error: "It Broke" });
     });
 });
 

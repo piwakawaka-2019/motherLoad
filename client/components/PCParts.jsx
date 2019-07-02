@@ -1,5 +1,4 @@
 import React, { Fragment } from "react";
-import { connect } from "react-redux";
 
 class PCParts extends React.Component {
   render() {

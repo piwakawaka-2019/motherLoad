@@ -17,7 +17,7 @@ router.get("/category/:id/:location", (req, res) => {
     })
     .catch(err => {
       console.error(err);
-      res.setStatus(500).json({ error: "It Broke" });
+      res.status(500).json({ error: "It Broke" });
     });
 });
 

@@ -15,7 +15,7 @@ class Tutorials extends React.Component {
   render() {
     return (
       <Fragment>
-        <Filter />
+        <Filter filter={false} />
 
         <p id="contribute">
           Know something we don't? &nbsp;
@@ -37,11 +37,14 @@ class Tutorials extends React.Component {
             return (
               <Fragment>
                 <div id="adviceBox">
-
+                <h3 className="has-text-white">{tutorials.title}</h3>
+                <embed width="420" height="315" src={tutorials.source_url} />
+                <br />
                   {this.props.auth.isAuthenticated && (
                     <Buttons id={tutorials.id} />
                   )}
                 </div>
+                
               </Fragment>
             );
           })}
