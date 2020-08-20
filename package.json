@@ -38,7 +38,7 @@
     "@material-ui/core": "^3.9.3",
     "@material-ui/icons": "^3.0.2",
     "babel-loader": "^8.0.5",
-    "bcrypt": "^3.0.6",
+    "bcrypt": "^5.0.0",
     "bootstrap": "^4.3.1",
     "bulma-carousel": "^4.0.4",
     "bulma-extensions": "^6.2.5",
